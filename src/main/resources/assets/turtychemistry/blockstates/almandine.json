@@ -1,0 +1,13 @@
+{
+	"variants": {
+		"": [{
+				"model": "turtychemistry:block/almandine_brown"
+			},
+			{
+				"model": "turtychemistry:block/almandine_orange"
+			},
+			{
+				"model": "turtychemistry:block/almandine_red"
+			}]
+	}
+}

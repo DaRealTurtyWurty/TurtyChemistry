@@ -1,0 +1,13 @@
+{
+	"variants": {
+		"": [{
+				"model": "turtychemistry:block/lepidolite_lavender"
+			},
+			{
+				"model": "turtychemistry:block/lepidolite_pink"
+			},
+			{
+				"model": "turtychemistry:block/lepidolite_yellow"
+			}]
+	}
+}

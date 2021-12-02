@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "turtychemistry:block/electrolyzer" },
+        "facing=south": { "model": "turtychemistry:block/electrolyzer", "y": 180 },
+        "facing=west":  { "model": "turtychemistry:block/electrolyzer", "y": 270 },
+        "facing=east":  { "model": "turtychemistry:block/electrolyzer", "y": 90 }
+    }
+}

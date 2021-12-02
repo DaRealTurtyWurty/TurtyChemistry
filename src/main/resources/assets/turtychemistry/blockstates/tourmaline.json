@@ -1,0 +1,22 @@
+{
+	"variants": {
+		"": [{
+				"model": "turtychemistry:block/tourmaline_achroite"
+			},
+			{
+				"model": "turtychemistry:block/tourmaline_dravite"
+			},
+			{
+				"model": "turtychemistry:block/tourmaline_indicolite"
+			},
+			{
+				"model": "turtychemistry:block/tourmaline_rubelite"
+			},
+			{
+				"model": "turtychemistry:block/tourmaline_schorl"
+			},
+			{
+				"model": "turtychemistry:block/tourmaline_verdelite"
+			}]
+	}
+}

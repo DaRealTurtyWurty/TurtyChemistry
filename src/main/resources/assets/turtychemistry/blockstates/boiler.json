@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "turtychemistry:block/boiler" },
+        "facing=south": { "model": "turtychemistry:block/boiler", "y": 180 },
+        "facing=west":  { "model": "turtychemistry:block/boiler", "y": 270 },
+        "facing=east":  { "model": "turtychemistry:block/boiler", "y": 90 }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "": [
+            { "model": "turtychemistry:block/green_algae" },
+            { "model": "turtychemistry:block/green_algae", "y": 90 },
+            { "model": "turtychemistry:block/green_algae", "y": 180 },
+            { "model": "turtychemistry:block/green_algae", "y": 270 }
+        ]
+    }
+}

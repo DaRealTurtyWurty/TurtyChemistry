@@ -1,0 +1,10 @@
+{
+	"variants": {
+		"": [{
+				"model": "turtychemistry:block/spodumene_purple"
+			},
+			{
+				"model": "turtychemistry:block/spodumene_clear"
+			}]
+	}
+}

@@ -1,17 +1,17 @@
 modLoader="javafml"
 loaderVersion="[37,)"
 license="MIT"
-#issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/"
+issueTrackerURL="https://github.com/DaRealTurtyWurty/TurtyChemistry/issues"
 
 [[mods]]
 modId="turtychemistry"
 version="1.0"
 displayName="Turty's Chemistry"
-#updateJSONURL="https://change.me.example.invalid/updates.json"
-#displayURL="https://change.me.to.your.mods.homepage.example.invalid/"
+updateJSONURL="https://github.com/DaRealTurtyWurty/TurtyChemistry/blob/master/updates.json"
+displayURL="https://github.com/DaRealTurtyWurty/TurtyChemistry/"
 logoFile="logo.png"
 credits="TurtyWurty"
-authors="TurtyWurty"
+authors="TurtyWurty and maybe, just maybe, TurtyWurty. Also now that I think of it, TurtyWurty!"
 description='''
-
+A mod for minecraft which adds chemistry into the game.
 '''

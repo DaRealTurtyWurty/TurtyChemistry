@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" i ",
+		" i ",
+		"TTT"
+	],
+	"key": {
+		"i": {
+			"tag": "forge:ingots/iron"
+		},
+		"T": {
+			"item": "minecraft:terracotta"
+		}
+	},
+	"result": {
+		"item": "turtychemistry:bunsen_burner",
+		"count": 1
+	}
+}

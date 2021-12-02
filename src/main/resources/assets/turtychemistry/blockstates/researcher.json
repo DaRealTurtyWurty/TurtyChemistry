@@ -1,0 +1,49 @@
+{
+	"variants": {
+		"facing=north,processor=basic": {
+			"model": "turtychemistry:block/researcher_basic"
+		},
+		"facing=south,processor=basic": {
+			"model": "turtychemistry:block/researcher_basic",
+			"y": 180
+		},
+		"facing=west,processor=basic": {
+			"model": "turtychemistry:block/researcher_basic",
+			"y": 270
+		},
+		"facing=east,processor=basic": {
+			"model": "turtychemistry:block/researcher_basic",
+			"y": 90
+		},
+		"facing=north,processor=intermediate": {
+			"model": "turtychemistry:block/researcher_intermediate"
+		},
+		"facing=south,processor=intermediate": {
+			"model": "turtychemistry:block/researcher_intermediate",
+			"y": 180
+		},
+		"facing=west,processor=intermediate": {
+			"model": "turtychemistry:block/researcher_intermediate",
+			"y": 270
+		},
+		"facing=east,processor=intermediate": {
+			"model": "turtychemistry:block/researcher_intermediate",
+			"y": 90
+		},
+		"facing=north,processor=advanced": {
+			"model": "turtychemistry:block/researcher_advanced"
+		},
+		"facing=south,processor=advanced": {
+			"model": "turtychemistry:block/researcher_advanced",
+			"y": 180
+		},
+		"facing=west,processor=advanced": {
+			"model": "turtychemistry:block/researcher_advanced",
+			"y": 270
+		},
+		"facing=east,processor=advanced": {
+			"model": "turtychemistry:block/researcher_advanced",
+			"y": 90
+		}
+	}
+}

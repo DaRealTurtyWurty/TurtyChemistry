@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "turtychemistry:palladium_block"
+        }
+    ],
+    "result": {
+        "item": "turtychemistry:palladium",
+        "count": 9
+    }
+}

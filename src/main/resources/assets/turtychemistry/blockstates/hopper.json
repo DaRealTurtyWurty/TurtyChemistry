@@ -1,0 +1,13 @@
+{
+    "variants": {
+        "part=front_bottom_left": { "model": "turtychemistry:block/hopper_bottom", "y": 0 },
+        "part=front_bottom_right": { "model": "turtychemistry:block/hopper_bottom", "y": 90 },
+        "part=back_bottom_left": { "model": "turtychemistry:block/hopper_bottom", "y": 270 },
+        "part=back_bottom_right": { "model": "turtychemistry:block/hopper_bottom", "y": 180 },
+        
+        "part=front_top_left": { "model": "turtychemistry:block/hopper_top", "y": 0 },
+        "part=front_top_right": { "model": "turtychemistry:block/hopper_top", "y": 90 },
+        "part=back_top_left": { "model": "turtychemistry:block/hopper_top", "y": 270 },
+        "part=back_top_right": { "model": "turtychemistry:block/hopper_top", "y": 180 }
+    }
+}

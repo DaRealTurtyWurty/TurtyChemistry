@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"###",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "turtychemistry:osmium"
+		}
+	},
+	"result": {
+		"item": "turtychemistry:osmium_block",
+		"count": 1
+	}
+}

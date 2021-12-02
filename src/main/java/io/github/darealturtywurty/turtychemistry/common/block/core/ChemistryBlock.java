@@ -1,4 +1,4 @@
-package io.github.darealturtywurty.turtychemistry.common.block;
+package io.github.darealturtywurty.turtychemistry.common.block.core;
 
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -9,8 +9,11 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 
 public class ChemistryBlock extends Block {
 
+    public final int radioactivity;
+
     public ChemistryBlock(Builder builder) {
         super(builder.properties);
+        this.radioactivity = builder.radioactivity;
         if (builder.blockItem.getLeft()) {
             BlockInit.BLOCK_ITEM_WHITELIST.put(this, builder.blockItem.getRight());
         }
@@ -21,8 +24,12 @@ public class ChemistryBlock extends Block {
         private Pair<Boolean, Item.Properties> blockItem = Pair.of(false, null);
         private int radioactivity = 0;
 
-        public Builder(BlockBehaviour.Properties properties) {
+        private Builder(BlockBehaviour.Properties properties) {
             this.properties = properties;
+        }
+
+        public static Builder build(BlockBehaviour.Properties properties) {
+            return new Builder(properties);
         }
 
         public Builder blockItem(boolean shouldHave) {

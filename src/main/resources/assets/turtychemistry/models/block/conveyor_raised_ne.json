@@ -1,0 +1,6 @@
+{
+    "parent": "turtychemistry:block/template_conveyor_raised_ne",
+    "textures": {
+        "conveyor": "turtychemistry:blocks/conveyor"
+    }
+}

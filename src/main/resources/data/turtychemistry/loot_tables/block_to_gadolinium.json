@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "turtychemistry:gadolinium_block"
+        }
+    ],
+    "result": {
+        "item": "turtychemistry:gadolinium",
+        "count": 9
+    }
+}

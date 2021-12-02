@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"###",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "turtychemistry:indium"
+		}
+	},
+	"result": {
+		"item": "turtychemistry:indium_block",
+		"count": 1
+	}
+}

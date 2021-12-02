@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "turtychemistry:block/butane" },
+        "facing=south": { "model": "turtychemistry:block/butane", "y": 180 },
+        "facing=west":  { "model": "turtychemistry:block/butane", "y": 270 },
+        "facing=east":  { "model": "turtychemistry:block/butane", "y": 90 }
+    }
+}

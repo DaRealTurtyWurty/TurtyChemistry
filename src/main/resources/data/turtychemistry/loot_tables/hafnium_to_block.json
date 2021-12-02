@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"###",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "turtychemistry:hafnium"
+		}
+	},
+	"result": {
+		"item": "turtychemistry:hafnium_block",
+		"count": 1
+	}
+}

@@ -1,0 +1,2164 @@
+{
+	"variants": {
+		"facing=north,strength=0,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0"
+		},
+		"facing=south,strength=0,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 180
+		},
+		"facing=west,strength=0,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 270
+		},
+		"facing=east,strength=0,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 90
+		},
+		"facing=north,strength=1,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1"
+		},
+		"facing=south,strength=1,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 180
+		},
+		"facing=west,strength=1,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 270
+		},
+		"facing=east,strength=1,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 90
+		},
+		"facing=north,strength=2,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2"
+		},
+		"facing=south,strength=2,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 180
+		},
+		"facing=west,strength=2,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 270
+		},
+		"facing=east,strength=2,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 90
+		},
+		"facing=north,strength=3,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3"
+		},
+		"facing=south,strength=3,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 180
+		},
+		"facing=west,strength=3,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 270
+		},
+		"facing=east,strength=3,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 90
+		},
+		"facing=north,strength=4,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4"
+		},
+		"facing=south,strength=4,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 180
+		},
+		"facing=west,strength=4,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 270
+		},
+		"facing=east,strength=4,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 90
+		},
+		"facing=north,strength=5,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5"
+		},
+		"facing=south,strength=5,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 180
+		},
+		"facing=west,strength=5,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 270
+		},
+		"facing=east,strength=5,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 90
+		},
+		"facing=north,strength=6,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6"
+		},
+		"facing=south,strength=6,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 180
+		},
+		"facing=west,strength=6,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 270
+		},
+		"facing=east,strength=6,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 90
+		},
+		"facing=north,strength=7,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7"
+		},
+		"facing=south,strength=7,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 180
+		},
+		"facing=west,strength=7,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 270
+		},
+		"facing=east,strength=7,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 90
+		},
+		"facing=north,strength=8,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8"
+		},
+		"facing=south,strength=8,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 180
+		},
+		"facing=west,strength=8,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 270
+		},
+		"facing=east,strength=8,has_gas=true,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 90
+		},
+		"facing=north,strength=0,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0"
+		},
+		"facing=south,strength=0,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 180
+		},
+		"facing=west,strength=0,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 270
+		},
+		"facing=east,strength=0,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 90
+		},
+		"facing=north,strength=0,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0"
+		},
+		"facing=south,strength=0,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 180
+		},
+		"facing=west,strength=0,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 270
+		},
+		"facing=east,strength=0,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 90
+		},
+		"facing=north,strength=1,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1"
+		},
+		"facing=south,strength=1,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 180
+		},
+		"facing=west,strength=1,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 270
+		},
+		"facing=east,strength=1,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 90
+		},
+		"facing=north,strength=2,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2"
+		},
+		"facing=south,strength=2,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 180
+		},
+		"facing=west,strength=2,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 270
+		},
+		"facing=east,strength=2,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 90
+		},
+		"facing=north,strength=3,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3"
+		},
+		"facing=south,strength=3,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 180
+		},
+		"facing=west,strength=3,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 270
+		},
+		"facing=east,strength=3,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 90
+		},
+		"facing=north,strength=4,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4"
+		},
+		"facing=south,strength=4,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 180
+		},
+		"facing=west,strength=4,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 270
+		},
+		"facing=east,strength=4,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 90
+		},
+		"facing=north,strength=5,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5"
+		},
+		"facing=south,strength=5,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 180
+		},
+		"facing=west,strength=5,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 270
+		},
+		"facing=east,strength=5,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 90
+		},
+		"facing=north,strength=6,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6"
+		},
+		"facing=south,strength=6,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 180
+		},
+		"facing=west,strength=6,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 270
+		},
+		"facing=east,strength=6,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 90
+		},
+		"facing=north,strength=7,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7"
+		},
+		"facing=south,strength=7,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 180
+		},
+		"facing=west,strength=7,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 270
+		},
+		"facing=east,strength=7,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 90
+		},
+		"facing=north,strength=8,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8"
+		},
+		"facing=south,strength=8,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 180
+		},
+		"facing=west,strength=8,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 270
+		},
+		"facing=east,strength=8,has_gas=false,frame=false,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 90
+		},
+		"facing=north,strength=1,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1"
+		},
+		"facing=south,strength=1,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 180
+		},
+		"facing=west,strength=1,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 270
+		},
+		"facing=east,strength=1,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 90
+		},
+		"facing=north,strength=2,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2"
+		},
+		"facing=south,strength=2,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 180
+		},
+		"facing=west,strength=2,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 270
+		},
+		"facing=east,strength=2,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 90
+		},
+		"facing=north,strength=3,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3"
+		},
+		"facing=south,strength=3,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 180
+		},
+		"facing=west,strength=3,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 270
+		},
+		"facing=east,strength=3,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 90
+		},
+		"facing=north,strength=4,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4"
+		},
+		"facing=south,strength=4,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 180
+		},
+		"facing=west,strength=4,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 270
+		},
+		"facing=east,strength=4,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 90
+		},
+		"facing=north,strength=5,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5"
+		},
+		"facing=south,strength=5,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 180
+		},
+		"facing=west,strength=5,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 270
+		},
+		"facing=east,strength=5,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 90
+		},
+		"facing=north,strength=6,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6"
+		},
+		"facing=south,strength=6,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 180
+		},
+		"facing=west,strength=6,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 270
+		},
+		"facing=east,strength=6,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 90
+		},
+		"facing=north,strength=7,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7"
+		},
+		"facing=south,strength=7,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 180
+		},
+		"facing=west,strength=7,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 270
+		},
+		"facing=east,strength=7,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 90
+		},
+		"facing=north,strength=8,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8"
+		},
+		"facing=south,strength=8,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 180
+		},
+		"facing=west,strength=8,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 270
+		},
+		"facing=east,strength=8,has_gas=false,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 90
+		},
+		"facing=north,strength=0,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0"
+		},
+		"facing=south,strength=0,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 180
+		},
+		"facing=west,strength=0,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 270
+		},
+		"facing=east,strength=0,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 90
+		},
+		"facing=north,strength=1,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1"
+		},
+		"facing=south,strength=1,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 180
+		},
+		"facing=west,strength=1,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 270
+		},
+		"facing=east,strength=1,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 90
+		},
+		"facing=north,strength=2,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2"
+		},
+		"facing=south,strength=2,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 180
+		},
+		"facing=west,strength=2,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 270
+		},
+		"facing=east,strength=2,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 90
+		},
+		"facing=north,strength=3,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3"
+		},
+		"facing=south,strength=3,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 180
+		},
+		"facing=west,strength=3,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 270
+		},
+		"facing=east,strength=3,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 90
+		},
+		"facing=north,strength=4,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4"
+		},
+		"facing=south,strength=4,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 180
+		},
+		"facing=west,strength=4,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 270
+		},
+		"facing=east,strength=4,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 90
+		},
+		"facing=north,strength=5,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5"
+		},
+		"facing=south,strength=5,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 180
+		},
+		"facing=west,strength=5,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 270
+		},
+		"facing=east,strength=5,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 90
+		},
+		"facing=north,strength=6,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6"
+		},
+		"facing=south,strength=6,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 180
+		},
+		"facing=west,strength=6,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 270
+		},
+		"facing=east,strength=6,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 90
+		},
+		"facing=north,strength=7,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7"
+		},
+		"facing=south,strength=7,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 180
+		},
+		"facing=west,strength=7,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 270
+		},
+		"facing=east,strength=7,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 90
+		},
+		"facing=north,strength=8,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8"
+		},
+		"facing=south,strength=8,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 180
+		},
+		"facing=west,strength=8,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 270
+		},
+		"facing=east,strength=8,has_gas=true,frame=true,mesh=false,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 90
+		},
+		"facing=north,strength=0,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0"
+		},
+		"facing=south,strength=0,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 180
+		},
+		"facing=west,strength=0,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 270
+		},
+		"facing=east,strength=0,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 90
+		},
+		"facing=north,strength=1,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1"
+		},
+		"facing=south,strength=1,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 180
+		},
+		"facing=west,strength=1,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 270
+		},
+		"facing=east,strength=1,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 90
+		},
+		"facing=north,strength=2,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2"
+		},
+		"facing=south,strength=2,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 180
+		},
+		"facing=west,strength=2,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 270
+		},
+		"facing=east,strength=2,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 90
+		},
+		"facing=north,strength=3,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3"
+		},
+		"facing=south,strength=3,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 180
+		},
+		"facing=west,strength=3,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 270
+		},
+		"facing=east,strength=3,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 90
+		},
+		"facing=north,strength=4,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4"
+		},
+		"facing=south,strength=4,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 180
+		},
+		"facing=west,strength=4,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 270
+		},
+		"facing=east,strength=4,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 90
+		},
+		"facing=north,strength=5,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5"
+		},
+		"facing=south,strength=5,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 180
+		},
+		"facing=west,strength=5,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 270
+		},
+		"facing=east,strength=5,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 90
+		},
+		"facing=north,strength=6,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6"
+		},
+		"facing=south,strength=6,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 180
+		},
+		"facing=west,strength=6,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 270
+		},
+		"facing=east,strength=6,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 90
+		},
+		"facing=north,strength=7,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7"
+		},
+		"facing=south,strength=7,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 180
+		},
+		"facing=west,strength=7,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 270
+		},
+		"facing=east,strength=7,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 90
+		},
+		"facing=north,strength=8,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8"
+		},
+		"facing=south,strength=8,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 180
+		},
+		"facing=west,strength=8,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 270
+		},
+		"facing=east,strength=8,has_gas=true,frame=false,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 90
+		},
+		"facing=north,strength=0,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0"
+		},
+		"facing=south,strength=0,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 180
+		},
+		"facing=west,strength=0,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 270
+		},
+		"facing=east,strength=0,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 90
+		},
+		"facing=north,strength=1,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1"
+		},
+		"facing=south,strength=1,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 180
+		},
+		"facing=west,strength=1,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 270
+		},
+		"facing=east,strength=1,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 90
+		},
+		"facing=north,strength=2,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2"
+		},
+		"facing=south,strength=2,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 180
+		},
+		"facing=west,strength=2,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 270
+		},
+		"facing=east,strength=2,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 90
+		},
+		"facing=north,strength=3,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3"
+		},
+		"facing=south,strength=3,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 180
+		},
+		"facing=west,strength=3,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 270
+		},
+		"facing=east,strength=3,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 90
+		},
+		"facing=north,strength=4,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4"
+		},
+		"facing=south,strength=4,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 180
+		},
+		"facing=west,strength=4,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 270
+		},
+		"facing=east,strength=4,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 90
+		},
+		"facing=north,strength=5,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5"
+		},
+		"facing=south,strength=5,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 180
+		},
+		"facing=west,strength=5,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 270
+		},
+		"facing=east,strength=5,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 90
+		},
+		"facing=north,strength=6,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6"
+		},
+		"facing=south,strength=6,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 180
+		},
+		"facing=west,strength=6,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 270
+		},
+		"facing=east,strength=6,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 90
+		},
+		"facing=north,strength=7,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7"
+		},
+		"facing=south,strength=7,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 180
+		},
+		"facing=west,strength=7,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 270
+		},
+		"facing=east,strength=7,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 90
+		},
+		"facing=north,strength=8,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8"
+		},
+		"facing=south,strength=8,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 180
+		},
+		"facing=west,strength=8,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 270
+		},
+		"facing=east,strength=8,has_gas=false,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 90
+		},
+		"facing=north,strength=0,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0"
+		},
+		"facing=south,strength=0,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 180
+		},
+		"facing=west,strength=0,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 270
+		},
+		"facing=east,strength=0,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 90
+		},
+		"facing=north,strength=1,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1"
+		},
+		"facing=south,strength=1,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 180
+		},
+		"facing=west,strength=1,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 270
+		},
+		"facing=east,strength=1,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 90
+		},
+		"facing=north,strength=2,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2"
+		},
+		"facing=south,strength=2,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 180
+		},
+		"facing=west,strength=2,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 270
+		},
+		"facing=east,strength=2,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 90
+		},
+		"facing=north,strength=3,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3"
+		},
+		"facing=south,strength=3,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 180
+		},
+		"facing=west,strength=3,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 270
+		},
+		"facing=east,strength=3,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 90
+		},
+		"facing=north,strength=4,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4"
+		},
+		"facing=south,strength=4,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 180
+		},
+		"facing=west,strength=4,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 270
+		},
+		"facing=east,strength=4,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 90
+		},
+		"facing=north,strength=5,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5"
+		},
+		"facing=south,strength=5,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 180
+		},
+		"facing=west,strength=5,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 270
+		},
+		"facing=east,strength=5,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 90
+		},
+		"facing=north,strength=6,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6"
+		},
+		"facing=south,strength=6,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 180
+		},
+		"facing=west,strength=6,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 270
+		},
+		"facing=east,strength=6,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 90
+		},
+		"facing=north,strength=7,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7"
+		},
+		"facing=south,strength=7,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 180
+		},
+		"facing=west,strength=7,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 270
+		},
+		"facing=east,strength=7,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 90
+		},
+		"facing=north,strength=8,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8"
+		},
+		"facing=south,strength=8,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 180
+		},
+		"facing=west,strength=8,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 270
+		},
+		"facing=east,strength=8,has_gas=true,frame=true,mesh=true,crucible=false": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 90
+		},
+		"facing=north,strength=0,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_0"
+		},
+		"facing=south,strength=0,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 180
+		},
+		"facing=west,strength=0,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 270
+		},
+		"facing=east,strength=0,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 90
+		},
+		"facing=north,strength=1,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_1"
+		},
+		"facing=south,strength=1,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 180
+		},
+		"facing=west,strength=1,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 270
+		},
+		"facing=east,strength=1,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 90
+		},
+		"facing=north,strength=2,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_2"
+		},
+		"facing=south,strength=2,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 180
+		},
+		"facing=west,strength=2,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 270
+		},
+		"facing=east,strength=2,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 90
+		},
+		"facing=north,strength=3,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_3"
+		},
+		"facing=south,strength=3,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 180
+		},
+		"facing=west,strength=3,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 270
+		},
+		"facing=east,strength=3,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 90
+		},
+		"facing=north,strength=4,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_4"
+		},
+		"facing=south,strength=4,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 180
+		},
+		"facing=west,strength=4,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 270
+		},
+		"facing=east,strength=4,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 90
+		},
+		"facing=north,strength=5,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_5"
+		},
+		"facing=south,strength=5,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 180
+		},
+		"facing=west,strength=5,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 270
+		},
+		"facing=east,strength=5,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 90
+		},
+		"facing=north,strength=6,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_6"
+		},
+		"facing=south,strength=6,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 180
+		},
+		"facing=west,strength=6,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 270
+		},
+		"facing=east,strength=6,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 90
+		},
+		"facing=north,strength=7,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_7"
+		},
+		"facing=south,strength=7,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 180
+		},
+		"facing=west,strength=7,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 270
+		},
+		"facing=east,strength=7,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 90
+		},
+		"facing=north,strength=8,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_8"
+		},
+		"facing=south,strength=8,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 180
+		},
+		"facing=west,strength=8,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 270
+		},
+		"facing=east,strength=8,has_gas=true,frame=false,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 90
+		},
+		"facing=north,strength=0,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_0"
+		},
+		"facing=south,strength=0,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 180
+		},
+		"facing=west,strength=0,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 270
+		},
+		"facing=east,strength=0,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 90
+		},
+		"facing=north,strength=1,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_1"
+		},
+		"facing=south,strength=1,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 180
+		},
+		"facing=west,strength=1,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 270
+		},
+		"facing=east,strength=1,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 90
+		},
+		"facing=north,strength=2,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_2"
+		},
+		"facing=south,strength=2,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 180
+		},
+		"facing=west,strength=2,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 270
+		},
+		"facing=east,strength=2,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 90
+		},
+		"facing=north,strength=3,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_3"
+		},
+		"facing=south,strength=3,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 180
+		},
+		"facing=west,strength=3,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 270
+		},
+		"facing=east,strength=3,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 90
+		},
+		"facing=north,strength=4,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_4"
+		},
+		"facing=south,strength=4,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 180
+		},
+		"facing=west,strength=4,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 270
+		},
+		"facing=east,strength=4,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 90
+		},
+		"facing=north,strength=5,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_5"
+		},
+		"facing=south,strength=5,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 180
+		},
+		"facing=west,strength=5,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 270
+		},
+		"facing=east,strength=5,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 90
+		},
+		"facing=north,strength=6,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_6"
+		},
+		"facing=south,strength=6,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 180
+		},
+		"facing=west,strength=6,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 270
+		},
+		"facing=east,strength=6,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 90
+		},
+		"facing=north,strength=7,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_7"
+		},
+		"facing=south,strength=7,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 180
+		},
+		"facing=west,strength=7,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 270
+		},
+		"facing=east,strength=7,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 90
+		},
+		"facing=north,strength=8,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_8"
+		},
+		"facing=south,strength=8,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 180
+		},
+		"facing=west,strength=8,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 270
+		},
+		"facing=east,strength=8,has_gas=false,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 90
+		},
+		"facing=north,strength=0,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_0"
+		},
+		"facing=south,strength=0,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 180
+		},
+		"facing=west,strength=0,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 270
+		},
+		"facing=east,strength=0,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 90
+		},
+		"facing=north,strength=1,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_1"
+		},
+		"facing=south,strength=1,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 180
+		},
+		"facing=west,strength=1,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 270
+		},
+		"facing=east,strength=1,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 90
+		},
+		"facing=north,strength=2,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_2"
+		},
+		"facing=south,strength=2,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 180
+		},
+		"facing=west,strength=2,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 270
+		},
+		"facing=east,strength=2,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 90
+		},
+		"facing=north,strength=3,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_3"
+		},
+		"facing=south,strength=3,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 180
+		},
+		"facing=west,strength=3,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 270
+		},
+		"facing=east,strength=3,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 90
+		},
+		"facing=north,strength=4,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_4"
+		},
+		"facing=south,strength=4,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 180
+		},
+		"facing=west,strength=4,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 270
+		},
+		"facing=east,strength=4,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 90
+		},
+		"facing=north,strength=5,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_5"
+		},
+		"facing=south,strength=5,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 180
+		},
+		"facing=west,strength=5,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 270
+		},
+		"facing=east,strength=5,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 90
+		},
+		"facing=north,strength=6,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_6"
+		},
+		"facing=south,strength=6,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 180
+		},
+		"facing=west,strength=6,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 270
+		},
+		"facing=east,strength=6,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 90
+		},
+		"facing=north,strength=7,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_7"
+		},
+		"facing=south,strength=7,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 180
+		},
+		"facing=west,strength=7,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 270
+		},
+		"facing=east,strength=7,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 90
+		},
+		"facing=north,strength=8,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_8"
+		},
+		"facing=south,strength=8,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 180
+		},
+		"facing=west,strength=8,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 270
+		},
+		"facing=east,strength=8,has_gas=true,frame=true,mesh=false,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 90
+		},
+		"facing=north,strength=0,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_0"
+		},
+		"facing=south,strength=0,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 180
+		},
+		"facing=west,strength=0,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 270
+		},
+		"facing=east,strength=0,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 90
+		},
+		"facing=north,strength=1,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_1"
+		},
+		"facing=south,strength=1,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 180
+		},
+		"facing=west,strength=1,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 270
+		},
+		"facing=east,strength=1,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 90
+		},
+		"facing=north,strength=2,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_2"
+		},
+		"facing=south,strength=2,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 180
+		},
+		"facing=west,strength=2,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 270
+		},
+		"facing=east,strength=2,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 90
+		},
+		"facing=north,strength=3,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_3"
+		},
+		"facing=south,strength=3,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 180
+		},
+		"facing=west,strength=3,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 270
+		},
+		"facing=east,strength=3,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 90
+		},
+		"facing=north,strength=4,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_4"
+		},
+		"facing=south,strength=4,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 180
+		},
+		"facing=west,strength=4,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 270
+		},
+		"facing=east,strength=4,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 90
+		},
+		"facing=north,strength=5,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_5"
+		},
+		"facing=south,strength=5,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 180
+		},
+		"facing=west,strength=5,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 270
+		},
+		"facing=east,strength=5,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 90
+		},
+		"facing=north,strength=6,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_6"
+		},
+		"facing=south,strength=6,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 180
+		},
+		"facing=west,strength=6,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 270
+		},
+		"facing=east,strength=6,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 90
+		},
+		"facing=north,strength=7,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_7"
+		},
+		"facing=south,strength=7,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 180
+		},
+		"facing=west,strength=7,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 270
+		},
+		"facing=east,strength=7,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 90
+		},
+		"facing=north,strength=8,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_8"
+		},
+		"facing=south,strength=8,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 180
+		},
+		"facing=west,strength=8,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 270
+		},
+		"facing=east,strength=8,has_gas=true,frame=false,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 90
+		},
+		"facing=north,strength=0,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_0"
+		},
+		"facing=south,strength=0,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 180
+		},
+		"facing=west,strength=0,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 270
+		},
+		"facing=east,strength=0,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 90
+		},
+		"facing=north,strength=1,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_1"
+		},
+		"facing=south,strength=1,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 180
+		},
+		"facing=west,strength=1,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 270
+		},
+		"facing=east,strength=1,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 90
+		},
+		"facing=north,strength=2,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_2"
+		},
+		"facing=south,strength=2,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 180
+		},
+		"facing=west,strength=2,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 270
+		},
+		"facing=east,strength=2,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 90
+		},
+		"facing=north,strength=3,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_3"
+		},
+		"facing=south,strength=3,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 180
+		},
+		"facing=west,strength=3,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 270
+		},
+		"facing=east,strength=3,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 90
+		},
+		"facing=north,strength=4,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_4"
+		},
+		"facing=south,strength=4,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 180
+		},
+		"facing=west,strength=4,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 270
+		},
+		"facing=east,strength=4,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 90
+		},
+		"facing=north,strength=5,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_5"
+		},
+		"facing=south,strength=5,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 180
+		},
+		"facing=west,strength=5,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 270
+		},
+		"facing=east,strength=5,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 90
+		},
+		"facing=north,strength=6,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_6"
+		},
+		"facing=south,strength=6,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 180
+		},
+		"facing=west,strength=6,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 270
+		},
+		"facing=east,strength=6,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 90
+		},
+		"facing=north,strength=7,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_7"
+		},
+		"facing=south,strength=7,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 180
+		},
+		"facing=west,strength=7,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 270
+		},
+		"facing=east,strength=7,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 90
+		},
+		"facing=north,strength=8,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_8"
+		},
+		"facing=south,strength=8,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 180
+		},
+		"facing=west,strength=8,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 270
+		},
+		"facing=east,strength=8,has_gas=false,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 90
+		},
+		"facing=north,strength=0,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_0"
+		},
+		"facing=south,strength=0,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 180
+		},
+		"facing=west,strength=0,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 270
+		},
+		"facing=east,strength=0,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 90
+		},
+		"facing=north,strength=1,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_1"
+		},
+		"facing=south,strength=1,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 180
+		},
+		"facing=west,strength=1,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 270
+		},
+		"facing=east,strength=1,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 90
+		},
+		"facing=north,strength=2,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_2"
+		},
+		"facing=south,strength=2,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 180
+		},
+		"facing=west,strength=2,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 270
+		},
+		"facing=east,strength=2,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 90
+		},
+		"facing=north,strength=3,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_3"
+		},
+		"facing=south,strength=3,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 180
+		},
+		"facing=west,strength=3,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 270
+		},
+		"facing=east,strength=3,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 90
+		},
+		"facing=north,strength=4,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_4"
+		},
+		"facing=south,strength=4,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 180
+		},
+		"facing=west,strength=4,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 270
+		},
+		"facing=east,strength=4,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 90
+		},
+		"facing=north,strength=5,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_5"
+		},
+		"facing=south,strength=5,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 180
+		},
+		"facing=west,strength=5,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 270
+		},
+		"facing=east,strength=5,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 90
+		},
+		"facing=north,strength=6,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_6"
+		},
+		"facing=south,strength=6,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 180
+		},
+		"facing=west,strength=6,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 270
+		},
+		"facing=east,strength=6,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 90
+		},
+		"facing=north,strength=7,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_7"
+		},
+		"facing=south,strength=7,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 180
+		},
+		"facing=west,strength=7,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 270
+		},
+		"facing=east,strength=7,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 90
+		},
+		"facing=north,strength=8,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_8"
+		},
+		"facing=south,strength=8,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 180
+		},
+		"facing=west,strength=8,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 270
+		},
+		"facing=east,strength=8,has_gas=true,frame=true,mesh=true,crucible=true": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 90
+		},
+		"crucible=true,facing=east,frame=false,has_gas=false,mesh=true,strength=6": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 90
+		},
+		"crucible=true,facing=east,frame=false,has_gas=false,mesh=true,strength=5": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 90
+		},
+		"crucible=true,facing=east,frame=false,has_gas=false,mesh=true,strength=4": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 90
+		},
+		"crucible=true,facing=east,frame=false,has_gas=false,mesh=true,strength=3": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 90
+		},
+		"crucible=true,facing=east,frame=false,has_gas=false,mesh=true,strength=8": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 90
+		},
+		"crucible=true,facing=east,frame=false,has_gas=false,mesh=true,strength=7": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 90
+		},
+		"crucible=true,facing=north,frame=false,has_gas=false,mesh=true,strength=8": {
+			"model": "turtychemistry:block/bunsen_burner_8"
+		},
+		"crucible=true,facing=north,frame=false,has_gas=false,mesh=true,strength=7": {
+			"model": "turtychemistry:block/bunsen_burner_7"
+		},
+		"crucible=true,facing=north,frame=false,has_gas=false,mesh=true,strength=6": {
+			"model": "turtychemistry:block/bunsen_burner_6"
+		},
+		"crucible=true,facing=north,frame=false,has_gas=false,mesh=true,strength=5": {
+			"model": "turtychemistry:block/bunsen_burner_5"
+		},
+		"crucible=true,facing=north,frame=false,has_gas=false,mesh=true,strength=4": {
+			"model": "turtychemistry:block/bunsen_burner_4"
+		},
+		"crucible=true,facing=north,frame=false,has_gas=false,mesh=true,strength=3": {
+			"model": "turtychemistry:block/bunsen_burner_3"
+		},
+		"crucible=true,facing=north,frame=false,has_gas=false,mesh=true,strength=2": {
+			"model": "turtychemistry:block/bunsen_burner_2"
+		},
+		"crucible=true,facing=north,frame=false,has_gas=false,mesh=true,strength=1": {
+			"model": "turtychemistry:block/bunsen_burner_1"
+		},
+		"crucible=true,facing=north,frame=false,has_gas=false,mesh=true,strength=0": {
+			"model": "turtychemistry:block/bunsen_burner_0"
+		},
+		"crucible=true,facing=south,frame=false,has_gas=false,mesh=false,strength=0": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 180
+		},
+		"crucible=true,facing=south,frame=false,has_gas=false,mesh=false,strength=1": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 180
+		},
+		"crucible=true,facing=south,frame=false,has_gas=false,mesh=false,strength=2": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 180
+		},
+		"crucible=true,facing=south,frame=false,has_gas=false,mesh=false,strength=3": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 180
+		},
+		"crucible=true,facing=south,frame=false,has_gas=false,mesh=false,strength=8": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 180
+		},
+		"crucible=true,facing=south,frame=false,has_gas=false,mesh=false,strength=4": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 180
+		},
+		"crucible=true,facing=south,frame=false,has_gas=false,mesh=false,strength=5": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 180
+		},
+		"crucible=true,facing=south,frame=false,has_gas=false,mesh=false,strength=6": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 180
+		},
+		"crucible=true,facing=south,frame=false,has_gas=false,mesh=false,strength=7": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 180
+		},
+		"crucible=true,facing=west,frame=false,has_gas=false,mesh=false,strength=0": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 270
+		},
+		"crucible=true,facing=west,frame=false,has_gas=false,mesh=false,strength=1": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 270
+		},
+		"crucible=true,facing=west,frame=false,has_gas=false,mesh=false,strength=2": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 270
+		},
+		"crucible=true,facing=west,frame=false,has_gas=false,mesh=false,strength=3": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 270
+		},
+		"crucible=true,facing=east,frame=false,has_gas=false,mesh=false,strength=7": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 90
+		},
+		"crucible=true,facing=east,frame=false,has_gas=false,mesh=false,strength=6": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 90
+		},
+		"crucible=true,facing=east,frame=false,has_gas=false,mesh=false,strength=8": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 90
+		},
+		"crucible=true,facing=west,frame=false,has_gas=false,mesh=false,strength=8": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 270
+		},
+		"crucible=true,facing=west,frame=false,has_gas=false,mesh=false,strength=4": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 270
+		},
+		"crucible=true,facing=west,frame=false,has_gas=false,mesh=false,strength=5": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 270
+		},
+		"crucible=true,facing=west,frame=false,has_gas=false,mesh=false,strength=6": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 270
+		},
+		"crucible=true,facing=west,frame=false,has_gas=false,mesh=false,strength=7": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 270
+		},
+		"crucible=true,facing=north,frame=false,has_gas=false,mesh=false,strength=1": {
+			"model": "turtychemistry:block/bunsen_burner_1"
+		},
+		"crucible=true,facing=north,frame=false,has_gas=false,mesh=false,strength=0": {
+			"model": "turtychemistry:block/bunsen_burner_0"
+		},
+		"crucible=true,facing=north,frame=false,has_gas=false,mesh=false,strength=3": {
+			"model": "turtychemistry:block/bunsen_burner_3"
+		},
+		"crucible=true,facing=north,frame=false,has_gas=false,mesh=false,strength=2": {
+			"model": "turtychemistry:block/bunsen_burner_2"
+		},
+		"crucible=true,facing=east,frame=false,has_gas=false,mesh=false,strength=3": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 90
+		},
+		"crucible=true,facing=east,frame=false,has_gas=false,mesh=false,strength=2": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 90
+		},
+		"crucible=true,facing=east,frame=false,has_gas=false,mesh=false,strength=5": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 90
+		},
+		"crucible=true,facing=east,frame=false,has_gas=false,mesh=false,strength=4": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 90
+		},
+		"crucible=true,facing=east,frame=false,has_gas=false,mesh=false,strength=1": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 90
+		},
+		"crucible=true,facing=east,frame=false,has_gas=false,mesh=false,strength=0": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 90
+		},
+		"crucible=false,facing=east,frame=false,has_gas=false,mesh=true,strength=2": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 90
+		},
+		"crucible=false,facing=east,frame=false,has_gas=false,mesh=true,strength=3": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 90
+		},
+		"crucible=false,facing=east,frame=false,has_gas=false,mesh=true,strength=0": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 90
+		},
+		"crucible=false,facing=east,frame=false,has_gas=false,mesh=true,strength=1": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 90
+		},
+		"crucible=false,facing=east,frame=false,has_gas=false,mesh=true,strength=6": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 90
+		},
+		"crucible=false,facing=east,frame=false,has_gas=false,mesh=true,strength=7": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 90
+		},
+		"crucible=false,facing=east,frame=false,has_gas=false,mesh=true,strength=4": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 90
+		},
+		"crucible=false,facing=east,frame=false,has_gas=false,mesh=true,strength=5": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 90
+		},
+		"crucible=false,facing=east,frame=false,has_gas=false,mesh=true,strength=8": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 90
+		},
+		"crucible=true,facing=south,frame=false,has_gas=false,mesh=true,strength=8": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 180
+		},
+		"crucible=true,facing=south,frame=false,has_gas=false,mesh=true,strength=7": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 180
+		},
+		"crucible=true,facing=south,frame=false,has_gas=false,mesh=true,strength=6": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 180
+		},
+		"crucible=true,facing=south,frame=false,has_gas=false,mesh=true,strength=5": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 180
+		},
+		"crucible=true,facing=south,frame=false,has_gas=false,mesh=true,strength=4": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 180
+		},
+		"crucible=true,facing=north,frame=false,has_gas=false,mesh=false,strength=8": {
+			"model": "turtychemistry:block/bunsen_burner_8"
+		},
+		"crucible=true,facing=south,frame=false,has_gas=false,mesh=true,strength=3": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 180
+		},
+		"crucible=true,facing=south,frame=false,has_gas=false,mesh=true,strength=2": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 180
+		},
+		"crucible=true,facing=south,frame=false,has_gas=false,mesh=true,strength=1": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 180
+		},
+		"crucible=true,facing=north,frame=false,has_gas=false,mesh=false,strength=5": {
+			"model": "turtychemistry:block/bunsen_burner_5"
+		},
+		"crucible=true,facing=south,frame=false,has_gas=false,mesh=true,strength=0": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 180
+		},
+		"crucible=true,facing=north,frame=false,has_gas=false,mesh=false,strength=4": {
+			"model": "turtychemistry:block/bunsen_burner_4"
+		},
+		"crucible=true,facing=north,frame=false,has_gas=false,mesh=false,strength=7": {
+			"model": "turtychemistry:block/bunsen_burner_7"
+		},
+		"crucible=true,facing=north,frame=false,has_gas=false,mesh=false,strength=6": {
+			"model": "turtychemistry:block/bunsen_burner_6"
+		},
+		"crucible=false,facing=west,frame=false,has_gas=false,mesh=true,strength=1": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 270
+		},
+		"crucible=false,facing=west,frame=false,has_gas=false,mesh=true,strength=0": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 270
+		},
+		"crucible=false,facing=west,frame=false,has_gas=false,mesh=true,strength=3": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 270
+		},
+		"crucible=false,facing=west,frame=false,has_gas=false,mesh=true,strength=2": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 270
+		},
+		"crucible=false,facing=west,frame=false,has_gas=false,mesh=true,strength=5": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 270
+		},
+		"crucible=false,facing=west,frame=false,has_gas=false,mesh=true,strength=4": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 270
+		},
+		"crucible=false,facing=west,frame=false,has_gas=false,mesh=true,strength=7": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 270
+		},
+		"crucible=false,facing=west,frame=false,has_gas=false,mesh=true,strength=6": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 270
+		},
+		"crucible=false,facing=west,frame=false,has_gas=false,mesh=true,strength=8": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 270
+		},
+		"crucible=true,facing=west,frame=false,has_gas=false,mesh=true,strength=0": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 270
+		},
+		"crucible=true,facing=west,frame=false,has_gas=false,mesh=true,strength=3": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 270
+		},
+		"crucible=true,facing=west,frame=false,has_gas=false,mesh=true,strength=4": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 270
+		},
+		"crucible=true,facing=west,frame=false,has_gas=false,mesh=true,strength=1": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 270
+		},
+		"crucible=true,facing=west,frame=false,has_gas=false,mesh=true,strength=2": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 270
+		},
+		"crucible=true,facing=west,frame=false,has_gas=false,mesh=true,strength=7": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 270
+		},
+		"crucible=true,facing=west,frame=false,has_gas=false,mesh=true,strength=8": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 270
+		},
+		"crucible=true,facing=west,frame=false,has_gas=false,mesh=true,strength=5": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 270
+		},
+		"crucible=true,facing=west,frame=false,has_gas=false,mesh=true,strength=6": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 270
+		},
+		"crucible=false,facing=north,frame=false,has_gas=false,mesh=true,strength=0": {
+			"model": "turtychemistry:block/bunsen_burner_0"
+		},
+		"crucible=false,facing=north,frame=false,has_gas=false,mesh=true,strength=1": {
+			"model": "turtychemistry:block/bunsen_burner_1"
+		},
+		"crucible=false,facing=north,frame=false,has_gas=false,mesh=true,strength=2": {
+			"model": "turtychemistry:block/bunsen_burner_2"
+		},
+		"crucible=false,facing=north,frame=false,has_gas=false,mesh=true,strength=3": {
+			"model": "turtychemistry:block/bunsen_burner_3"
+		},
+		"crucible=false,facing=north,frame=false,has_gas=false,mesh=true,strength=4": {
+			"model": "turtychemistry:block/bunsen_burner_4"
+		},
+		"crucible=false,facing=north,frame=false,has_gas=false,mesh=true,strength=5": {
+			"model": "turtychemistry:block/bunsen_burner_5"
+		},
+		"crucible=false,facing=north,frame=false,has_gas=false,mesh=true,strength=6": {
+			"model": "turtychemistry:block/bunsen_burner_6"
+		},
+		"crucible=false,facing=north,frame=false,has_gas=false,mesh=true,strength=7": {
+			"model": "turtychemistry:block/bunsen_burner_7"
+		},
+		"crucible=false,facing=north,frame=false,has_gas=false,mesh=true,strength=8": {
+			"model": "turtychemistry:block/bunsen_burner_8"
+		},
+		"crucible=true,facing=east,frame=false,has_gas=false,mesh=true,strength=2": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 90
+		},
+		"crucible=true,facing=east,frame=false,has_gas=false,mesh=true,strength=1": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 90
+		},
+		"crucible=true,facing=east,frame=false,has_gas=false,mesh=true,strength=0": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 90
+		},
+		"crucible=false,facing=south,frame=false,has_gas=false,mesh=true,strength=3": {
+			"model": "turtychemistry:block/bunsen_burner_3",
+			"y": 180
+		},
+		"crucible=false,facing=south,frame=false,has_gas=false,mesh=true,strength=2": {
+			"model": "turtychemistry:block/bunsen_burner_2",
+			"y": 180
+		},
+		"crucible=false,facing=south,frame=false,has_gas=false,mesh=true,strength=1": {
+			"model": "turtychemistry:block/bunsen_burner_1",
+			"y": 180
+		},
+		"crucible=false,facing=south,frame=false,has_gas=false,mesh=true,strength=0": {
+			"model": "turtychemistry:block/bunsen_burner_0",
+			"y": 180
+		},
+		"crucible=false,facing=south,frame=false,has_gas=false,mesh=true,strength=8": {
+			"model": "turtychemistry:block/bunsen_burner_8",
+			"y": 180
+		},
+		"crucible=false,facing=south,frame=false,has_gas=false,mesh=true,strength=7": {
+			"model": "turtychemistry:block/bunsen_burner_7",
+			"y": 180
+		},
+		"crucible=false,facing=south,frame=false,has_gas=false,mesh=true,strength=6": {
+			"model": "turtychemistry:block/bunsen_burner_6",
+			"y": 180
+		},
+		"crucible=false,facing=south,frame=false,has_gas=false,mesh=true,strength=5": {
+			"model": "turtychemistry:block/bunsen_burner_5",
+			"y": 180
+		},
+		"crucible=false,facing=south,frame=false,has_gas=false,mesh=true,strength=4": {
+			"model": "turtychemistry:block/bunsen_burner_4",
+			"y": 180
+		}
+	}
+}

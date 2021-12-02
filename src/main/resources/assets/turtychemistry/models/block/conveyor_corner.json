@@ -1,0 +1,6 @@
+{
+    "parent": "turtychemistry:block/conveyor_curved",
+    "textures": {
+        "conveyor": "turtychemistry:blocks/conveyor_corner"
+    }
+}

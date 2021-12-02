@@ -1,0 +1,22 @@
+{
+	"variants": {
+		"facing=north": {
+			"model": "turtychemistry:block/gas_extractor"
+		},
+		
+		"facing=south": {
+			"model": "turtychemistry:block/gas_extractor",
+			"y": 180
+		},
+		
+		"facing=west": {
+			"model": "turtychemistry:block/gas_extractor",
+			"y": 270
+		},
+		
+		"facing=east": {
+			"model": "turtychemistry:block/gas_extractor",
+			"y": 90
+		}
+	}
+}

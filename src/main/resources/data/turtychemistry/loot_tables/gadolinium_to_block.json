@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"###",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "turtychemistry:gadolinium"
+		}
+	},
+	"result": {
+		"item": "turtychemistry:gadolinium_block",
+		"count": 1
+	}
+}

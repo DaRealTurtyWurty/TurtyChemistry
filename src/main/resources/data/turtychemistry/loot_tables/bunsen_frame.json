@@ -1,0 +1,20 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"iii",
+		"I I",
+		"I I"
+	],
+	"key": {
+		"i": {
+			"tag": "forge:ingots/iron"
+		},
+		"I": {
+			"item": "minecraft:iron_bars"
+		}
+	},
+	"result": {
+		"item": "turtychemistry:bunsen_frame",
+		"count": 1
+	}
+}

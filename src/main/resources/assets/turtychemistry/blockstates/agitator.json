@@ -1,0 +1,19 @@
+{
+	"variants": {
+		"facing=north": {
+			"model": "turtychemistry:block/agitator"
+		},
+		"facing=south": {
+			"model": "turtychemistry:block/agitator",
+			"y": 180
+		},
+		"facing=west": {
+			"model": "turtychemistry:block/agitator",
+			"y": 270
+		},
+		"facing=east": {
+			"model": "turtychemistry:block/agitator",
+			"y": 90
+		}
+	}
+}

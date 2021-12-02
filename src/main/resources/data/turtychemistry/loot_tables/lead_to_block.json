@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"###",
+		"###"
+	],
+	"key": {
+		"#": {
+			"item": "turtychemistry:lead"
+		}
+	},
+	"result": {
+		"item": "turtychemistry:lead_block",
+		"count": 1
+	}
+}

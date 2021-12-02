@@ -1,0 +1,11 @@
+{
+	"variants": {
+		"": [{
+				"model": "turtychemistry:block/tantalite_brown"
+			},
+			{
+				"model": "turtychemistry:block/tantalite_black"
+			}
+		]
+	}
+}

@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "turtychemistry:ruthenium_block"
+        }
+    ],
+    "result": {
+        "item": "turtychemistry:ruthenium",
+        "count": 9
+    }
+}

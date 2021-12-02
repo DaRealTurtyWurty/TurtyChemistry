@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "facing=north,processing=false": { "model": "turtychemistry:block/autoclave" },
+        "facing=south,processing=false": { "model": "turtychemistry:block/autoclave", "y": 180 },
+        "facing=west,processing=false":  { "model": "turtychemistry:block/autoclave", "y": 270 },
+        "facing=east,processing=false":  { "model": "turtychemistry:block/autoclave", "y": 90 },
+        "facing=north,processing=true": { "model": "turtychemistry:block/autoclave" },
+        "facing=south,processing=true": { "model": "turtychemistry:block/autoclave", "y": 180 },
+        "facing=west,processing=true":  { "model": "turtychemistry:block/autoclave", "y": 270 },
+        "facing=east,processing=true":  { "model": "turtychemistry:block/autoclave", "y": 90 }
+    }
+}

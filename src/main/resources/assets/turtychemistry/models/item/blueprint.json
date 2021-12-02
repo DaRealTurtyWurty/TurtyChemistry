@@ -1,0 +1,74 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "turtychemistry:items/blueprint"
+	},
+	"overrides": [
+		{
+			"predicate": {
+				"turtychemistry:stage": 0.0
+			},
+			"model": "turtychemistry:item/blueprint/blueprint"
+		},
+		{
+			"predicate": {
+				"turtychemistry:stage": 0.05
+			},
+			"model": "turtychemistry:item/blueprint/blueprint_0"
+		},
+		{
+			"predicate": {
+				"turtychemistry:stage": 0.1
+			},
+			"model": "turtychemistry:item/blueprint/blueprint_1"
+		},
+		{
+			"predicate": {
+				"turtychemistry:stage": 0.15
+			},
+			"model": "turtychemistry:item/blueprint/blueprint_2"
+		},
+		{
+			"predicate": {
+				"turtychemistry:stage": 0.2
+			},
+			"model": "turtychemistry:item/blueprint/blueprint_3"
+		},
+		{
+			"predicate": {
+				"turtychemistry:stage": 0.25
+			},
+			"model": "turtychemistry:item/blueprint/blueprint_4"
+		},
+		{
+			"predicate": {
+				"turtychemistry:stage": 0.3
+			},
+			"model": "turtychemistry:item/blueprint/blueprint_5"
+		},
+		{
+			"predicate": {
+				"turtychemistry:stage": 0.35
+			},
+			"model": "turtychemistry:item/blueprint/blueprint_6"
+		},
+		{
+			"predicate": {
+				"turtychemistry:stage": 0.4
+			},
+			"model": "turtychemistry:item/blueprint/blueprint_7"
+		},
+		{
+			"predicate": {
+				"turtychemistry:stage": 0.45
+			},
+			"model": "turtychemistry:item/blueprint/blueprint_8"
+		},
+		{
+			"predicate": {
+				"turtychemistry:stage": 0.5
+			},
+			"model": "turtychemistry:item/blueprint/blueprint_9"
+		}
+	]
+}

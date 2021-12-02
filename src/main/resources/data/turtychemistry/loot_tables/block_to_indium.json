@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "turtychemistry:indium_block"
+        }
+    ],
+    "result": {
+        "item": "turtychemistry:indium",
+        "count": 9
+    }
+}
