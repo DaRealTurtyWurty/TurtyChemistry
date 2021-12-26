@@ -21,10 +21,9 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
 public class ShaleFracturerContainer extends AbstractContainerMenu {
-
     private static ShaleFracturerBlockEntity blockEntity;
     private static final Predicate<AbstractContainerMenu> PLAYER_INV_PREDICATE = container -> container instanceof final ShaleFracturerContainer shaleFracturer
-            && shaleFracturer.getBlockEntity().shouldShowPlayerInv();
+            && shaleFracturer.getBlockEntity().shouldShowPlayerInv;
     private final ContainerLevelAccess containerAccess;
     private final ContainerData data;
 
@@ -38,12 +37,17 @@ public class ShaleFracturerContainer extends AbstractContainerMenu {
         this.containerAccess = ContainerLevelAccess.create(playerInv.player.level, pos);
         this.data = data;
 
-        // TODO: Add Slots
+        final int slotSizePlus2 = 18, startX = 8, startY = 84, hotbarY = 142;
         for (int column = 0; column < 9; column++) {
             for (int row = 0; row < 3; row++) {
-                addSlot(new HideableSlot(playerInv, this, PLAYER_INV_PREDICATE, windowId, column, row));
+                addSlot(new HideableSlot(playerInv, this, PLAYER_INV_PREDICATE, 9 + row * 9 + column,
+                        startX + column * slotSizePlus2, startY + row * slotSizePlus2));
             }
+            addSlot(new HideableSlot(playerInv, this, PLAYER_INV_PREDICATE, column,
+                    startX + column * slotSizePlus2, hotbarY));
         }
+
+        // TODO: Add Slots
 
         addDataSlots(data);
     }
@@ -56,6 +60,10 @@ public class ShaleFracturerContainer extends AbstractContainerMenu {
 
     public ShaleFracturerBlockEntity getBlockEntity() {
         return blockEntity;
+    }
+
+    public ContainerData getData() {
+        return this.data;
     }
 
     @Override

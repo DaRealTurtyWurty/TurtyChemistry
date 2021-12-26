@@ -1,7 +1,7 @@
 package io.github.darealturtywurty.turtychemistry.client.events;
 
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
-import io.github.darealturtywurty.turtychemistry.client.ui.ShaleFracturerScreen;
+import io.github.darealturtywurty.turtychemistry.client.ui.shale_fracturer.ShaleFracturerScreen;
 import io.github.darealturtywurty.turtychemistry.core.init.ContainerInit;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;

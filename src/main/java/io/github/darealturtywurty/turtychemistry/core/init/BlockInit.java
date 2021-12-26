@@ -21,9 +21,9 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
-import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public final class BlockInit extends AbstractInit {
 
@@ -135,16 +135,12 @@ public final class BlockInit extends AbstractInit {
 
     public static final RegistryObject<ShaleFracturerBlock.DrillBlock> SHALE_DRILL = BLOCKS
             .register("shale_drill", () -> new ShaleFracturerBlock.DrillBlock<>(
-                    build(of(Material.METAL).strength(-1f)).blockItem(true)));
+                    build(of(Material.METAL).strength(-1f)).blockItem(false)));
 
     @Mod.EventBusSubscriber(modid = TurtyChemistry.MODID, bus = Bus.MOD)
     public static class BlockItems {
         @SubscribeEvent
         public static void registerBlockItems(RegistryEvent.Register<Item> event) {
-            if (GREEN_ALGAE.isPresent()) {
-                BLOCK_ITEM_WHITELIST.put(GREEN_ALGAE.get(), new Item.Properties().tab(TurtyChemistry.TAB));
-            }
-
             BLOCKS.getEntries().stream().filter(RegistryObject::isPresent).map(RegistryObject::get)
                     .filter(block -> BLOCK_ITEM_WHITELIST.containsKey(block)).forEachOrdered(block -> {
                         final var blockItem = new BlockItem(block,

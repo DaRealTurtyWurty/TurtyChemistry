@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.24+', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1+', changing: true
     }
 }
 
@@ -16,11 +16,11 @@ version = '1.0'
 group = 'io.github.darealturtywurty.turtychemistry'
 archivesBaseName = 'turtychemistry'
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(16)
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
-    mappings channel: 'official', version: '1.17.1'
+    mappings channel: 'official', version: '1.18.1'
 
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
@@ -28,7 +28,6 @@ minecraft {
         client {
             workingDirectory project.file('run')
             arg "-mixin.config=" + archivesBaseName + ".mixins.json"
-            arg "-Dmixin.debug.export=true"
 
             mods {
                 turtychemistry {
@@ -40,7 +39,6 @@ minecraft {
         server {
             workingDirectory project.file('run')
             arg "-mixin.config=" + archivesBaseName + ".mixins.json"
-            arg "-Dmixin.debug.export=true"
 
             mods {
                 turtychemistry {
@@ -70,7 +68,7 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.17.1-37.0.126'
+    minecraft 'net.minecraftforge:forge:1.18.1-39.0.5'
     annotationProcessor 'org.spongepowered:mixin:0.8.3:processor'
 }
 
@@ -82,7 +80,7 @@ jar {
                 "Specification-Version"   : "1",
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
-                "Implementation-Vendor"   : "examplemodsareus",
+                "Implementation-Vendor"   : "TurtyWurty",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
                 "MixinConfigs": archivesBaseName + ".mixins.json"
         ])

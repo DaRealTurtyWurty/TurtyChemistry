@@ -4,9 +4,9 @@ import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
 import io.github.darealturtywurty.turtychemistry.common.item.ChemistryItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.WaterLilyBlockItem;
-import net.minecraftforge.fmllegacy.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 public class ItemInit extends AbstractInit {
 
