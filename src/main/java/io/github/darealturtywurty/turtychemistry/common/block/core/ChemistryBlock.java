@@ -14,7 +14,7 @@ public class ChemistryBlock extends Block {
     public ChemistryBlock(Builder builder) {
         super(builder.properties);
         this.radioactivity = builder.radioactivity;
-        if (builder.blockItem.getLeft()) {
+        if (Boolean.TRUE.equals(builder.blockItem.getLeft())) {
             BlockInit.BLOCK_ITEM_WHITELIST.put(this, builder.blockItem.getRight());
         }
     }
@@ -26,10 +26,6 @@ public class ChemistryBlock extends Block {
 
         private Builder(BlockBehaviour.Properties properties) {
             this.properties = properties;
-        }
-
-        public static Builder build(BlockBehaviour.Properties properties) {
-            return new Builder(properties);
         }
 
         public Builder blockItem(boolean shouldHave) {
@@ -45,6 +41,10 @@ public class ChemistryBlock extends Block {
         public Builder radioactivity(int radioactivity) {
             this.radioactivity = radioactivity;
             return this;
+        }
+
+        public static Builder build(BlockBehaviour.Properties properties) {
+            return new Builder(properties);
         }
     }
 }

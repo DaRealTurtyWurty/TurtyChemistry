@@ -2,6 +2,7 @@ package io.github.darealturtywurty.turtychemistry.core.init;
 
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
 import io.github.darealturtywurty.turtychemistry.network.packet.ServerboundShaleFracturerPlayerInvPacket;
+import io.github.darealturtywurty.turtylib.core.init.AbstractInit;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;

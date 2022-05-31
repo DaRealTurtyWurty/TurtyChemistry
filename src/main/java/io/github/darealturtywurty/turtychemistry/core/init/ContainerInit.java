@@ -2,6 +2,7 @@ package io.github.darealturtywurty.turtychemistry.core.init;
 
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
 import io.github.darealturtywurty.turtychemistry.common.container.ShaleFracturerContainer;
+import io.github.darealturtywurty.turtylib.core.init.AbstractInit;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;

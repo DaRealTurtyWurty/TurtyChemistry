@@ -27,7 +27,7 @@ public class ShaleFracturerBlock<Type extends ShaleFracturerBlockEntity> extends
     @SuppressWarnings("unchecked")
     @Override
     public BlockEntityTicker<Type> getTickMethod(Type blockEntity) {
-        return blockEntity;
+        return (BlockEntityTicker) blockEntity;
     }
 
     @Override
@@ -36,13 +36,12 @@ public class ShaleFracturerBlock<Type extends ShaleFracturerBlockEntity> extends
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player,
-            InteractionHand hand, BlockHitResult result) {
+    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
+            BlockHitResult result) {
         if (!level.isClientSide
                 && level.getBlockEntity(pos) instanceof final ShaleFracturerBlockEntity shaleFracturer) {
             final MenuProvider container = new SimpleMenuProvider(
-                    ShaleFracturerContainer.getServerContainer(shaleFracturer, pos),
-                    shaleFracturer.getTitle());
+                    ShaleFracturerContainer.getServerContainer(shaleFracturer, pos), shaleFracturer.getTitle());
             NetworkHooks.openGui((ServerPlayer) player, container, pos);
         }
 
@@ -57,7 +56,7 @@ public class ShaleFracturerBlock<Type extends ShaleFracturerBlockEntity> extends
         @SuppressWarnings("unchecked")
         @Override
         public BlockEntityTicker<Type> getTickMethod(Type blockEntity) {
-            return blockEntity;
+            return (BlockEntityTicker) blockEntity;
         }
 
         @Override

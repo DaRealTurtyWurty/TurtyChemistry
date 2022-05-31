@@ -3,10 +3,10 @@ package io.github.darealturtywurty.turtychemistry.common.container;
 import java.util.function.Predicate;
 
 import io.github.darealturtywurty.turtychemistry.common.block.entity.ShaleFracturerBlockEntity;
-import io.github.darealturtywurty.turtychemistry.common.container.slot.HideableSlot;
 import io.github.darealturtywurty.turtychemistry.core.init.BlockInit;
 import io.github.darealturtywurty.turtychemistry.core.init.ContainerInit;
 import io.github.darealturtywurty.turtychemistry.network.syncdata.ShaleFracturerSyncData;
+import io.github.darealturtywurty.turtylib.common.container.HideableSlot;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -43,19 +43,13 @@ public class ShaleFracturerContainer extends AbstractContainerMenu {
                 addSlot(new HideableSlot(playerInv, this, PLAYER_INV_PREDICATE, 9 + row * 9 + column,
                         startX + column * slotSizePlus2, startY + row * slotSizePlus2));
             }
-            addSlot(new HideableSlot(playerInv, this, PLAYER_INV_PREDICATE, column,
-                    startX + column * slotSizePlus2, hotbarY));
+            addSlot(new HideableSlot(playerInv, this, PLAYER_INV_PREDICATE, column, startX + column * slotSizePlus2,
+                    hotbarY));
         }
 
         // TODO: Add Slots
 
         addDataSlots(data);
-    }
-
-    public static MenuConstructor getServerContainer(ShaleFracturerBlockEntity blockEntity, BlockPos pos) {
-        ShaleFracturerContainer.blockEntity = blockEntity;
-        return (id, playerInv, player) -> new ShaleFracturerContainer(id, playerInv,
-                blockEntity.getInventory(), pos, new ShaleFracturerSyncData(blockEntity));
     }
 
     public ShaleFracturerBlockEntity getBlockEntity() {
@@ -99,5 +93,11 @@ public class ShaleFracturerContainer extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player player) {
         return stillValid(this.containerAccess, player, BlockInit.SHALE_FRACTURER.get());
+    }
+
+    public static MenuConstructor getServerContainer(ShaleFracturerBlockEntity blockEntity, BlockPos pos) {
+        ShaleFracturerContainer.blockEntity = blockEntity;
+        return (id, playerInv, player) -> new ShaleFracturerContainer(id, playerInv, blockEntity.inventory.inventory,
+                pos, new ShaleFracturerSyncData(blockEntity));
     }
 }

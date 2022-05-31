@@ -2,6 +2,7 @@ package io.github.darealturtywurty.turtychemistry.core.init;
 
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
 import io.github.darealturtywurty.turtychemistry.common.item.ChemistryItem;
+import io.github.darealturtywurty.turtylib.core.init.AbstractInit;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.WaterLilyBlockItem;
 import net.minecraftforge.registries.DeferredRegister;

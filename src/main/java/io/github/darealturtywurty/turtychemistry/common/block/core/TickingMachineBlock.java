@@ -1,14 +1,14 @@
 package io.github.darealturtywurty.turtychemistry.common.block.core;
 
+import io.github.darealturtywurty.turtylib.common.blockentity.TickableBlockEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
-public abstract class TickingMachineBlock<Type extends BlockEntity> extends MachineBlock<Type> {
-
-    public TickingMachineBlock(ChemistryBlock.Builder builder) {
+public abstract class TickingMachineBlock<Type extends TickableBlockEntity> extends MachineBlock {
+    protected TickingMachineBlock(ChemistryBlock.Builder builder) {
         super(builder);
     }
 
@@ -16,8 +16,7 @@ public abstract class TickingMachineBlock<Type extends BlockEntity> extends Mach
     @Override
     public <BE extends BlockEntity> BlockEntityTicker<BE> getTicker(Level level, BlockState state,
             BlockEntityType<BE> type) {
-        return level.isClientSide ? null
-                : (level0, pos, state0, blockEntity) -> getTickMethod((Type) blockEntity);
+        return level.isClientSide ? null : (level0, pos, state0, blockEntity) -> getTickMethod((Type) blockEntity);
     }
 
     public abstract BlockEntityTicker<Type> getTickMethod(Type blockEntity);
