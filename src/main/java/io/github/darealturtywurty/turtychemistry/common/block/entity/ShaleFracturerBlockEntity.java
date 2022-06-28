@@ -14,12 +14,11 @@ import io.github.darealturtywurty.turtylib.common.blockentity.module.InventoryMo
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class ShaleFracturerBlockEntity extends ModularBlockEntity {
     public static final int MIN_SPEED = 1, MIN_ENERGY_INPUT = 1, MIN_WATER_INPUT = 1, MAX_SPEED = 200,
-            MAX_ENERGY_INPUT = 100, MAX_WATER_INPUT = 100;
+        MAX_ENERGY_INPUT = 100, MAX_WATER_INPUT = 100;
     public final List<BlockPos> drillPositions = new ArrayList<>();
     public boolean shouldShowPlayerInv;
     public int speed = 100, energyInputLimit = 100, waterInputLimit = 100;
@@ -31,7 +30,7 @@ public class ShaleFracturerBlockEntity extends ModularBlockEntity {
     }
 
     public Component getTitle() {
-        return new TranslatableComponent("container." + TurtyChemistry.MODID + ".shale_fracturer");
+        return Component.translatable("container." + TurtyChemistry.MODID + ".shale_fracturer");
     }
 
     @Override
@@ -41,20 +40,12 @@ public class ShaleFracturerBlockEntity extends ModularBlockEntity {
         this.energyInputLimit = compound.getInt("EnergyInputLimit");
         this.waterInputLimit = compound.getInt("WaterInputLimit");
     }
-
-    @Override
-    public CompoundTag save(CompoundTag compound) {
-        compound.putInt("Speed", this.speed);
-        compound.putInt("EnergyInputLimit", this.energyInputLimit);
-        compound.putInt("WaterInputLimit", this.waterInputLimit);
-        return super.save(compound);
-    }
-
+    
     public void setEnergyInputLimit(int energy) {
         this.energyInputLimit = energy;
         if (this.level.isClientSide) {
             PacketHandler.CHANNEL.sendToServer(
-                    new ServerboundShaleFracturerIntegerPacket(this.worldPosition, Type.ENERGY_INPUT_LIMIT, energy));
+                new ServerboundShaleFracturerIntegerPacket(this.worldPosition, Type.ENERGY_INPUT_LIMIT, energy));
         }
     }
 
@@ -69,7 +60,7 @@ public class ShaleFracturerBlockEntity extends ModularBlockEntity {
         this.speed = speed;
         if (this.level.isClientSide) {
             PacketHandler.CHANNEL
-                    .sendToServer(new ServerboundShaleFracturerIntegerPacket(this.worldPosition, Type.SPEED, speed));
+                .sendToServer(new ServerboundShaleFracturerIntegerPacket(this.worldPosition, Type.SPEED, speed));
         }
     }
 
@@ -77,8 +68,16 @@ public class ShaleFracturerBlockEntity extends ModularBlockEntity {
         this.waterInputLimit = water;
         if (this.level.isClientSide) {
             PacketHandler.CHANNEL.sendToServer(
-                    new ServerboundShaleFracturerIntegerPacket(this.worldPosition, Type.WATER_INPUT_LIMIT, water));
+                new ServerboundShaleFracturerIntegerPacket(this.worldPosition, Type.WATER_INPUT_LIMIT, water));
         }
+    }
+
+    @Override
+    protected void saveAdditional(CompoundTag nbt) {
+        super.saveAdditional(nbt);
+        nbt.putInt("Speed", this.speed);
+        nbt.putInt("EnergyInputLimit", this.energyInputLimit);
+        nbt.putInt("WaterInputLimit", this.waterInputLimit);
     }
 
     public static class DrillBlockEntity extends ModularBlockEntity {

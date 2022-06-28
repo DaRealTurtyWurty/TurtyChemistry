@@ -9,17 +9,15 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public final class BlockEntityInit extends AbstractInit {
-
+    
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister
-            .create(ForgeRegistries.BLOCK_ENTITIES, TurtyChemistry.MODID);
-
+        .create(ForgeRegistries.BLOCK_ENTITIES, TurtyChemistry.MODID);
+    
     public static final RegistryObject<BlockEntityType<ShaleFracturerBlockEntity>> SHALE_FRACTURER = BLOCK_ENTITIES
-            .register("shale_fracturer", () -> BlockEntityType.Builder
-                    .of(ShaleFracturerBlockEntity::new, BlockInit.SHALE_FRACTURER.get()).build(null));
-
+        .register("shale_fracturer", () -> BlockEntityType.Builder
+            .of(ShaleFracturerBlockEntity::new, BlockInit.SHALE_FRACTURER.get()).build(null));
+    
     public static final RegistryObject<BlockEntityType<ShaleFracturerBlockEntity.DrillBlockEntity>> SHALE_DRILL = BLOCK_ENTITIES
-            .register("shale_drill",
-                    () -> BlockEntityType.Builder
-                            .of(ShaleFracturerBlockEntity.DrillBlockEntity::new, BlockInit.SHALE_DRILL.get())
-                            .build(null));
+        .register("shale_drill", () -> BlockEntityType.Builder
+            .of(ShaleFracturerBlockEntity.DrillBlockEntity::new, BlockInit.SHALE_DRILL.get()).build(null));
 }
