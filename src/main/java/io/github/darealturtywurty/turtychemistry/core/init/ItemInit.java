@@ -251,39 +251,6 @@ public class ItemInit extends AbstractInit {
     public static final RegistryObject<ChemistryItem> OGANESSON = ITEMS.register("oganesson",
         () -> new ChemistryItem(makeItemProperties()));
     
-    public static final RegistryObject<ChemistryItem> BLACK_TEST_TUBE = ITEMS.register("black_test_tube",
-        () -> new ChemistryItem(makeItemProperties()));
-    public static final RegistryObject<ChemistryItem> RED_TEST_TUBE = ITEMS.register("red_test_tube",
-        () -> new ChemistryItem(makeItemProperties()));
-    public static final RegistryObject<ChemistryItem> GREEN_TEST_TUBE = ITEMS.register("green_test_tube",
-        () -> new ChemistryItem(makeItemProperties()));
-    public static final RegistryObject<ChemistryItem> BROWN_TEST_TUBE = ITEMS.register("brown_test_tube",
-        () -> new ChemistryItem(makeItemProperties()));
-    public static final RegistryObject<ChemistryItem> BLUE_TEST_TUBE = ITEMS.register("blue_test_tube",
-        () -> new ChemistryItem(makeItemProperties()));
-    public static final RegistryObject<ChemistryItem> PURPLE_TEST_TUBE = ITEMS.register("purple_test_tube",
-        () -> new ChemistryItem(makeItemProperties()));
-    public static final RegistryObject<ChemistryItem> CYAN_TEST_TUBE = ITEMS.register("cyan_test_tube",
-        () -> new ChemistryItem(makeItemProperties()));
-    public static final RegistryObject<ChemistryItem> LIGHT_GRAY_TEST_TUBE = ITEMS.register("light_gray_test_tube",
-        () -> new ChemistryItem(makeItemProperties()));
-    public static final RegistryObject<ChemistryItem> GRAY_TEST_TUBE = ITEMS.register("gray_test_tube",
-        () -> new ChemistryItem(makeItemProperties()));
-    public static final RegistryObject<ChemistryItem> PINK_TEST_TUBE = ITEMS.register("pink_test_tube",
-        () -> new ChemistryItem(makeItemProperties()));
-    public static final RegistryObject<ChemistryItem> LIME_TEST_TUBE = ITEMS.register("lime_test_tube",
-        () -> new ChemistryItem(makeItemProperties()));
-    public static final RegistryObject<ChemistryItem> YELLOW_TEST_TUBE = ITEMS.register("yellow_test_tube",
-        () -> new ChemistryItem(makeItemProperties()));
-    public static final RegistryObject<ChemistryItem> LIGHT_BLUE_TEST_TUBE = ITEMS.register("light_blue_test_tube",
-        () -> new ChemistryItem(makeItemProperties()));
-    public static final RegistryObject<ChemistryItem> MAGENTA_TEST_TUBE = ITEMS.register("magenta_test_tube",
-        () -> new ChemistryItem(makeItemProperties()));
-    public static final RegistryObject<ChemistryItem> ORANGE_TEST_TUBE = ITEMS.register("orange_test_tube",
-        () -> new ChemistryItem(makeItemProperties()));
-    public static final RegistryObject<ChemistryItem> WHITE_TEST_TUBE = ITEMS.register("white_test_tube",
-        () -> new ChemistryItem(makeItemProperties()));
-    
     public static final RegistryObject<ChemistryItem> REFINARY_GAS = ITEMS.register("refinary_gas",
         () -> new ChemistryItem(makeItemProperties()));
     public static final RegistryObject<ChemistryItem> PETROL = ITEMS.register("petrol",
@@ -325,12 +292,6 @@ public class ItemInit extends AbstractInit {
     public static final RegistryObject<ChemistryItem> BALLOON = ITEMS.register("balloon",
         () -> new ChemistryItem(makeItemProperties()));
     public static final RegistryObject<ChemistryItem> TEST_TUBE = ITEMS.register("test_tube",
-        () -> new ChemistryItem(makeItemProperties()));
-    public static final RegistryObject<PlaceOnWaterBlockItem> GREEN_ALGAE = ITEMS.register("green_algae",
-        () -> new PlaceOnWaterBlockItem(BlockInit.GREEN_ALGAE.get(), new Item.Properties().tab(TurtyChemistry.TAB)));
-    public static final RegistryObject<ChemistryItem> SAWDUST = ITEMS.register("sawdust",
-        () -> new ChemistryItem(makeItemProperties()));
-    public static final RegistryObject<ChemistryItem> BRIQUETTE = ITEMS.register("briquette",
         () -> new ChemistryItem(makeItemProperties()));
     
     public static ChemistryItem.Builder makeItemProperties() {
