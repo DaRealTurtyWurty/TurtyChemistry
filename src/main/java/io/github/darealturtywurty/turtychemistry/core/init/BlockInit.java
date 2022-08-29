@@ -1,14 +1,7 @@
 package io.github.darealturtywurty.turtychemistry.core.init;
 
-import static io.github.darealturtywurty.turtychemistry.common.block.core.ChemistryBlock.Builder.build;
-import static net.minecraft.world.level.block.state.BlockBehaviour.Properties.copy;
-import static net.minecraft.world.level.block.state.BlockBehaviour.Properties.of;
-
-import java.util.function.Supplier;
-
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
 import io.github.darealturtywurty.turtychemistry.common.block.ShaleBlock;
-import io.github.darealturtywurty.turtychemistry.common.block.ShaleFracturerBlock;
 import io.github.darealturtywurty.turtychemistry.common.block.core.ChemistryBlock;
 import io.github.darealturtywurty.turtylib.core.init.AbstractInit;
 import net.minecraft.world.item.BlockItem;
@@ -20,6 +13,12 @@ import net.minecraft.world.level.material.Material;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.function.Supplier;
+
+import static io.github.darealturtywurty.turtychemistry.common.block.core.ChemistryBlock.Builder.build;
+import static net.minecraft.world.level.block.state.BlockBehaviour.Properties.copy;
+import static net.minecraft.world.level.block.state.BlockBehaviour.Properties.of;
 
 public final class BlockInit extends AbstractInit {
 
@@ -131,12 +130,6 @@ public final class BlockInit extends AbstractInit {
     public static final RegistryObject<ShaleBlock> SHALE = register("shale",
         () -> new ShaleBlock(build(of(Material.ICE_SOLID).dynamicShape().noOcclusion())),
         new Item.Properties().tab(TurtyChemistry.TAB));
-
-    public static final RegistryObject<ShaleFracturerBlock> SHALE_FRACTURER = register("shale_fracturer",
-        () -> new ShaleFracturerBlock<>(build(of(Material.METAL))), new Item.Properties().tab(TurtyChemistry.TAB));
-
-    public static final RegistryObject<ShaleFracturerBlock.DrillBlock> SHALE_DRILL = BLOCKS.register("shale_drill",
-        () -> new ShaleFracturerBlock.DrillBlock<>(build(of(Material.METAL).strength(-1f))));
 
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> supplier,
         Item.Properties properties) {

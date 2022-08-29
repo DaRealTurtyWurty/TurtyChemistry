@@ -1,9 +1,6 @@
 package io.github.darealturtywurty.turtychemistry.client.events;
 
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
-import io.github.darealturtywurty.turtychemistry.client.ui.shale_fracturer.ShaleFracturerScreen;
-import io.github.darealturtywurty.turtychemistry.core.init.ContainerInit;
-import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -18,6 +15,6 @@ public final class ClientModEvents {
 
     @SubscribeEvent
     public static void setup(FMLClientSetupEvent event) {
-        MenuScreens.register(ContainerInit.SHALE_FRACTURER.get(), ShaleFracturerScreen::new);
+
     }
 }

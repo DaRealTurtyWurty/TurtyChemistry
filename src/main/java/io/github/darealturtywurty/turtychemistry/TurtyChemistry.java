@@ -29,6 +29,6 @@ public class TurtyChemistry {
         BlockInit.BLOCKS.register(bus);
         ItemInit.ITEMS.register(bus);
         BlockEntityInit.BLOCK_ENTITIES.register(bus);
-        ContainerInit.CONTAINERS.register(bus);
+        ContainerInit.MENU_TYPES.register(bus);
     }
 }
