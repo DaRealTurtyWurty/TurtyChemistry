@@ -1,5 +1,6 @@
 package io.github.darealturtywurty.turtychemistry;
 
+import io.github.darealturtywurty.turtychemistry.core.multiblocks.MultiblockRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -31,5 +32,6 @@ public class TurtyChemistry {
         ItemInit.ITEMS.register(bus);
         BlockEntityInit.BLOCK_ENTITIES.register(bus);
         ContainerInit.MENU_TYPES.register(bus);
+        MultiblockRegistry.MULTIBLOCKS.register(bus);
     }
 }
