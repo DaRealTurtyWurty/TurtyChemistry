@@ -1,6 +1,0 @@
-{
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "turtychemistry:items/light_blue_test_tube"
-    }
-}

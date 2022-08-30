@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=north": { "model": "turtychemistry:block/baler_arm" },
-        "facing=south": { "model": "turtychemistry:block/baler_arm", "y": 180 },
-        "facing=west":  { "model": "turtychemistry:block/baler_arm", "y": 270 },
-        "facing=east":  { "model": "turtychemistry:block/baler_arm", "y": 90 }
-    }
-}

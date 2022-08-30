@@ -127,10 +127,6 @@ public final class BlockInit extends AbstractInit {
      * blockItem(true), new Item.Properties().tab(TurtyChemistry.TAB));
      */
 
-    public static final RegistryObject<ShaleBlock> SHALE = register("shale",
-        () -> new ShaleBlock(build(of(Material.ICE_SOLID).dynamicShape().noOcclusion())),
-        new Item.Properties().tab(TurtyChemistry.TAB));
-
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> supplier,
         Item.Properties properties) {
         final RegistryObject<T> block = BLOCKS.register(name, supplier);
