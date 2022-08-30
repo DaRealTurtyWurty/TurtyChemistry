@@ -11,6 +11,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.jetbrains.annotations.NotNull;
 
 @Mod(TurtyChemistry.MODID)
 public class TurtyChemistry {
@@ -19,7 +20,7 @@ public class TurtyChemistry {
 
     public static final CreativeModeTab TAB = new CreativeModeTab(MODID) {
         @Override
-        public ItemStack makeIcon() {
+        public @NotNull ItemStack makeIcon() {
             return ItemInit.THULIUM.get().getDefaultInstance();
         }
     };
@@ -29,6 +30,6 @@ public class TurtyChemistry {
         BlockInit.BLOCKS.register(bus);
         ItemInit.ITEMS.register(bus);
         BlockEntityInit.BLOCK_ENTITIES.register(bus);
-        ContainerInit.CONTAINERS.register(bus);
+        ContainerInit.MENU_TYPES.register(bus);
     }
 }

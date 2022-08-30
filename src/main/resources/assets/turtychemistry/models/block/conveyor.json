@@ -1,6 +1,0 @@
-{
-    "parent": "turtychemistry:block/conveyor_flat",
-    "textures": {
-        "conveyor": "turtychemistry:blocks/conveyor"
-    }
-}
