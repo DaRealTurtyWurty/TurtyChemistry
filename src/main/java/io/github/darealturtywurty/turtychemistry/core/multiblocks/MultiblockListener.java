@@ -30,8 +30,9 @@ public final class MultiblockListener {
             return;
         final LevelAccessor currentEventLevel = event.getLevel();
         final BlockPos currentEventPosition = event.getPos();
+        final BlockState currentEventPlacedBlock = event.getPlacedBlock();
         for(Multiblock multiblock : MultiblockRegistry.REGISTRY.get()) {
-            if(multiblock.isValid(event.getPlacedBlock())) {
+            if(multiblock.isValid(currentEventPlacedBlock)) {
 
                 // A0A
                 // 000
@@ -93,22 +94,5 @@ public final class MultiblockListener {
         return null;
     }
 
-    private static BlockPattern.BlockPatternMatch find(BlockPattern pattern, LevelAccessor level, BlockPos pos, int xLength, int yLength, int zLength ) {
-        int i = Math.max(Math.max(xLength, yLength), zLength);
 
-        for(BlockPos blockpos : BlockPos.betweenClosed(pos, pos.offset(i - 1, i - 1, i - 1))) {
-            for(Direction direction : Direction.values()) {
-                for(Direction direction1 : Direction.values()) {
-                    if (direction1 != direction && direction1 != direction.getOpposite()) {
-                        BlockPattern.BlockPatternMatch match = pattern.matches(level, blockpos, direction, direction1);
-                        if (match != null) {
-                            return match;
-                        }
-                    }
-                }
-            }
-        }
-
-        return null;
-    }
 }
