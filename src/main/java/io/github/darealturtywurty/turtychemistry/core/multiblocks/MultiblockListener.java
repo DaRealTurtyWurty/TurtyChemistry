@@ -31,7 +31,7 @@ public final class MultiblockListener {
         final BlockPos position = event.getPos();
         final BlockState block = event.getPlacedBlock();
         for(Multiblock multiblock : MultiblockRegistry.REGISTRY.get()) {
-            if(!multiblock.isValid(currentEventPlacedBlock)) {
+            if(!multiblock.isValid(block)) {
                 continue;
             }
                 // A0A
@@ -39,8 +39,8 @@ public final class MultiblockListener {
                 // A0A
                 final BlockPattern.BlockPatternMatch match = testFind(
                         multiblock.getPatternMatcher(),
-                        currentEventLevel,
-                        currentEventPosition
+                        level,
+                        position
                 );
 
                 if(match == null)
@@ -57,13 +57,13 @@ public final class MultiblockListener {
                 for(int x = 0; x < multiBlockWidth; x++) {
                     for(int y = 0; y < multiBlockHeight; y++) {
                         for(int z = 0; z < multiBlockDepth; z++) {
-                            currentEventLevel.setBlock(match.getBlock(x, y, z).getPos(), BlockInit.MULTIBLOCK.get().defaultBlockState(), Block.UPDATE_ALL);
+                            level.setBlock(match.getBlock(x, y, z).getPos(), BlockInit.MULTIBLOCK.get().defaultBlockState(), Block.UPDATE_ALL);
 
                         }
                     }
                 }
 
-                currentEventLevel.setBlock(controllerPosition, controller.getValue(), Block.UPDATE_ALL);
+                level.setBlock(controllerPosition, controller.getValue(), Block.UPDATE_ALL);
 
                 return;
         }
