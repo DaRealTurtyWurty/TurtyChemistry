@@ -77,7 +77,6 @@ public final class MultiblockListener {
         final int patternDepth = pattern.getDepth();
         final int patternHeight = pattern.getHeight();
 
-
         for(int x = -patternWidth; x < patternWidth; x++) {
             for(int y = -patternDepth; y < patternDepth; y++) {
                 for(int z = -patternHeight; z < patternHeight; z++) {
