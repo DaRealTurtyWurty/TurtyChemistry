@@ -1,8 +1,6 @@
 package io.github.darealturtywurty.turtychemistry.core.init;
 
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
-import io.github.darealturtywurty.turtychemistry.common.block.MultiblockBlock;
-import io.github.darealturtywurty.turtychemistry.common.block.ShaleBlock;
 import io.github.darealturtywurty.turtychemistry.common.block.core.ChemistryBlock;
 import io.github.darealturtywurty.turtylib.core.init.AbstractInit;
 import net.minecraft.world.item.BlockItem;
@@ -11,7 +9,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.WaterlilyBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -20,7 +17,6 @@ import java.util.function.Supplier;
 
 import static io.github.darealturtywurty.turtychemistry.common.block.core.ChemistryBlock.Builder.build;
 import static net.minecraft.world.level.block.state.BlockBehaviour.Properties.copy;
-import static net.minecraft.world.level.block.state.BlockBehaviour.Properties.of;
 
 public final class BlockInit extends AbstractInit {
 
@@ -129,8 +125,6 @@ public final class BlockInit extends AbstractInit {
      * blockItem(true), new Item.Properties().tab(TurtyChemistry.TAB));
      */
 
-    public static final RegistryObject<MultiblockBlock> MULTIBLOCK = BLOCKS.register("multiblock",
-            () -> new MultiblockBlock(BlockBehaviour.Properties.of(Material.AIR).air().noLootTable()));
 
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> supplier,
         Item.Properties properties) {
