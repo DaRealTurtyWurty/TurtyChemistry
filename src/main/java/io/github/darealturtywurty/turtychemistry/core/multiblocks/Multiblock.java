@@ -24,20 +24,20 @@ public class Multiblock {
         this.controller = builder.controller;
     }
 
-    public List<Predicate<BlockState>> getValidStates()
+    public final List<Predicate<BlockState>> getValidStates()
     {
         return validStates;
     }
 
-    public BlockPattern getPatternMatcher() {
+    public final BlockPattern getPatternMatcher() {
         return this.patternMatcher;
     }
 
-    public boolean isValid(BlockState state) {
+    public final boolean isValid(BlockState state) {
         return this.validStates.stream().anyMatch(it -> it.test(state));
     }
 
-    public Pair<Vec3i, BlockState> getController() {
+    public final Pair<Vec3i, BlockState> getController() {
         return this.controller;
     }
 
@@ -79,7 +79,7 @@ public class Multiblock {
             return builder.pattern();
         }
 
-        public Builder controller(int x, int y, int z, BlockState state) {
+        public final Builder controller(int x, int y, int z, BlockState state) {
             if(x < 0 || x > this.pattern.getWidth())
                 throw new IndexOutOfBoundsException("'x' is out of the range of this multiblock. The width is: " + this.pattern.getWidth());
 

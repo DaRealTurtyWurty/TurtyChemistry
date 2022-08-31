@@ -23,38 +23,39 @@ import org.jetbrains.annotations.Nullable;
 public final class MultiblockListener {
     @SubscribeEvent
     public static void blockPlace(BlockEvent.EntityPlaceEvent event) {
+        final LevelAccessor currentEventLevel = event.getLevel();
+        final BlockPos currentEventPosition = event.getPos();
         if(!(event.getEntity() instanceof Player) || event.getLevel().isClientSide())
             return;
 
         for(Multiblock multiblock : MultiblockRegistry.REGISTRY.get()) {
-            if(!multiblock.isValid(event.getPlacedBlock())) {
-                continue;
-            } else {
+            if(multiblock.isValid(event.getPlacedBlock())) {
+
                 // A0A
                 // 000
                 // A0A
 
-                BlockPattern.BlockPatternMatch match = testFind(
+                final BlockPattern.BlockPatternMatch match = testFind(
                         multiblock.getPatternMatcher(),
-                        event.getLevel(),
-                        event.getPos()
+                        currentEventLevel,
+                        currentEventPosition
                 );
 
                 if(match == null)
                     continue;
 
-                Pair<Vec3i, BlockState> controller = multiblock.getController();
-                BlockPos controllerPosition = match.getBlock(controller.getKey().getX(), controller.getKey().getY(), controller.getKey().getZ()).getPos();
+                final Pair<Vec3i, BlockState> controller = multiblock.getController();
+                final BlockPos controllerPosition = match.getBlock(controller.getKey().getX(), controller.getKey().getY(), controller.getKey().getZ()).getPos();
 
                 for(int x = 0; x < multiblock.getPatternMatcher().getWidth(); x++) {
                     for(int y = 0; y < multiblock.getPatternMatcher().getHeight(); y++) {
                         for(int z = 0; z < multiblock.getPatternMatcher().getDepth(); z++) {
-                            event.getLevel().setBlock(match.getBlock(x, y, z).getPos(), BlockInit.MULTIBLOCK.get().defaultBlockState(), Block.UPDATE_ALL);
+                            currentEventLevel.setBlock(match.getBlock(x, y, z).getPos(), BlockInit.MULTIBLOCK.get().defaultBlockState(), Block.UPDATE_ALL);
                         }
                     }
                 }
 
-                event.getLevel().setBlock(controllerPosition, controller.getValue(), Block.UPDATE_ALL);
+                currentEventLevel.setBlock(controllerPosition, controller.getValue(), Block.UPDATE_ALL);
 
                 return;
             }
@@ -66,8 +67,8 @@ public final class MultiblockListener {
         for(int x = -pattern.getWidth(); x < pattern.getWidth(); x++) {
             for(int y = -pattern.getDepth(); y < pattern.getDepth(); y++) {
                 for(int z = -pattern.getHeight(); z < pattern.getHeight(); z++) {
-                    BlockPos offset = pos.offset(x, y, z);
-                    BlockPattern.BlockPatternMatch found = pattern.find(level, offset);
+                    final BlockPos offset = pos.offset(x, y, z);
+                    final BlockPattern.BlockPatternMatch found = pattern.find(level, offset);
 
                     if(found != null)
                         return found;
