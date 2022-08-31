@@ -24,8 +24,7 @@ public class Multiblock {
         this.controller = builder.controller;
     }
 
-    public final List<Predicate<BlockState>> getValidStates()
-    {
+    public final List<Predicate<BlockState>> getValidStates() {
         return validStates;
     }
 

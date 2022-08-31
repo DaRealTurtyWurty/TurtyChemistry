@@ -24,13 +24,12 @@ import org.jetbrains.annotations.Nullable;
 public final class MultiblockListener {
     @SubscribeEvent
     public static void blockPlace(BlockEvent.EntityPlaceEvent event) {
-        //cache the event caller's Level and Block Position
 
         if(!(event.getEntity() instanceof Player) || event.getLevel().isClientSide())
             return;
-        final LevelAccessor currentEventLevel = event.getLevel();
-        final BlockPos currentEventPosition = event.getPos();
-        final BlockState currentEventPlacedBlock = event.getPlacedBlock();
+        final LevelAccessor level = event.getLevel();
+        final BlockPos position = event.getPos();
+        final BlockState block = event.getPlacedBlock();
         for(Multiblock multiblock : MultiblockRegistry.REGISTRY.get()) {
             if(!multiblock.isValid(currentEventPlacedBlock)) {
                 continue;
@@ -77,7 +76,6 @@ public final class MultiblockListener {
         final int patternWidth = pattern.getWidth();
         final int patternDepth = pattern.getDepth();
         final int patternHeight = pattern.getHeight();
-
 
         for(int x = -patternWidth; x < patternWidth; x++) {
             for(int y = -patternDepth; y < patternDepth; y++) {
