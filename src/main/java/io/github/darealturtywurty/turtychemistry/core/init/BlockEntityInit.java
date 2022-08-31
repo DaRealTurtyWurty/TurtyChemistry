@@ -18,8 +18,7 @@ public final class BlockEntityInit extends AbstractInit {
 
 
 
-    private static <T extends BlockEntity>RegistryObject<BlockEntityType<T>> registerNewBlockEntity(final String name, final BlockEntityType.BlockEntitySupplier<T> blockEntitySupplier, final Block block)
-    {
-        return BLOCK_ENTITIES.register(name,() -> BlockEntityType.Builder.of(blockEntitySupplier,block).build(null));
+    private static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> registerNewBlockEntity(final String name, final BlockEntityType.BlockEntitySupplier<T> blockEntitySupplier, final Block... blocks) {
+        return BLOCK_ENTITIES.register(name, () -> BlockEntityType.Builder.of(blockEntitySupplier, blocks).build(null));
     }
 }
