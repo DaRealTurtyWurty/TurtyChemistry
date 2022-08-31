@@ -27,9 +27,9 @@ public final class MultiblockListener {
 
         if(!(event.getEntity() instanceof Player) || event.getLevel().isClientSide())
             return;
-        final LevelAccessor currentEventLevel = event.getLevel();
-        final BlockPos currentEventPosition = event.getPos();
-        final BlockState currentEventPlacedBlock = event.getPlacedBlock();
+        final LevelAccessor level = event.getLevel();
+        final BlockPos position = event.getPos();
+        final BlockState block = event.getPlacedBlock();
         for(Multiblock multiblock : MultiblockRegistry.REGISTRY.get()) {
             if(multiblock.isValid(currentEventPlacedBlock)) {
 
