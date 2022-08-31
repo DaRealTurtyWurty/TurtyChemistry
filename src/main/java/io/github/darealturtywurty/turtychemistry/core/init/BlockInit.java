@@ -1,6 +1,7 @@
 package io.github.darealturtywurty.turtychemistry.core.init;
 
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
+import io.github.darealturtywurty.turtychemistry.common.block.ClayAlloyFurnaceBlock;
 import io.github.darealturtywurty.turtychemistry.common.block.core.ChemistryBlock;
 import io.github.darealturtywurty.turtylib.core.init.AbstractInit;
 import net.minecraft.world.item.BlockItem;
@@ -125,6 +126,8 @@ public final class BlockInit extends AbstractInit {
      * blockItem(true), new Item.Properties().tab(TurtyChemistry.TAB));
      */
 
+    public static final RegistryObject<ClayAlloyFurnaceBlock> CLAY_ALLOY_FURNACE = BLOCKS.register("clay_alloy_furnace",
+            () -> new ClayAlloyFurnaceBlock(BlockBehaviour.Properties.copy(Blocks.TERRACOTTA).dynamicShape().noOcclusion()));
 
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> supplier,
         Item.Properties properties) {
