@@ -24,7 +24,6 @@ import org.jetbrains.annotations.Nullable;
 public final class MultiblockListener {
     @SubscribeEvent
     public static void blockPlace(BlockEvent.EntityPlaceEvent event) {
-        //cache the event caller's Level and Block Position
 
         if(!(event.getEntity() instanceof Player) || event.getLevel().isClientSide())
             return;
