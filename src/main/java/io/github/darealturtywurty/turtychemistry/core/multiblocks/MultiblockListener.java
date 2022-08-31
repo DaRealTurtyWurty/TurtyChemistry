@@ -32,12 +32,12 @@ public final class MultiblockListener {
         final BlockPos currentEventPosition = event.getPos();
         final BlockState currentEventPlacedBlock = event.getPlacedBlock();
         for(Multiblock multiblock : MultiblockRegistry.REGISTRY.get()) {
-            if(multiblock.isValid(currentEventPlacedBlock)) {
-
+            if(!multiblock.isValid(currentEventPlacedBlock)) {
+                continue;
+            }
                 // A0A
                 // 000
                 // A0A
-
                 final BlockPattern.BlockPatternMatch match = testFind(
                         multiblock.getPatternMatcher(),
                         currentEventLevel,
@@ -67,8 +67,8 @@ public final class MultiblockListener {
                 currentEventLevel.setBlock(controllerPosition, controller.getValue(), Block.UPDATE_ALL);
 
                 return;
-            }
         }
+
     }
 
     // TODO: Make this more efficient
