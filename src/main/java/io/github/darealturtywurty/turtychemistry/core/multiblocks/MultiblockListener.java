@@ -17,12 +17,14 @@ import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.apache.commons.lang3.tuple.Pair;
+import org.apache.logging.log4j.Level;
 import org.jetbrains.annotations.Nullable;
 
 @Mod.EventBusSubscriber(modid = TurtyChemistry.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public final class MultiblockListener {
     @SubscribeEvent
     public static void blockPlace(BlockEvent.EntityPlaceEvent event) {
+        //cache the event caller's Level and Block Position
         final LevelAccessor currentEventLevel = event.getLevel();
         final BlockPos currentEventPosition = event.getPos();
         if(!(event.getEntity() instanceof Player) || event.getLevel().isClientSide())
@@ -47,10 +49,16 @@ public final class MultiblockListener {
                 final Pair<Vec3i, BlockState> controller = multiblock.getController();
                 final BlockPos controllerPosition = match.getBlock(controller.getKey().getX(), controller.getKey().getY(), controller.getKey().getZ()).getPos();
 
-                for(int x = 0; x < multiblock.getPatternMatcher().getWidth(); x++) {
-                    for(int y = 0; y < multiblock.getPatternMatcher().getHeight(); y++) {
-                        for(int z = 0; z < multiblock.getPatternMatcher().getDepth(); z++) {
+
+                //cache the width, height, and depth of the multiblock's pattern so it doesn't have to call it every cycle of the loop
+                final int multiBlockWidth = multiblock.getPatternMatcher().getWidth();
+                final int multiBlockHeight = multiblock.getPatternMatcher().getHeight();
+                final int multiBlockDepth = multiblock.getPatternMatcher().getDepth();
+                for(int x = 0; x < multiBlockWidth; x++) {
+                    for(int y = 0; y < multiBlockHeight; y++) {
+                        for(int z = 0; z < multiBlockDepth; z++) {
                             currentEventLevel.setBlock(match.getBlock(x, y, z).getPos(), BlockInit.MULTIBLOCK.get().defaultBlockState(), Block.UPDATE_ALL);
+
                         }
                     }
                 }
@@ -64,9 +72,15 @@ public final class MultiblockListener {
 
     // TODO: Make this more efficient
     private static @Nullable BlockPattern.BlockPatternMatch testFind(BlockPattern pattern, LevelAccessor level, BlockPos pos) {
-        for(int x = -pattern.getWidth(); x < pattern.getWidth(); x++) {
-            for(int y = -pattern.getDepth(); y < pattern.getDepth(); y++) {
-                for(int z = -pattern.getHeight(); z < pattern.getHeight(); z++) {
+        //cache the width, height, and depth of the multiblock's pattern so it doesn't have to call it every cycle of the loop
+        final int patternWidth = pattern.getWidth();
+        final int patternDepth = pattern.getDepth();
+        final int patternHeight = pattern.getHeight();
+
+
+        for(int x = -patternWidth; x < patternWidth; x++) {
+            for(int y = -patternDepth; y < patternDepth; y++) {
+                for(int z = -patternHeight; z < patternHeight; z++) {
                     final BlockPos offset = pos.offset(x, y, z);
                     final BlockPattern.BlockPatternMatch found = pattern.find(level, offset);
 
