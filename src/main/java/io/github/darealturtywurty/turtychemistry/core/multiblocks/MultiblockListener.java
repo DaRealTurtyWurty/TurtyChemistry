@@ -25,11 +25,11 @@ public final class MultiblockListener {
     @SubscribeEvent
     public static void blockPlace(BlockEvent.EntityPlaceEvent event) {
         //cache the event caller's Level and Block Position
-        final LevelAccessor currentEventLevel = event.getLevel();
-        final BlockPos currentEventPosition = event.getPos();
+
         if(!(event.getEntity() instanceof Player) || event.getLevel().isClientSide())
             return;
-
+        final LevelAccessor currentEventLevel = event.getLevel();
+        final BlockPos currentEventPosition = event.getPos();
         for(Multiblock multiblock : MultiblockRegistry.REGISTRY.get()) {
             if(multiblock.isValid(event.getPlacedBlock())) {
 
