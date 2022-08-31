@@ -14,7 +14,7 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-public class MultiblockRegistry {
+public final class MultiblockRegistry {
     public static final DeferredRegister<Multiblock> MULTIBLOCKS =
             DeferredRegister.create(new ResourceLocation(TurtyChemistry.MODID, "multiblocks"), TurtyChemistry.MODID);
 
