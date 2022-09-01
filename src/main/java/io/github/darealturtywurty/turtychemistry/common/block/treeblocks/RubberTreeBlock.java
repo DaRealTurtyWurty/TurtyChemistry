@@ -1,6 +1,7 @@
 package io.github.darealturtywurty.turtychemistry.common.block.treeblocks;
 
 import io.github.darealturtywurty.turtychemistry.core.init.BlockInit;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
@@ -13,7 +14,7 @@ import net.minecraftforge.common.ToolActions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Random;
+
 import java.util.concurrent.ThreadLocalRandom;
 
 public final class RubberTreeBlock extends RotatedPillarBlock {
@@ -23,8 +24,7 @@ public final class RubberTreeBlock extends RotatedPillarBlock {
 
     public RubberTreeBlock(final Properties blockProperty) {
         super(blockProperty);
-        this.registerDefaultState(this.getStateDefinition().any().setValue(HAS_RUBBER, Boolean.TRUE).setValue(RUBBER_IN_TREE,
-                ThreadLocalRandom.current().nextInt(0, 5)));
+        this.registerDefaultState(this.getStateDefinition().any().setValue(HAS_RUBBER, Boolean.TRUE).setValue(RUBBER_IN_TREE, 5));
     }
 
     @Override
@@ -39,6 +39,11 @@ public final class RubberTreeBlock extends RotatedPillarBlock {
                     .setValue(HAS_RUBBER, state.getValue(HAS_RUBBER)).setValue(AXIS, state.getValue(AXIS));
         }
         return super.getToolModifiedState(state, context, toolAction, simulate);
+    }
+
+    @Override
+    public BlockState getStateForPlacement(final @NotNull BlockPlaceContext p_55928_) {
+        return super.getStateForPlacement(p_55928_).setValue(RUBBER_IN_TREE,ThreadLocalRandom.current().nextInt(1,5));
     }
 
     public @Nullable BlockState processRubber(final Block treeTapState) {
