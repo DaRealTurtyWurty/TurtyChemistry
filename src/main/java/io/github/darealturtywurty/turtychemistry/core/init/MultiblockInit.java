@@ -9,7 +9,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
 public class MultiblockInit {
-    public static final DeferredRegister<Multiblock> MULTIBLOCKS = DeferredRegister.create(TurtyLib.MULTIBLOCK_REGISTRY.get(), TurtyChemistry.MODID);
+    public static final DeferredRegister<Multiblock> MULTIBLOCKS = DeferredRegister.create(TurtyLib.MULTIBLOCK_REGISTRY_KEY, TurtyChemistry.MODID);
 
     public static final RegistryObject<Multiblock> CLAY_ALLOY_FURNACE = MULTIBLOCKS.register("clay_alloy_furnace",
             () -> new Multiblock(

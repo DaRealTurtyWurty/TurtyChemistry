@@ -18,15 +18,27 @@ public class ClayAlloyFurnaceBlockEntityRenderer implements BlockEntityRenderer<
     }
 
     @Override
-    public void render(@NotNull ClayAlloyFurnaceBlockEntity blockEntity, float partialTicks, @NotNull PoseStack stack, @NotNull MultiBufferSource buffer, int packedLight, int packedOverlay) {
-        blockEntity.multiblock.getPositions().forEach(pos -> this.context.getBlockRenderDispatcher().renderSingleBlock(
-                Blocks.ACACIA_LOG.defaultBlockState(),
-                stack,
-                buffer,
-                packedLight,
-                packedOverlay,
-                ModelData.EMPTY,
-                RenderType.solid()
-        ));
+    public void render(@NotNull ClayAlloyFurnaceBlockEntity blockEntity, float partialTicks, @NotNull PoseStack stack, @NotNull MultiBufferSource buffer,
+                       int packedLight, int packedOverlay) {
+        blockEntity.multiblock.getPositions().forEach(pos -> {
+            stack.pushPose();
+
+            int x = pos.getX() - blockEntity.getBlockPos().getX();
+            int y = pos.getY() - blockEntity.getBlockPos().getY();
+            int z = pos.getZ() - blockEntity.getBlockPos().getZ();
+            stack.translate(x, y, z);
+
+            this.context.getBlockRenderDispatcher().renderSingleBlock(
+                    Blocks.PINK_STAINED_GLASS.defaultBlockState(),
+                    stack,
+                    buffer,
+                    packedLight,
+                    packedOverlay,
+                    ModelData.EMPTY,
+                    RenderType.translucent()
+            );
+
+            stack.popPose();
+        });
     }
 }
