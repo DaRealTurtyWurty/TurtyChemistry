@@ -135,7 +135,6 @@ public final class BlockInit extends AbstractInit {
 
     public static final RegistryObject<RubberTreeBlock> RUBBER_TREE_BLOCK = register("rubber_tree_block",
             () -> new RubberTreeBlock(BlockBehaviour.Properties.of(Material.WOOD)),new Item.Properties().tab(TurtyChemistry.TAB));
-
     public static final RegistryObject<RubberTreeBlockStripped> RUBBER_TREE_BLOCK_STRIPPED = register("rubber_tree_block_stripped",
             () -> new RubberTreeBlockStripped(BlockBehaviour.Properties.of(Material.WOOD)),new Item.Properties().tab(TurtyChemistry.TAB));
 

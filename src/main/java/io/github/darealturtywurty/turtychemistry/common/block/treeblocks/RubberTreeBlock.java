@@ -1,10 +1,6 @@
 package io.github.darealturtywurty.turtychemistry.common.block.treeblocks;
 
-import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
 import io.github.darealturtywurty.turtychemistry.core.init.BlockInit;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.NbtUtils;
-import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
@@ -21,46 +17,35 @@ import java.util.Random;
 
 public final class RubberTreeBlock extends RotatedPillarBlock {
 
-    public static final IntegerProperty RUBBER_IN_TREE = IntegerProperty.create("rubber_in_tree",0,5);
-
+    public static final IntegerProperty RUBBER_IN_TREE = IntegerProperty.create("rubber_in_tree", 0, 5);
     public static final BooleanProperty HAS_RUBBER = BooleanProperty.create("has_rubber");
+
     public RubberTreeBlock(final Properties blockProperty) {
         super(blockProperty);
-        this.registerDefaultState(this.getStateDefinition().any().setValue(HAS_RUBBER,Boolean.TRUE).setValue(RUBBER_IN_TREE, new Random().nextInt(0, 5)));
-
+        this.registerDefaultState(this.getStateDefinition().any().setValue(HAS_RUBBER, Boolean.TRUE).setValue(RUBBER_IN_TREE,
+                new Random().nextInt(0, 5)));
     }
 
     @Override
     protected void createBlockStateDefinition(final StateDefinition.@NotNull Builder<Block, BlockState> stateBuilder) {
-       super.createBlockStateDefinition(stateBuilder.add(RUBBER_IN_TREE).add(HAS_RUBBER));
+        super.createBlockStateDefinition(stateBuilder.add(RUBBER_IN_TREE).add(HAS_RUBBER));
     }
 
     @Override
-    public final @Nullable BlockState getToolModifiedState(final BlockState state, final UseOnContext context, final ToolAction toolAction, final boolean simulate) {
-
-        if(toolAction == ToolActions.AXE_STRIP)
-        {
-
-
-               return BlockInit.RUBBER_TREE_BLOCK_STRIPPED.get().defaultBlockState().setValue(RUBBER_IN_TREE,state.getValue(RUBBER_IN_TREE)).setValue(HAS_RUBBER,state.getValue(HAS_RUBBER)).setValue(AXIS,state.getValue(AXIS));
-
+    public @Nullable BlockState getToolModifiedState(final BlockState state, final UseOnContext context, final ToolAction toolAction, final boolean simulate) {
+        if (toolAction == ToolActions.AXE_STRIP) {
+            return BlockInit.RUBBER_TREE_BLOCK_STRIPPED.get().defaultBlockState().setValue(RUBBER_IN_TREE, state.getValue(RUBBER_IN_TREE))
+                    .setValue(HAS_RUBBER, state.getValue(HAS_RUBBER)).setValue(AXIS, state.getValue(AXIS));
         }
         return super.getToolModifiedState(state, context, toolAction, simulate);
     }
 
-
-
-
-    public BlockState processRubber(final Block treeTapState)
-    {
+    public BlockState processRubber(final Block treeTapState) {
         final int currentRubberValue = this.getStateDefinition().any().getValue(RUBBER_IN_TREE);
         final boolean hasRubber = this.getStateDefinition().any().getValue(HAS_RUBBER);
-
-        if(currentRubberValue != 0 && hasRubber)
-        {
+        if (currentRubberValue != 0 && hasRubber) {
             //TODO: check for the treesap
-
-            return this.getStateDefinition().any().setValue(RUBBER_IN_TREE,currentRubberValue - 1);
+            return this.getStateDefinition().any().setValue(RUBBER_IN_TREE, currentRubberValue - 1);
         }
         return null;
     }

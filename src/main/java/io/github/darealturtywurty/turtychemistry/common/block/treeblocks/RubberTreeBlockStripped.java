@@ -23,23 +23,18 @@ public final class RubberTreeBlockStripped extends RotatedPillarBlock {
 
     @Override
     public @Nullable BlockState getToolModifiedState(final BlockState state, final UseOnContext context, final ToolAction toolAction, final boolean simulate) {
-        if(toolAction == ToolActions.AXE_STRIP)
-        {
+        if (toolAction == ToolActions.AXE_STRIP) {
             return null;
         }
         return super.getToolModifiedState(state, context, toolAction, simulate);
     }
 
-    public BlockState processRubber(final Block treeTapState)
-    {
+    public BlockState processRubber(final Block treeTapState) {
         final int currentRubberValue = this.getStateDefinition().any().getValue(RubberTreeBlock.RUBBER_IN_TREE);
         final boolean hasRubber = this.getStateDefinition().any().getValue(RubberTreeBlock.HAS_RUBBER);
-
-        if(currentRubberValue != 0 && hasRubber)
-        {
+        if (currentRubberValue != 0 && hasRubber) {
             //TODO: check for the treesap
-
-            return this.getStateDefinition().any().setValue(RubberTreeBlock.RUBBER_IN_TREE,currentRubberValue - 1);
+            return this.getStateDefinition().any().setValue(RubberTreeBlock.RUBBER_IN_TREE, currentRubberValue - 1);
         }
         return null;
     }
