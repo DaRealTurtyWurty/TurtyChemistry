@@ -40,7 +40,7 @@ public final class RubberTreeBlock extends RotatedPillarBlock {
         return super.getToolModifiedState(state, context, toolAction, simulate);
     }
 
-    public BlockState processRubber(final Block treeTapState) {
+    public @Nullable BlockState processRubber(final Block treeTapState) {
         final int currentRubberValue = this.getStateDefinition().any().getValue(RUBBER_IN_TREE);
         final boolean hasRubber = this.getStateDefinition().any().getValue(HAS_RUBBER);
         if (currentRubberValue != 0 && hasRubber) {
