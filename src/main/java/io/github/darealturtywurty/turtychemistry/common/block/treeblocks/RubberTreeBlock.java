@@ -23,7 +23,7 @@ public final class RubberTreeBlock extends RotatedPillarBlock {
     public RubberTreeBlock(final Properties blockProperty) {
         super(blockProperty);
         this.registerDefaultState(this.getStateDefinition().any().setValue(HAS_RUBBER, Boolean.TRUE).setValue(RUBBER_IN_TREE,
-                new Random().nextInt(0, 5)));
+                ThreadLocalRandom.current().nextInt(0, 5)));
     }
 
     @Override
