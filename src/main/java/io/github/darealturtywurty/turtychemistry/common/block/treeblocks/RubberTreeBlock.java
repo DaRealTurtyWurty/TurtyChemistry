@@ -19,7 +19,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Random;
 
-public class RubberTreeBlock extends RotatedPillarBlock {
+public final class RubberTreeBlock extends RotatedPillarBlock {
 
     public static final IntegerProperty RUBBER_IN_TREE = IntegerProperty.create("rubber_in_tree",0,5);
 

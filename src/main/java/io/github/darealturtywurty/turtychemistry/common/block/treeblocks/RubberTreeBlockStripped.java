@@ -10,9 +10,9 @@ import net.minecraftforge.common.ToolActions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class RubberTreeBlockStripped extends RotatedPillarBlock {
-    public RubberTreeBlockStripped(final Properties p_55926_) {
-        super(p_55926_);
+public final class RubberTreeBlockStripped extends RotatedPillarBlock {
+    public RubberTreeBlockStripped(final Properties properties) {
+        super(properties);
     }
 
 
