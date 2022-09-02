@@ -31,9 +31,7 @@ public final class RubberTreeBlockStripped extends RubberTreeBaseBlock {
     @Override
     public void randomTick(final @NotNull BlockState state, final @NotNull ServerLevel level, final @NotNull BlockPos pos, final @NotNull RandomSource source) {
         super.randomTick(state, level, pos, source);
-        //cache the direction enum array
-        final Direction[] cachedDirections = Direction.values();
-        for (final Direction cachedDirection : cachedDirections) {
+        for (final Direction cachedDirection : Direction.values()) {
             final BlockState currentCheckedBlockState = level.getBlockState(pos.relative(cachedDirection));
             //TODO:replace the placeholder block with the actual treetap
             if (currentCheckedBlockState.is(BlockInit.RUBBER_TREE_SLAB.get())) {
