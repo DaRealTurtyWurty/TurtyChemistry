@@ -36,7 +36,7 @@ public final class RubberTreeBlockStripped extends RubberTreeBaseBlock {
         for (final Direction cachedDirection : cachedDirections) {
             final BlockState currentCheckedBlockState = level.getBlockState(pos.relative(cachedDirection));
             //TODO:replace the placeholder block with the actual treetap
-            if (currentCheckedBlockState == BlockInit.RUBBER_TREE_SLAB.get().defaultBlockState()) {
+            if (currentCheckedBlockState.is(BlockInit.RUBBER_TREE_SLAB.get())) {
                 processRubber(currentCheckedBlockState, state, level, pos);
             }
         }
