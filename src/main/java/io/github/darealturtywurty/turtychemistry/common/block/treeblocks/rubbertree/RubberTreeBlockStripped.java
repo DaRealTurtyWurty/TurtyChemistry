@@ -3,12 +3,9 @@ package io.github.darealturtywurty.turtychemistry.common.block.treeblocks.rubber
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.common.ToolActions;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public final class RubberTreeBlockStripped extends RubberTreeBaseBlock {
@@ -16,10 +13,7 @@ public final class RubberTreeBlockStripped extends RubberTreeBaseBlock {
         super(properties);
     }
 
-    @Override
-    protected void createBlockStateDefinition(final StateDefinition.@NotNull Builder<Block, BlockState> stateBuilder) {
-        super.createBlockStateDefinition(stateBuilder.add(RUBBER_IN_TREE).add(HAS_RUBBER));
-    }
+
     @Override
     public @Nullable BlockState getToolModifiedState(final BlockState state, final UseOnContext context, final ToolAction toolAction, final boolean simulate) {
         if (toolAction == ToolActions.AXE_STRIP) {

@@ -3,9 +3,7 @@ package io.github.darealturtywurty.turtychemistry.common.block.treeblocks.rubber
 import io.github.darealturtywurty.turtychemistry.core.init.BlockInit;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraftforge.common.ToolAction;
@@ -25,11 +23,6 @@ public final class RubberTreeBlock extends RubberTreeBaseBlock{
 
         this.registerDefaultState(this.getStateDefinition().any().setValue(HAS_RUBBER, Boolean.TRUE).setValue(RUBBER_IN_TREE, 5));
 
-    }
-
-    @Override
-    protected void createBlockStateDefinition(final StateDefinition.@NotNull Builder<Block, BlockState> stateBuilder) {
-        super.createBlockStateDefinition(stateBuilder.add(RUBBER_IN_TREE).add(HAS_RUBBER));
     }
 
     @Override
