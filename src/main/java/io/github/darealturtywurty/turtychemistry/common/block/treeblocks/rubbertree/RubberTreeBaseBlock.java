@@ -19,6 +19,7 @@ public sealed  class RubberTreeBaseBlock extends RotatedPillarBlock permits Rubb
         super(property.randomTicks());
         this.registerDefaultState(this.getStateDefinition().any().setValue(HAS_RUBBER, Boolean.TRUE).setValue(RUBBER_IN_TREE, 5));
     }
+    
     public static final IntegerProperty RUBBER_IN_TREE = IntegerProperty.create("rubber_in_tree", 0, 5);
     public static final BooleanProperty HAS_RUBBER = BooleanProperty.create("has_rubber");
     @Override
