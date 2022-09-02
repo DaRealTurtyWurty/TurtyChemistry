@@ -29,6 +29,7 @@ public final class RubberTreeBlock extends RubberTreeBaseBlock{
             return BlockInit.RUBBER_TREE_BLOCK_STRIPPED.get().defaultBlockState().setValue(RUBBER_IN_TREE, state.getValue(RUBBER_IN_TREE))
                     .setValue(HAS_RUBBER, state.getValue(HAS_RUBBER)).setValue(AXIS, state.getValue(AXIS));
         }
+        
         return super.getToolModifiedState(state, context, toolAction, simulate);
     }
 
