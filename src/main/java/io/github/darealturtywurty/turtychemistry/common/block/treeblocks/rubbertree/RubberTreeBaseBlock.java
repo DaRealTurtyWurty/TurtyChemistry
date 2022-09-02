@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import org.jetbrains.annotations.NotNull;
 
-public class RubberTreeBaseBlock extends RotatedPillarBlock {
+public sealed  class RubberTreeBaseBlock extends RotatedPillarBlock permits RubberTreeBlock, RubberTreeBlockStripped {
     public RubberTreeBaseBlock(final Properties property) {
         super(property.randomTicks());
         this.registerDefaultState(this.getStateDefinition().any().setValue(HAS_RUBBER, Boolean.TRUE).setValue(RUBBER_IN_TREE, 5));
