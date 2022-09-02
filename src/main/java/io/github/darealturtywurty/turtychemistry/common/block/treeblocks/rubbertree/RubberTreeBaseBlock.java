@@ -46,7 +46,6 @@ public sealed  class RubberTreeBaseBlock extends RotatedPillarBlock permits Rubb
         final boolean hasRubber = currentState.getValue(HAS_RUBBER);
         if (currentRubberValue != 0 && hasRubber && !level.isClientSide() /*&& treTapState.getValue(TreeTap.IS_TAPPING)*/) {
             level.setBlockAndUpdate(pos,currentState.setValue(RUBBER_IN_TREE, currentRubberValue - 1));
-
         }
     }
 }
