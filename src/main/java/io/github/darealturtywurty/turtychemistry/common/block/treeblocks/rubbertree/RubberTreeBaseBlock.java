@@ -35,7 +35,7 @@ public sealed class RubberTreeBaseBlock extends RotatedPillarBlock permits Rubbe
         for (final Direction cachedDirection : cachedDirections) {
             final BlockState currentCheckedBlockState = level.getBlockState(pos.relative(cachedDirection));
             //TODO:replace the placeholder block with the actual treetap
-            if (currentCheckedBlockState == BlockInit.PLACEHOLDER_BLOCK.get().defaultBlockState()) {
+            if (currentCheckedBlockState == BlockInit.RUBBER_TREE_SLAB.get().defaultBlockState()) {
                 processRubber(currentCheckedBlockState, state, level, pos);
             }
         }

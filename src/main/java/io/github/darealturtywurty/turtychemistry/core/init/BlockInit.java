@@ -143,8 +143,7 @@ public final class BlockInit extends AbstractInit {
 
     public static final RegistryObject<Block> RUBBER_TREE_SLAB = register("rubber_tree_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_SLAB)),new Item.Properties().tab(TurtyChemistry.TAB));
-    public static final RegistryObject<Block> PLACEHOLDER_BLOCK = register("placeholder_block",
-            () ->new Block(BlockBehaviour.Properties.of(Material.STRUCTURAL_AIR)),new Item.Properties().tab(TurtyChemistry.TAB));
+
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> supplier,
         Item.Properties properties) {
         final RegistryObject<T> block = BLOCKS.register(name, supplier);
