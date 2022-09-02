@@ -14,7 +14,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.concurrent.ThreadLocalRandom;
 
 public final class RubberTreeBlock extends RubberTreeBaseBlock{
-
     public static final IntegerProperty RUBBER_IN_TREE = IntegerProperty.create("rubber_in_tree", 0, 5);
     public static final BooleanProperty HAS_RUBBER = BooleanProperty.create("has_rubber");
 
