@@ -22,7 +22,6 @@ public final class RubberTreeBlock extends RubberTreeBaseBlock{
         super(blockProperty);
 
         this.registerDefaultState(this.getStateDefinition().any().setValue(HAS_RUBBER, Boolean.TRUE).setValue(RUBBER_IN_TREE, 5));
-
     }
 
     @Override
