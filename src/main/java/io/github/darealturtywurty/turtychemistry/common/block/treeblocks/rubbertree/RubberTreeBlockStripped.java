@@ -19,6 +19,7 @@ public final class RubberTreeBlockStripped extends RubberTreeBaseBlock {
         if (toolAction == ToolActions.AXE_STRIP) {
             return null;
         }
+
         return super.getToolModifiedState(state, context, toolAction, simulate);
     }
     @Override
