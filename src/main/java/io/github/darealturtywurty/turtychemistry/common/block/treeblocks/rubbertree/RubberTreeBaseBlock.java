@@ -39,8 +39,8 @@ public sealed  class RubberTreeBaseBlock extends RotatedPillarBlock permits Rubb
                 processRubber(currentCheckedBlockState, state, level, pos);
             }
         }
-
     }
+    
     public void processRubber(final BlockState treeTapState, final BlockState currentState, final Level level, final BlockPos pos) {
         final int currentRubberValue = currentState.getValue(RUBBER_IN_TREE);
         final boolean hasRubber = currentState.getValue(HAS_RUBBER);
