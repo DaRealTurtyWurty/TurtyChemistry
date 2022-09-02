@@ -1,4 +1,4 @@
-package io.github.darealturtywurty.turtychemistry.common.block.treeblocks;
+package io.github.darealturtywurty.turtychemistry.common.block.treeblocks.rubbertree;
 
 import io.github.darealturtywurty.turtychemistry.core.init.BlockInit;
 import net.minecraft.world.item.context.BlockPlaceContext;

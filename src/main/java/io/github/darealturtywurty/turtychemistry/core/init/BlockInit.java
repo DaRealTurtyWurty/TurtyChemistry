@@ -3,9 +3,9 @@ package io.github.darealturtywurty.turtychemistry.core.init;
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
 import io.github.darealturtywurty.turtychemistry.common.block.ClayAlloyFurnaceBlock;
 import io.github.darealturtywurty.turtychemistry.common.block.core.ChemistryBlock;
-import io.github.darealturtywurty.turtychemistry.common.block.treeblocks.RubberTreeBlock;
-import io.github.darealturtywurty.turtychemistry.common.block.treeblocks.RubberTreeBlockStripped;
-import io.github.darealturtywurty.turtylib.TurtyLib;
+import io.github.darealturtywurty.turtychemistry.common.block.treeblocks.rubbertree.RubberTreeBlock;
+import io.github.darealturtywurty.turtychemistry.common.block.treeblocks.rubbertree.RubberTreeBlockStripped;
+import io.github.darealturtywurty.turtychemistry.common.block.treeblocks.rubbertree.RubberTreeLeafBlock;
 import io.github.darealturtywurty.turtylib.core.init.AbstractInit;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -138,6 +138,8 @@ public final class BlockInit extends AbstractInit {
     public static final RegistryObject<RubberTreeBlockStripped> RUBBER_TREE_BLOCK_STRIPPED = register("rubber_tree_block_stripped",
             () -> new RubberTreeBlockStripped(BlockBehaviour.Properties.of(Material.WOOD)),new Item.Properties().tab(TurtyChemistry.TAB));
 
+    public static final RegistryObject<RubberTreeLeafBlock> RUBBER_TREE_LEAF_BLOCK = register("rubber_tree_leaf_block",
+            RubberTreeLeafBlock::new, new Item.Properties().tab(TurtyChemistry.TAB));
 
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> supplier,
         Item.Properties properties) {

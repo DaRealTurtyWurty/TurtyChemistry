@@ -1,4 +1,4 @@
-package io.github.darealturtywurty.turtychemistry.common.block.treeblocks;
+package io.github.darealturtywurty.turtychemistry.common.block.treeblocks.rubbertree;
 
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
@@ -14,7 +14,6 @@ public final class RubberTreeBlockStripped extends RotatedPillarBlock {
     public RubberTreeBlockStripped(final Properties properties) {
         super(properties);
     }
-
 
     @Override
     protected void createBlockStateDefinition(final StateDefinition.@NotNull Builder<Block, BlockState> stateBuilder) {
