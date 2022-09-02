@@ -43,7 +43,7 @@ public class ClayAlloyFurnaceBlockEntityRenderer implements BlockEntityRenderer<
     }
 
     @Override
-    public boolean shouldRenderOffScreen(ClayAlloyFurnaceBlockEntity blockEntity) {
+    public boolean shouldRenderOffScreen(@NotNull ClayAlloyFurnaceBlockEntity blockEntity) {
         return true;
     }
 }
