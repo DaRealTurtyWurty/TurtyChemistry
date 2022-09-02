@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public final class RubberTreeBlock extends RubberTreeBaseBlock{
+public final class RubberTreeBlock extends RubberTreeBaseBlock {
     public static final IntegerProperty RUBBER_IN_TREE = IntegerProperty.create("rubber_in_tree", 0, 5);
     public static final BooleanProperty HAS_RUBBER = BooleanProperty.create("has_rubber");
 
@@ -29,17 +29,14 @@ public final class RubberTreeBlock extends RubberTreeBaseBlock{
             return BlockInit.RUBBER_TREE_BLOCK_STRIPPED.get().defaultBlockState().setValue(RUBBER_IN_TREE, state.getValue(RUBBER_IN_TREE))
                     .setValue(HAS_RUBBER, state.getValue(HAS_RUBBER)).setValue(AXIS, state.getValue(AXIS));
         }
-        
+
         return super.getToolModifiedState(state, context, toolAction, simulate);
     }
 
     @Override
     public BlockState getStateForPlacement(final @NotNull BlockPlaceContext p_55928_) {
-        return super.getStateForPlacement(p_55928_).setValue(RUBBER_IN_TREE,ThreadLocalRandom.current().nextInt(1,5));
+        return super.getStateForPlacement(p_55928_).setValue(RUBBER_IN_TREE, ThreadLocalRandom.current().nextInt(1, 5));
     }
-
-
-
 
 
 }

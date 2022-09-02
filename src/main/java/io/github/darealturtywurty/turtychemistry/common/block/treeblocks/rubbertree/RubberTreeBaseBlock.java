@@ -14,19 +14,19 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import org.jetbrains.annotations.NotNull;
 
-public sealed  class RubberTreeBaseBlock extends RotatedPillarBlock permits RubberTreeBlock, RubberTreeBlockStripped {
+public sealed class RubberTreeBaseBlock extends RotatedPillarBlock permits RubberTreeBlock, RubberTreeBlockStripped {
+    public static final IntegerProperty RUBBER_IN_TREE = IntegerProperty.create("rubber_in_tree", 0, 5);
+    public static final BooleanProperty HAS_RUBBER = BooleanProperty.create("has_rubber");
     public RubberTreeBaseBlock(final Properties property) {
         super(property.randomTicks());
         this.registerDefaultState(this.getStateDefinition().any().setValue(HAS_RUBBER, Boolean.TRUE).setValue(RUBBER_IN_TREE, 5));
     }
-    
-    public static final IntegerProperty RUBBER_IN_TREE = IntegerProperty.create("rubber_in_tree", 0, 5);
-    public static final BooleanProperty HAS_RUBBER = BooleanProperty.create("has_rubber");
+
     @Override
     protected void createBlockStateDefinition(final StateDefinition.@NotNull Builder<Block, BlockState> stateBuilder) {
         super.createBlockStateDefinition(stateBuilder.add(RUBBER_IN_TREE).add(HAS_RUBBER));
     }
-    
+
     @Override
     public void randomTick(final @NotNull BlockState state, final @NotNull ServerLevel level, final @NotNull BlockPos pos, final @NotNull RandomSource source) {
         super.randomTick(state, level, pos, source);
@@ -40,12 +40,12 @@ public sealed  class RubberTreeBaseBlock extends RotatedPillarBlock permits Rubb
             }
         }
     }
-    
+
     public void processRubber(final BlockState treeTapState, final BlockState currentState, final Level level, final BlockPos pos) {
         final int currentRubberValue = currentState.getValue(RUBBER_IN_TREE);
         final boolean hasRubber = currentState.getValue(HAS_RUBBER);
         if (currentRubberValue != 0 && hasRubber && !level.isClientSide() /*&& treTapState.getValue(TreeTap.IS_TAPPING)*/) {
-            level.setBlockAndUpdate(pos,currentState.setValue(RUBBER_IN_TREE, currentRubberValue - 1));
+            level.setBlockAndUpdate(pos, currentState.setValue(RUBBER_IN_TREE, currentRubberValue - 1));
         }
     }
 }

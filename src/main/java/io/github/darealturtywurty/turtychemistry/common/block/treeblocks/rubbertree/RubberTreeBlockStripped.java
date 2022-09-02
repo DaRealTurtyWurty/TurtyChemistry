@@ -22,12 +22,13 @@ public final class RubberTreeBlockStripped extends RubberTreeBaseBlock {
 
         return super.getToolModifiedState(state, context, toolAction, simulate);
     }
+
     @Override
     public void processRubber(final BlockState treeTapState, final BlockState currentState, final Level level, final BlockPos pos) {
         final int currentRubberValue = currentState.getValue(RUBBER_IN_TREE);
         final boolean hasRubber = currentState.getValue(HAS_RUBBER);
         if (currentRubberValue != 0 && hasRubber && !level.isClientSide() /*&& treTapState.getValue(TreeTap.IS_TAPPING)*/) {
-            level.setBlockAndUpdate(pos,currentState.setValue(RUBBER_IN_TREE, currentRubberValue - 2));
+            level.setBlockAndUpdate(pos, currentState.setValue(RUBBER_IN_TREE, currentRubberValue - 2));
 
         }
     }
