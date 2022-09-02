@@ -26,6 +26,7 @@ public sealed  class RubberTreeBaseBlock extends RotatedPillarBlock permits Rubb
     protected void createBlockStateDefinition(final StateDefinition.@NotNull Builder<Block, BlockState> stateBuilder) {
         super.createBlockStateDefinition(stateBuilder.add(RUBBER_IN_TREE).add(HAS_RUBBER));
     }
+    
     @Override
     public void randomTick(final @NotNull BlockState state, final @NotNull ServerLevel level, final @NotNull BlockPos pos, final @NotNull RandomSource source) {
         super.randomTick(state, level, pos, source);
