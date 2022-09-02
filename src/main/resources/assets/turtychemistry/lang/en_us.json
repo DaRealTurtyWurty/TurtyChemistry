@@ -181,6 +181,9 @@
     "block.turtychemistry.black_beryl": "Black Beryl",
     "block.turtychemistry.rubber_tree_block": "Rubber Tree Log",
     "block.turtychemistry.rubber_tree_block_stripped": "Stripped Rubber Tree Log",
+    "block.turtychemistry.rubber_tree_leaves":"Rubber Tree Leaves" ,
+    "block.turtychemistry.rubber_tree_planks":"Rubber Tree Planks",
+    "block.turtychemistry.rubber_tree_slabs": "Rubber Tree Slabs",
     "biome.turtychemistry.brine_flats": "Brine Flats",
     "effect.turtychemistry.suffocating": "Suffocating",
     "fluid.turtychemistry.brine_still": "Brine"    

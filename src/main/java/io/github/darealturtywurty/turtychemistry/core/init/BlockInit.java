@@ -11,6 +11,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.WaterlilyBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -140,6 +141,12 @@ public final class BlockInit extends AbstractInit {
 
     public static final RegistryObject<RubberTreeLeafBlock> RUBBER_TREE_LEAVES = register("rubber_tree_leaves",
             RubberTreeLeafBlock::new, new Item.Properties().tab(TurtyChemistry.TAB));
+
+    public static final RegistryObject<Block> RUBBER_TREE_PLANKS = register("rubber_tree_planks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.ACACIA_PLANKS)),new Item.Properties().tab(TurtyChemistry.TAB));
+
+    public static final RegistryObject<Block> RUBBER_TREE_SLAPS = register("rubber_tree_slabs",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_SLAB)),new Item.Properties().tab(TurtyChemistry.TAB));
     public static final RegistryObject<Block> PLACEHOLDER_BLOCK = register("placeholder_block",
             () ->new Block(BlockBehaviour.Properties.of(Material.STRUCTURAL_AIR)),new Item.Properties().tab(TurtyChemistry.TAB));
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> supplier,
