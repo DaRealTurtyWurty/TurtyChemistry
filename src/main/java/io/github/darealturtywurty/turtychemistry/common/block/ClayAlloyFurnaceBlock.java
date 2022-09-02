@@ -20,8 +20,30 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class ClayAlloyFurnaceBlock extends Block implements EntityBlock {
+    private static final VoxelShape SHAPE = createShape();
+    
     public ClayAlloyFurnaceBlock(Properties properties) {
         super(properties);
+    }
+
+    private static VoxelShape createShape() {
+        VoxelShape shape = Shapes.empty();
+        shape = Shapes.join(shape, Shapes.box(0.1875, 2, 0.8125, 0.3125, 3, 1.1875), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(-0.3125, 2, 1.1875, 0.3125, 3, 1.3125), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(-0.3125, 2, 0.6875, 0.3125, 3, 0.8125), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(-0.3125, 2, 0.8125, -0.1875, 3, 1.1875), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(-1, 1.6875, 0, -0.1875, 2, 2), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(-1, 0, 0, 1, 0.3125, 2), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(-1, 0.3125, 0, -0.6875, 1.6875, 2), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(0.6875, 0.3125, 0, 1, 1.6875, 2), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(-0.6875, 0.3125, 1.6875, 0.6875, 1.6875, 2), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(-0.6875, 1.25, 0, 0.6875, 1.6875, 0.3125), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(-0.6875, 0.3125, 0, 0.6875, 0.6875, 0.3125), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(0.1875, 1.6875, 0, 1, 2, 2), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(-0.1875, 1.6875, 0, 0.1875, 2, 0.8125), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(-0.1875, 1.6875, 1.1875, 0.1875, 2, 2), BooleanOp.OR);
+
+        return shape;
     }
 
     @Override
@@ -43,22 +65,6 @@ public class ClayAlloyFurnaceBlock extends Block implements EntityBlock {
 
     @Override
     public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext ctx) {
-        VoxelShape shape = Shapes.empty();
-        shape = Shapes.join(shape, Shapes.box(0.1875, 2, 0.8125, 0.3125, 3, 1.1875), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(-0.3125, 2, 1.1875, 0.3125, 3, 1.3125), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(-0.3125, 2, 0.6875, 0.3125, 3, 0.8125), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(-0.3125, 2, 0.8125, -0.1875, 3, 1.1875), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(-1, 1.6875, 0, -0.1875, 2, 2), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(-1, 0, 0, 1, 0.3125, 2), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(-1, 0.3125, 0, -0.6875, 1.6875, 2), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0.6875, 0.3125, 0, 1, 1.6875, 2), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(-0.6875, 0.3125, 1.6875, 0.6875, 1.6875, 2), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(-0.6875, 1.25, 0, 0.6875, 1.6875, 0.3125), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(-0.6875, 0.3125, 0, 0.6875, 0.6875, 0.3125), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0.1875, 1.6875, 0, 1, 2, 2), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(-0.1875, 1.6875, 0, 0.1875, 2, 0.8125), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(-0.1875, 1.6875, 1.1875, 0.1875, 2, 2), BooleanOp.OR);
-
-        return shape;
+        return SHAPE;
     }
 }
