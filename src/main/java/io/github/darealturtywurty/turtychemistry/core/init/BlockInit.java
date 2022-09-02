@@ -5,14 +5,10 @@ import io.github.darealturtywurty.turtychemistry.common.block.ClayAlloyFurnaceBl
 import io.github.darealturtywurty.turtychemistry.common.block.core.ChemistryBlock;
 import io.github.darealturtywurty.turtychemistry.common.block.treeblocks.rubbertree.RubberTreeBlock;
 import io.github.darealturtywurty.turtychemistry.common.block.treeblocks.rubbertree.RubberTreeBlockStripped;
-import io.github.darealturtywurty.turtychemistry.common.block.treeblocks.rubbertree.RubberTreeLeafBlock;
 import io.github.darealturtywurty.turtylib.core.init.AbstractInit;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.WaterlilyBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.registries.DeferredRegister;
@@ -139,8 +135,8 @@ public final class BlockInit extends AbstractInit {
     public static final RegistryObject<RubberTreeBlockStripped> RUBBER_TREE_BLOCK_STRIPPED = register("rubber_tree_block_stripped",
             () -> new RubberTreeBlockStripped(BlockBehaviour.Properties.of(Material.WOOD)),new Item.Properties().tab(TurtyChemistry.TAB));
 
-    public static final RegistryObject<RubberTreeLeafBlock> RUBBER_TREE_LEAVES = register("rubber_tree_leaves",
-            RubberTreeLeafBlock::new, new Item.Properties().tab(TurtyChemistry.TAB));
+    public static final RegistryObject<Block> RUBBER_TREE_LEAVES = register("rubber_tree_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.ACACIA_LEAVES)), new Item.Properties().tab(TurtyChemistry.TAB));
 
     public static final RegistryObject<Block> RUBBER_TREE_PLANKS = register("rubber_tree_planks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.ACACIA_PLANKS)),new Item.Properties().tab(TurtyChemistry.TAB));
