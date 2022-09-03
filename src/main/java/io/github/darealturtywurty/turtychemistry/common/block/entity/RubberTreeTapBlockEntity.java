@@ -27,12 +27,7 @@ public final class RubberTreeTapBlockEntity extends ModularBlockEntity {
 
     public void setTapping() {
         TurtyChemistry.LOGGER.info("pressed");
-        if (!this.isTapping) {
-
-            PacketHandler.CHANNEL.sendToServer(new ServerBoundUpdateRubberTreeTapPacket(this.getBlockPos(), true));
-        } else {
-            PacketHandler.CHANNEL.sendToServer(new ServerBoundUpdateRubberTreeTapPacket(this.getBlockPos(), false));
-        }
+        PacketHandler.CHANNEL.sendToServer(new ServerBoundUpdateRubberTreeTapPacket(this.getBlockPos(), !this.isTapping)
     }
 
 }
