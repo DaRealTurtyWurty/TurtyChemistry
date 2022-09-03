@@ -49,7 +49,5 @@ public final class RubberTreeBlockStripped extends RubberTreeBaseBlock {
         } else {
             level.setBlockAndUpdate(pos, currentState.setValue(HAS_RUBBER, false));
         }
-
-
     }
 }
