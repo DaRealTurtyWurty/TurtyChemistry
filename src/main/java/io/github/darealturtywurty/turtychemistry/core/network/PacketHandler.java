@@ -20,10 +20,10 @@ public final class PacketHandler extends AbstractInit {
         int index = 0;
         TurtyChemistry.LOGGER.info("Registered {} packets!", index);
         CHANNEL.messageBuilder(ServerBoundUpdateRubberTreeTapPacket.class, index++, NetworkDirection.PLAY_TO_SERVER)
-                .encoder(ServerBoundUpdateRubberTreeTapPacket::encapsulate).decoder(ServerBoundUpdateRubberTreeTapPacket::new)
-                .consumer(ServerBoundUpdateRubberTreeTapPacket::process).add();
+                .encoder(ServerBoundUpdateRubberTreeTapPacket::encode).decoder(ServerBoundUpdateRubberTreeTapPacket::new)
+                .consumer(ServerBoundUpdateRubberTreeTapPacket::handle).add();
         CHANNEL.messageBuilder(ClientBoundUpdateRubberTreeTapPacket.class, index++, NetworkDirection.PLAY_TO_CLIENT)
-                .encoder(ClientBoundUpdateRubberTreeTapPacket::encapsulate).decoder(ClientBoundUpdateRubberTreeTapPacket::new)
-                .consumer(ClientBoundUpdateRubberTreeTapPacket::process).add();
+                .encoder(ClientBoundUpdateRubberTreeTapPacket::encode).decoder(ClientBoundUpdateRubberTreeTapPacket::new)
+                .consumer(ClientBoundUpdateRubberTreeTapPacket::handle).add();
     }
 }
