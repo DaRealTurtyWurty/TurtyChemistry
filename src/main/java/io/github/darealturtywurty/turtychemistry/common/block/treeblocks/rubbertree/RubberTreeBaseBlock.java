@@ -14,13 +14,10 @@ public sealed class RubberTreeBaseBlock extends RotatedPillarBlock permits Rubbe
 
     public RubberTreeBaseBlock(final Properties property) {
         super(property.randomTicks());
-        this.registerDefaultState(this.getStateDefinition().any().setValue(HAS_RUBBER, Boolean.TRUE).setValue(RUBBER_IN_TREE, 5));
     }
 
     @Override
     protected void createBlockStateDefinition(final StateDefinition.@NotNull Builder<Block, BlockState> stateBuilder) {
         super.createBlockStateDefinition(stateBuilder.add(RUBBER_IN_TREE).add(HAS_RUBBER));
     }
-
-
 }

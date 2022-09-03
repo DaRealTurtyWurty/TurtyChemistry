@@ -5,17 +5,27 @@ import io.github.darealturtywurty.turtychemistry.client.models.ClayAlloyFurnaceM
 import io.github.darealturtywurty.turtychemistry.client.models.ClayAlloyFurnaceTrayModel;
 import io.github.darealturtywurty.turtychemistry.client.models.ClayAlloyFurnaceWoodModel;
 import io.github.darealturtywurty.turtychemistry.client.renderer.ClayAlloyFurnaceBlockEntityRenderer;
+import io.github.darealturtywurty.turtychemistry.client.screen.RubberTreeTapScreen;
 import io.github.darealturtywurty.turtychemistry.core.init.BlockEntityInit;
+import io.github.darealturtywurty.turtychemistry.core.init.ContainerInit;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 @Mod.EventBusSubscriber(modid = TurtyChemistry.MODID, bus = Bus.MOD, value = Dist.CLIENT)
 public final class ClientModEvents {
     private ClientModEvents() {
         throw new IllegalStateException("Attempted to construct event bus subscriber!");
+    }
+
+
+    @SubscribeEvent
+    public static void clientSetup(FMLClientSetupEvent event) {
+        MenuScreens.register(ContainerInit.RUBBER_TREE_TAP_CONTAINER.get(), RubberTreeTapScreen::new);
     }
 
     @SubscribeEvent

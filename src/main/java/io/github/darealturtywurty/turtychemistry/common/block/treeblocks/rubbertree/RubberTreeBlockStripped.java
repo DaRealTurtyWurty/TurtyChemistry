@@ -31,20 +31,25 @@ public final class RubberTreeBlockStripped extends RubberTreeBaseBlock {
     @Override
     public void randomTick(final @NotNull BlockState state, final @NotNull ServerLevel level, final @NotNull BlockPos pos, final @NotNull RandomSource source) {
         super.randomTick(state, level, pos, source);
-        for (final Direction cachedDirection : Direction.values()) {
-            final BlockState currentCheckedBlockState = level.getBlockState(pos.relative(cachedDirection));
-            //TODO:replace the placeholder block with the actual treetap
-            if (currentCheckedBlockState.is(BlockInit.RUBBER_TREE_SLAB.get())) {
-                processRubber(currentCheckedBlockState, state, level, pos);
+        if (state.getValue(HAS_RUBBER) && !level.isClientSide()) {
+            for (final Direction cachedDirection : Direction.values()) {
+                final BlockState currentCheckedBlockState = level.getBlockState(pos.relative(cachedDirection));
+                //TODO:replace the placeholder block with the actual treetap
+                if (currentCheckedBlockState.is(BlockInit.RUBBER_TREE_SLAB.get())) {
+                    processRubber(currentCheckedBlockState, state, level, pos);
+                }
             }
         }
     }
 
-    public void processRubber(final BlockState treeTapState, final BlockState currentState, final Level level, final BlockPos pos) {
+    private static void processRubber(final BlockState treeTapState, final BlockState currentState, final Level level, final BlockPos pos) {
         final int currentRubberValue = currentState.getValue(RUBBER_IN_TREE);
-        final boolean hasRubber = currentState.getValue(HAS_RUBBER);
-        if (currentRubberValue != 0 && hasRubber && !level.isClientSide() /*&& treTapState.getValue(TreeTap.IS_TAPPING)*/) {
-            level.setBlockAndUpdate(pos, currentState.setValue(RUBBER_IN_TREE, currentRubberValue - 2));
+        if (currentRubberValue != 0 /*&& treeTapState.getValue(TreeTap.IS_TAPPING)*/) {
+            level.setBlockAndUpdate(pos, currentState.setValue(RUBBER_IN_TREE, currentRubberValue - 1));
+        } else {
+            level.setBlockAndUpdate(pos, currentState.setValue(HAS_RUBBER, false));
         }
+
+
     }
 }
