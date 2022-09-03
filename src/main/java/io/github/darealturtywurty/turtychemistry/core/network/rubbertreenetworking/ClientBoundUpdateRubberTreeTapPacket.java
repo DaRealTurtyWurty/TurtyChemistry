@@ -29,7 +29,7 @@ public final class ClientBoundUpdateRubberTreeTapPacket {
         byteBuf.writeBlockPos(this.treeTapBlockPos);
     }
 
-    public void process(Supplier<NetworkEvent.Context> networkContext) {
+    public void handle(Supplier<NetworkEvent.Context> networkContext) {
         networkContext.get().enqueueWork(
                 () -> DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
                     final BlockState blockState = Minecraft.getInstance().level.getBlockState(this.treeTapBlockPos);
