@@ -25,8 +25,9 @@ public final class ClientBoundUpdateRubberTreeTapPacket {
         this(byteBuf.readBlockPos(), byteBuf.readBoolean());
     }
 
-    public void encapsulate(final FriendlyByteBuf byteBuf) {
+    public void encode(final FriendlyByteBuf byteBuf) {
         byteBuf.writeBlockPos(this.treeTapBlockPos);
+        byteBuf.writeBoolean(this.isTapping);
     }
 
     public void handle(Supplier<NetworkEvent.Context> networkContext) {
