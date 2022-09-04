@@ -70,9 +70,10 @@ public final class RubberTreeTap extends Block {
         super.randomTick(state, level, pos, source);
         if (!level.isClientSide()) {
             for (final Direction cachedDirection : Direction.values()) {
-                final BlockState currentCheckedBlockState = level.getBlockState(pos.relative(cachedDirection));
+                final BlockPos cachedRelativeBlockPosition = pos.relative(cachedDirection);
+                final BlockState currentCheckedBlockState = level.getBlockState(cachedRelativeBlockPosition);
                 if (currentCheckedBlockState.is(BlockInit.RUBBER_TREE_BLOCK_STRIPPED.get())) {
-                    processRubber(currentCheckedBlockState, state, level, pos, pos.relative(cachedDirection));
+                    processRubber(currentCheckedBlockState, state, level, pos, cachedRelativeBlockPosition);
                 }
             }
         }
