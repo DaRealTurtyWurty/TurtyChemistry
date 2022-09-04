@@ -43,13 +43,13 @@ public final class RubberTreeTap extends Block {
                 if (state.getValue(LATEX_AMOUNT) > 0) {
                     playerInventory.setItem(playerInventory.getFreeSlot(), new ItemStack(ItemInit.LATEX.get()));
                     level.setBlockAndUpdate(pos, state.setValue(LATEX_AMOUNT, state.getValue(LATEX_AMOUNT) - 1));
-                    player.displayClientMessage(Component.translatable("tap.interract.success %d", state.getValue(LATEX_AMOUNT)), false);
+                    player.displayClientMessage(Component.translatable("tap.interract.success %s", state.getValue(LATEX_AMOUNT)), false);
 
                 } else {
-                    player.displayClientMessage(Component.literal("tap.interract.fail"), false);
+                    player.displayClientMessage(Component.translatable("tap.interract.fail"), false);
                 }
             } else {
-                player.displayClientMessage(Component.literal("Latex Stored In Tap: " + state.getValue(LATEX_AMOUNT)), false);
+                player.displayClientMessage(Component.translatable("tap.interract.check %s" ,state.getValue(LATEX_AMOUNT)), false);
             }
         }
         return InteractionResult.SUCCESS;
