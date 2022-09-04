@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "turtychemistry:latex"
+  },
+  "result": "turtychemistry:rubber",
+  "experience": 1,
+  "cookingtime": 1
+}

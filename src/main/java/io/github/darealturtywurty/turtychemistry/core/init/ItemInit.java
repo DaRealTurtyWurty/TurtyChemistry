@@ -9,10 +9,10 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ItemInit extends AbstractInit {
-    
+
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,
         TurtyChemistry.MODID);
-    
+
     public static final RegistryObject<ChemistryItem> HYDROGEN = ITEMS.register("hydrogen",
         () -> new ChemistryItem(makeItemProperties()));
     public static final RegistryObject<ChemistryItem> HELIUM = ITEMS.register("helium",
@@ -249,7 +249,7 @@ public class ItemInit extends AbstractInit {
         () -> new ChemistryItem(makeItemProperties()));
     public static final RegistryObject<ChemistryItem> OGANESSON = ITEMS.register("oganesson",
         () -> new ChemistryItem(makeItemProperties()));
-    
+
     public static final RegistryObject<ChemistryItem> REFINARY_GAS = ITEMS.register("refinary_gas",
         () -> new ChemistryItem(makeItemProperties()));
     public static final RegistryObject<ChemistryItem> PETROL = ITEMS.register("petrol",
@@ -266,7 +266,7 @@ public class ItemInit extends AbstractInit {
         () -> new ChemistryItem(makeItemProperties()));
     public static final RegistryObject<ChemistryItem> BITUMEN = ITEMS.register("bitumen",
         () -> new ChemistryItem(makeItemProperties()));
-    
+
     public static final RegistryObject<ChemistryItem> AMMONIA = ITEMS.register("ammonia",
         () -> new ChemistryItem(makeItemProperties()));
     public static final RegistryObject<ChemistryItem> HYDROCHLORIC_ACID = ITEMS.register("hydrochloric_acid",
@@ -287,12 +287,16 @@ public class ItemInit extends AbstractInit {
         () -> new ChemistryItem(makeItemProperties()));
     public static final RegistryObject<ChemistryItem> CHRYSOBERYL = ITEMS.register("chrysoberyl",
         () -> new ChemistryItem(makeItemProperties()));
-    
+
     public static final RegistryObject<ChemistryItem> BALLOON = ITEMS.register("balloon",
         () -> new ChemistryItem(makeItemProperties()));
     public static final RegistryObject<ChemistryItem> TEST_TUBE = ITEMS.register("test_tube",
         () -> new ChemistryItem(makeItemProperties()));
-    
+    public static final RegistryObject<ChemistryItem> LATEX = ITEMS.register("latex",
+            () -> new ChemistryItem(makeItemProperties()));
+    public static final RegistryObject<ChemistryItem> RUBBER = ITEMS.register("rubber",
+            () -> new ChemistryItem(makeItemProperties()));
+
     public static ChemistryItem.Builder makeItemProperties() {
         return new ChemistryItem.Builder(new ChemistryItem.Properties().tab(TurtyChemistry.TAB));
     }

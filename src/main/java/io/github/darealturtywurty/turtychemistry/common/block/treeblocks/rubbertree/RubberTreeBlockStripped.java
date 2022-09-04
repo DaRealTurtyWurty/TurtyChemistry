@@ -31,23 +31,22 @@ public final class RubberTreeBlockStripped extends RubberTreeBaseBlock {
     @Override
     public void randomTick(final @NotNull BlockState state, final @NotNull ServerLevel level, final @NotNull BlockPos pos, final @NotNull RandomSource source) {
         super.randomTick(state, level, pos, source);
-        if (state.getValue(HAS_RUBBER) && !level.isClientSide()) {
+        if (state.getValue(RUBBER_IN_TREE) > 0 && !level.isClientSide()) {
             for (final Direction cachedDirection : Direction.values()) {
                 final BlockState currentCheckedBlockState = level.getBlockState(pos.relative(cachedDirection));
-                //TODO:replace the placeholder block with the actual treetap
-                if (currentCheckedBlockState.is(BlockInit.RUBBER_TREE_SLAB.get())) {
-                    processRubber(currentCheckedBlockState, state, level, pos);
+                if (currentCheckedBlockState.is(BlockInit.RUBBER_TREE_TAP.get())) {
+                    processRubber(currentCheckedBlockState, state, level, pos, pos.relative(cachedDirection));
                 }
             }
         }
     }
 
-    private static void processRubber(final BlockState treeTapState, final BlockState currentState, final Level level, final BlockPos pos) {
+    private static void processRubber(final BlockState treeTapState, final BlockState currentState, final Level level, final BlockPos currentPosition, final BlockPos treeTapPosition) {
         final int currentRubberValue = currentState.getValue(RUBBER_IN_TREE);
-        if (currentRubberValue != 0 /*&& treeTapState.getValue(TreeTap.IS_TAPPING)*/) {
-            level.setBlockAndUpdate(pos, currentState.setValue(RUBBER_IN_TREE, currentRubberValue - 1));
-        } else {
-            level.setBlockAndUpdate(pos, currentState.setValue(HAS_RUBBER, false));
+        if (currentRubberValue > 0 && treeTapState.getValue(RubberTreeTap.LATEX_AMOUNT) != 5) {
+            level.setBlockAndUpdate(currentPosition, currentState.setValue(RUBBER_IN_TREE, currentRubberValue - 1));
+            level.setBlockAndUpdate(treeTapPosition, treeTapState.setValue(RubberTreeTap.LATEX_AMOUNT, treeTapState.getValue(RubberTreeTap.LATEX_AMOUNT) + 1));
+
         }
     }
 }
