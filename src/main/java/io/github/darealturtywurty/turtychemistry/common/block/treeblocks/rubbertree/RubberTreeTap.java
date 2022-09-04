@@ -38,7 +38,6 @@ public final class RubberTreeTap extends Block {
                                           final @NotNull Player player, final @NotNull InteractionHand hand, final @NotNull BlockHitResult result) {
         final Inventory playerInventory = player.getInventory();
         if (!level.isClientSide()) {
-            TurtyChemistry.LOGGER.info("is crouching " + player.isCrouching());
             if (!player.isCrouching()) {
                 if (state.getValue(LATEX_AMOUNT) > 0) {
                     playerInventory.setItem(playerInventory.getFreeSlot(), new ItemStack(ItemInit.LATEX.get()));
