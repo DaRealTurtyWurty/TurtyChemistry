@@ -18,7 +18,6 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 public final class RubberTreeTap extends Block {
 
@@ -62,7 +61,7 @@ public final class RubberTreeTap extends Block {
         return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
     }
 
-    
+
     @Override
     public BlockState getStateForPlacement(final @NotNull BlockPlaceContext ctx) {
         return super.getStateForPlacement(ctx).setValue(LATEX_AMOUNT, 0);
