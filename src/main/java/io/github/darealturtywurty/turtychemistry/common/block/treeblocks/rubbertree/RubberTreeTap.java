@@ -49,7 +49,7 @@ public final class RubberTreeTap extends Block {
                     player.displayClientMessage(Component.translatable("tap.interract.fail"), false);
                 }
             } else {
-                player.displayClientMessage(Component.translatable("tap.interract.check %s" ,state.getValue(LATEX_AMOUNT)), false);
+                player.displayClientMessage(Component.translatable("tap.interract.check %s", state.getValue(LATEX_AMOUNT)), false);
             }
         }
         return InteractionResult.SUCCESS;
