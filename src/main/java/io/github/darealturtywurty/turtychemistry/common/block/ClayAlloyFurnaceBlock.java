@@ -21,7 +21,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class ClayAlloyFurnaceBlock extends Block implements EntityBlock {
     private static final VoxelShape SHAPE = createShape();
-    
+
     public ClayAlloyFurnaceBlock(Properties properties) {
         super(properties);
     }

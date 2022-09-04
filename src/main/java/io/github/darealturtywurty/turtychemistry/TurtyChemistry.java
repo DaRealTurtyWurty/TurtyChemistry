@@ -19,6 +19,11 @@ public class TurtyChemistry {
         public @NotNull ItemStack makeIcon() {
             return ItemInit.THULIUM.get().getDefaultInstance();
         }
+
+        @Override
+        public boolean hasSearchBar() {
+            return true;
+        }
     };
 
     public TurtyChemistry() {
