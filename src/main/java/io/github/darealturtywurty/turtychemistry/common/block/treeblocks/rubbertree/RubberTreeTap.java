@@ -1,9 +1,13 @@
 package io.github.darealturtywurty.turtychemistry.common.block.treeblocks.rubbertree;
 
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
+import io.github.darealturtywurty.turtychemistry.core.init.BlockInit;
 import io.github.darealturtywurty.turtychemistry.core.init.ItemInit;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Inventory;
@@ -25,7 +29,7 @@ public final class RubberTreeTap extends Block {
     public static final Component TITLE = Component.literal("Rubber Tree Tap");
 
     public RubberTreeTap(final Properties properties) {
-        super(properties);
+        super(properties.randomTicks());
     }
 
 
@@ -39,10 +43,10 @@ public final class RubberTreeTap extends Block {
                 if (state.getValue(LATEX_AMOUNT) > 0) {
                     playerInventory.setItem(playerInventory.getFreeSlot(), new ItemStack(ItemInit.LATEX.get()));
                     level.setBlockAndUpdate(pos, state.setValue(LATEX_AMOUNT, state.getValue(LATEX_AMOUNT) - 1));
-                    player.displayClientMessage(Component.literal("Latex Left in Tap: " + state.getValue(LATEX_AMOUNT)), false);
+                    player.displayClientMessage(Component.translatable("tap.interract.success %d", state.getValue(LATEX_AMOUNT)), false);
 
                 } else {
-                    player.displayClientMessage(Component.literal("There Is No latex Left"), false);
+                    player.displayClientMessage(Component.literal("tap.interract.fail"), false);
                 }
             } else {
                 player.displayClientMessage(Component.literal("Latex Stored In Tap: " + state.getValue(LATEX_AMOUNT)), false);
@@ -61,6 +65,27 @@ public final class RubberTreeTap extends Block {
         return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
     }
 
+    @Override
+    public void randomTick(final @NotNull BlockState state, final @NotNull ServerLevel level, final @NotNull BlockPos pos, final @NotNull RandomSource source) {
+        super.randomTick(state, level, pos, source);
+        if (!level.isClientSide()) {
+            for (final Direction cachedDirection : Direction.values()) {
+                final BlockState currentCheckedBlockState = level.getBlockState(pos.relative(cachedDirection));
+                if (currentCheckedBlockState.is(BlockInit.RUBBER_TREE_BLOCK_STRIPPED.get())) {
+                    processRubber(currentCheckedBlockState, state, level, pos, pos.relative(cachedDirection));
+                }
+            }
+        }
+    }
+
+    private static void processRubber(final BlockState treeState, final BlockState currentState, final Level level, final BlockPos currentPosition, final BlockPos rubberTreePosition) {
+        final int treeRubberValue = treeState.getValue(RubberTreeBlockStripped.RUBBER_IN_TREE);
+        if (treeRubberValue > 0 && currentState.getValue(LATEX_AMOUNT) != 5) {
+            level.setBlockAndUpdate(currentPosition, currentState.setValue(LATEX_AMOUNT, currentState.getValue(LATEX_AMOUNT) + 1));
+            level.setBlockAndUpdate(rubberTreePosition, treeState.setValue(RubberTreeBlockStripped.RUBBER_IN_TREE, treeState.getValue(RubberTreeBlockStripped.RUBBER_IN_TREE) - 1));
+
+        }
+    }
 
     @Override
     public BlockState getStateForPlacement(final @NotNull BlockPlaceContext ctx) {

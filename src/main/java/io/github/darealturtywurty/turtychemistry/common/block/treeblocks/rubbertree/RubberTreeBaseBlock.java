@@ -12,7 +12,7 @@ public sealed class RubberTreeBaseBlock extends RotatedPillarBlock permits Rubbe
 
 
     public RubberTreeBaseBlock(final Properties property) {
-        super(property.randomTicks());
+        super(property);
     }
 
     @Override
