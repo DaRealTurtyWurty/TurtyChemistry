@@ -1,6 +1,7 @@
 package io.github.darealturtywurty.turtychemistry.core.init;
 
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
+import io.github.darealturtywurty.turtychemistry.common.block.ClayAlloyFurnaceBlock;
 import io.github.darealturtywurty.turtylib.TurtyLib;
 import io.github.darealturtywurty.turtylib.core.multiblock.Multiblock;
 import net.minecraft.world.level.block.Blocks;
@@ -24,6 +25,8 @@ public class MultiblockInit {
                             .where('C', BlockBehaviour.BlockStateBase::isAir)
                             .finish()
                             .controller(0, 0, 0, BlockInit.CLAY_ALLOY_FURNACE.get().defaultBlockState())
+                            .useFunction(($0, level, blockPos, player, $1, $2, $3) -> ClayAlloyFurnaceBlock.use(level,
+                                    blockPos, player))
             )
     );
 }
