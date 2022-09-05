@@ -57,6 +57,18 @@ public class ClayAlloyFurnaceBlock extends Block implements EntityBlock {
         return shape;
     }
 
+    public static InteractionResult use(Level level, BlockPos pos, Player player) {
+        if (!level.isClientSide()) {
+            if (level.getBlockEntity(pos) instanceof ClayAlloyFurnaceBlockEntity blockEntity) {
+                SimpleMenuProvider provider = new SimpleMenuProvider(ClayAlloyFurnaceMenu.getServerMenu(blockEntity,
+                        pos), Component.translatable("container." + TurtyChemistry.MODID + ".clay_alloy_furnace"));
+                NetworkHooks.openScreen((ServerPlayer) player, provider, pos);
+            }
+        }
+
+        return InteractionResult.sidedSuccess(level.isClientSide());
+    }
+
     @Override
     public @NotNull RenderShape getRenderShape(@NotNull BlockState state) {
         return RenderShape.INVISIBLE;
@@ -81,14 +93,6 @@ public class ClayAlloyFurnaceBlock extends Block implements EntityBlock {
 
     @Override
     public @NotNull InteractionResult use(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
-        if (!level.isClientSide()) {
-            if (level.getBlockEntity(pos) instanceof ClayAlloyFurnaceBlockEntity blockEntity) {
-                SimpleMenuProvider provider = new SimpleMenuProvider(ClayAlloyFurnaceMenu.getServerMenu(blockEntity,
-                        pos), Component.translatable("container." + TurtyChemistry.MODID + ".clay_alloy_furnace"));
-                NetworkHooks.openScreen((ServerPlayer) player, provider, pos);
-            }
-        }
-
-        return InteractionResult.sidedSuccess(level.isClientSide());
+        return use(level, pos, player);
     }
 }
