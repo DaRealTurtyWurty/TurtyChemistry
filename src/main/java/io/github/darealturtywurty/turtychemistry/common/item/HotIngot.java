@@ -1,9 +1,7 @@
 package io.github.darealturtywurty.turtychemistry.common.item;
 
-import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.commands.data.EntityDataAccessor;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
@@ -11,75 +9,66 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-public final class HotIngot extends ChemistryItem  {
+public final class HotIngot extends ChemistryItem {
 
     private float temperatureInCelsius;
     private final Item defaultItem;
-    private static final String COMPUND_TAG_ID = "temp";
-    public HotIngot(final Builder builder, final Item baseItem) {
+    private static final String COMPOUND_TAG_ID = "temperature";
+    private static final int COOLING_COEFFICIENT = -4;
+
+    public HotIngot(final Builder builder, final Item nonHeatedUpVersion) {
         super(builder);
-        TurtyChemistry.LOGGER.info(baseItem);
-        defaultItem=baseItem;
+        defaultItem = nonHeatedUpVersion;
     }
 
     @Override
-    public void onCraftedBy(final ItemStack stack, final @NotNull Level level, final @NotNull Player player) {
-        final float randomTemp = ThreadLocalRandom.current().nextFloat(160,300);
-        this.temperatureInCelsius = randomTemp;
-        stack.setTag(writeNBT(randomTemp));
+    public void onCraftedBy(final @NotNull ItemStack stack, final @NotNull Level level, final @NotNull Player player) {
+        if (!level.isClientSide()) {
+            this.temperatureInCelsius = ThreadLocalRandom.current().nextFloat(160, 300);
+            if (stack.getTag() == null) {
+                final CompoundTag initalTagOnCraft = new CompoundTag();
+                stack.setTag(initalTagOnCraft);
+                initalTagOnCraft.putFloat(COMPOUND_TAG_ID, temperatureInCelsius);
+            }
+        }
     }
 
     @Override
     public void appendHoverText(final @NotNull ItemStack stack, @Nullable final Level level, final @NotNull List<Component> texts, final @NotNull TooltipFlag flag) {
-        if(stack.getTag() != null) {
-            texts.add(Component.translatable("hot_ingot.temp.status %s", stack.getTag().getFloat(COMPUND_TAG_ID)));
-        }
-        else
-        {
-            stack.setTag(new CompoundTag());
+        if (stack.getTag() != null) {
+            texts.add(Component.translatable("hot_ingot.temp.status %s", stack.getTag().getFloat(COMPOUND_TAG_ID)));
         }
     }
 
     @Override
     public void inventoryTick(final @NotNull ItemStack stack, final @NotNull Level level, final @NotNull Entity entity, final int slot, final boolean selected) {
-        if(temperatureInCelsius <= 0)
-        {
-            temperatureInCelsius = 300;
-        }
-        TurtyChemistry.LOGGER.info(temperatureInCelsius);
-        if(temperatureInCelsius > 60)
-        {
-            entity.setSecondsOnFire(3);
-            entity.hurt(DamageSource.ON_FIRE,2);
-            temperatureInCelsius--;
+        if (!level.isClientSide()) {
+            CompoundTag temperatureTag = stack.getTag();
+            if (temperatureTag == null) {
+                temperatureTag = new CompoundTag();
+                stack.setTag(temperatureTag);
+            }
+            if (temperatureInCelsius > 35) {
+                entity.setSecondsOnFire(3);
+                entity.hurt(DamageSource.ON_FIRE, 2);
+                final float biomesTemperature = level.getBiome(entity.blockPosition()).get().getBaseTemperature();
+                temperatureInCelsius -= temperatureInCelsius / (temperatureInCelsius + (Math.pow(biomesTemperature, COOLING_COEFFICIENT)));
+                temperatureTag.putFloat(COMPOUND_TAG_ID, temperatureInCelsius);
 
+            } else {
+                if (entity instanceof Player player) {
+                    player.getInventory().setItem(slot, new ItemStack(defaultItem));
+                }
+            }
         }
-        else
-        {
-            ((Player)entity).getInventory().setItem(slot,new ItemStack(defaultItem));
-        }
-        stack.save(writeNBT(temperatureInCelsius));
-        super.inventoryTick(stack,level,entity,slot,selected);
+        super.inventoryTick(stack, level, entity, slot, selected);
     }
 
 
-    public CompoundTag writeNBT(final float temp)
-    {
-        final CompoundTag temperature = new CompoundTag();
-        temperature.putFloat(COMPUND_TAG_ID,temp);
-        return temperature;
-    }
-
-    public float readNBT(final CompoundTag compoundTag)
-    {
-
-        return compoundTag.getFloat(COMPUND_TAG_ID);
-    }
 }
