@@ -19,6 +19,11 @@ public class TurtyChemistry {
         public @NotNull ItemStack makeIcon() {
             return ItemInit.THULIUM.get().getDefaultInstance();
         }
+
+        @Override
+        public boolean hasSearchBar() {
+            return true;
+        }
     };
 
     public TurtyChemistry() {
@@ -27,6 +32,7 @@ public class TurtyChemistry {
         ItemInit.ITEMS.register(bus);
         BlockEntityInit.BLOCK_ENTITIES.register(bus);
         ContainerInit.MENU_TYPES.register(bus);
+        RecipeInit.SERIALIZERS.register(bus);
         MultiblockInit.MULTIBLOCKS.register(bus);
     }
 }
