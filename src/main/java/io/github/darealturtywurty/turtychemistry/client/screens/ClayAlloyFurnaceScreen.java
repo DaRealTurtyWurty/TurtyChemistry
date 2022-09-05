@@ -10,6 +10,7 @@ import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
+import org.jetbrains.annotations.NotNull;
 
 public class ClayAlloyFurnaceScreen extends AbstractContainerScreen<ClayAlloyFurnaceMenu> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(TurtyChemistry.MODID,
@@ -24,38 +25,37 @@ public class ClayAlloyFurnaceScreen extends AbstractContainerScreen<ClayAlloyFur
     }
 
     @Override
-    public void render(PoseStack poseStack, int mouseX, int mouseY, float partialTicks) {
+    public void render(@NotNull PoseStack poseStack, int mouseX, int mouseY, float partialTicks) {
         this.renderBackground(poseStack);
         super.render(poseStack, mouseX, mouseY, partialTicks);
         this.renderTooltip(poseStack, mouseX, mouseY);
     }
 
     @Override
-    protected void renderLabels(PoseStack poseStack, int mouseX, int mouseY) {
+    protected void renderLabels(@NotNull PoseStack poseStack, int mouseX, int mouseY) {
         this.font.draw(poseStack, this.title, 8.0F, 6.0F, 4210752);
         this.font.draw(poseStack, this.playerInventoryTitle, 8.0F, (float) (this.imageHeight - 96 + 2),
                 4210752);
     }
 
     @Override
-    protected void renderBg(PoseStack poseStack, float partialTicks, int mouseX, int mouseY) {
+    protected void renderBg(@NotNull PoseStack poseStack, float partialTicks, int mouseX, int mouseY) {
         RenderSystem.setShader(GameRenderer::getPositionTexColorShader);
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
         RenderSystem.setShaderTexture(0, TEXTURE);
         this.blit(poseStack, this.leftPos, this.topPos, 0, 0, this.imageWidth, this.imageHeight);
 
-        // add progress bar
+        int fuel = -this.menu.getData().get(1) + ClayAlloyFurnaceBlockEntity.MAX_BURN_TIME;
+        if (fuel < ClayAlloyFurnaceBlockEntity.MAX_BURN_TIME) {
+            int scaledFuel = ClayAlloyFurnaceBlockEntity.MAX_BURN_TIME;
+            scaledFuel = fuel * 13 / scaledFuel;
+
+            this.blit(poseStack, this.leftPos + 56, this.topPos + 36 + 12 - scaledFuel, 176, 12 - scaledFuel, 14,
+                    scaledFuel + 1);
+        }
+
         int progress = this.menu.getData().get(0);
         int progressScaled = progress != 0 ? progress * 24 / this.menu.getData().get(2) : 0;
         this.blit(poseStack, this.leftPos + 79, this.topPos + 34, 176, 14, progressScaled + 1, 16);
-
-        // add fuel bar
-        int fuel = this.menu.getData().get(1);
-        if (fuel > 0) {
-            int k = ClayAlloyFurnaceBlockEntity.MAX_BURN_TIME;
-            k = fuel * 13 / k;
-
-            this.blit(poseStack, this.leftPos + 56, this.topPos + 36 + 12 - k, 176, 12 - k, 14, k + 1);
-        }
     }
 }

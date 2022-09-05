@@ -181,5 +181,6 @@
     "block.turtychemistry.rubber_tree_slab": "Rubber Tree Slab",
     "biome.turtychemistry.brine_flats": "Brine Flats",
     "effect.turtychemistry.suffocating": "Suffocating",
-    "fluid.turtychemistry.brine_still": "Brine"
+    "fluid.turtychemistry.brine_still": "Brine",
+    "container.turtychemistry.clay_alloy_furnace": "Clay Alloy Furnace"
 }
