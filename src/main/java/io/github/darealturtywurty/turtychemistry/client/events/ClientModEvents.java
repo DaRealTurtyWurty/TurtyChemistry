@@ -19,12 +19,6 @@ public final class ClientModEvents {
         throw new IllegalStateException("Attempted to construct event bus subscriber!");
     }
 
-
-    @SubscribeEvent
-    public static void clientSetup(FMLClientSetupEvent event) {
-
-    }
-
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(BlockEntityInit.CLAY_ALLOY_FURNACE.get(),
