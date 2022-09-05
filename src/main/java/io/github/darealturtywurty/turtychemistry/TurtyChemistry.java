@@ -1,16 +1,12 @@
 package io.github.darealturtywurty.turtychemistry;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import io.github.darealturtywurty.turtychemistry.core.init.BlockEntityInit;
-import io.github.darealturtywurty.turtychemistry.core.init.BlockInit;
-import io.github.darealturtywurty.turtychemistry.core.init.ContainerInit;
-import io.github.darealturtywurty.turtychemistry.core.init.ItemInit;
+import io.github.darealturtywurty.turtychemistry.core.init.*;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 @Mod(TurtyChemistry.MODID)
@@ -23,6 +19,11 @@ public class TurtyChemistry {
         public @NotNull ItemStack makeIcon() {
             return ItemInit.THULIUM.get().getDefaultInstance();
         }
+
+        @Override
+        public boolean hasSearchBar() {
+            return true;
+        }
     };
 
     public TurtyChemistry() {
@@ -31,5 +32,7 @@ public class TurtyChemistry {
         ItemInit.ITEMS.register(bus);
         BlockEntityInit.BLOCK_ENTITIES.register(bus);
         ContainerInit.MENU_TYPES.register(bus);
+        RecipeInit.SERIALIZERS.register(bus);
+        MultiblockInit.MULTIBLOCKS.register(bus);
     }
 }
