@@ -138,6 +138,9 @@
     "item.turtychemistry.balloon": "Balloon",
     "item.turtychemistry.brine_bucket": "Brine Bucket",
     "item.turtychemistry.test_tube": "Test Tube",
+    "item.turtychemistry.latex": "Latex",
+    "item.turtychemistry.rubber": "Rubber",
+    
     "itemGroup.turtychemistry": "Turty's Chemistry",
     "block.turtychemistry.brine": "Brine",
     "block.turtychemistry.brine_block": "Brine Block",
@@ -179,6 +182,7 @@
     "block.turtychemistry.rubber_tree_leaves": "Rubber Tree Leaves",
     "block.turtychemistry.rubber_tree_planks": "Rubber Tree Planks",
     "block.turtychemistry.rubber_tree_slab": "Rubber Tree Slab",
+    "block.turtychemistry.rubber_tree_tap": "Rubber Tree Tap",
     "biome.turtychemistry.brine_flats": "Brine Flats",
     "effect.turtychemistry.suffocating": "Suffocating",
     "fluid.turtychemistry.brine_still": "Brine",

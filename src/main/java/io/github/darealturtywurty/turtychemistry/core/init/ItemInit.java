@@ -293,6 +293,11 @@ public class ItemInit extends AbstractInit {
     public static final RegistryObject<ChemistryItem> TEST_TUBE = ITEMS.register("test_tube",
             () -> new ChemistryItem(makeItemProperties()));
 
+    public static final RegistryObject<ChemistryItem> LATEX = ITEMS.register("latex",
+            () -> new ChemistryItem(makeItemProperties()));
+    public static final RegistryObject<ChemistryItem> RUBBER = ITEMS.register("rubber",
+            () -> new ChemistryItem(makeItemProperties()));
+
     public static ChemistryItem.Builder makeItemProperties() {
         return new ChemistryItem.Builder(new ChemistryItem.Properties().tab(TurtyChemistry.TAB));
     }
