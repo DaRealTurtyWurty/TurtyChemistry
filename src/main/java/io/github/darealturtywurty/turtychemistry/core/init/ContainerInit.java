@@ -10,4 +10,6 @@ public final class ContainerInit extends AbstractInit {
 
     public static final DeferredRegister<MenuType<?>> MENU_TYPES = DeferredRegister
             .create(ForgeRegistries.MENU_TYPES, TurtyChemistry.MODID);
+
+
 }

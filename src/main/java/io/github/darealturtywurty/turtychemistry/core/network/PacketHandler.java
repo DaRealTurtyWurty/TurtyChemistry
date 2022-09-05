@@ -16,5 +16,6 @@ public final class PacketHandler extends AbstractInit {
     public static void init() {
         int index = 0;
         TurtyChemistry.LOGGER.info("Registered {} packets!", index);
+
     }
 }

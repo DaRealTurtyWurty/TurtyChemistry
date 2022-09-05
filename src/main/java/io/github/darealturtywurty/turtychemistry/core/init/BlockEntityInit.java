@@ -10,8 +10,10 @@ import net.minecraftforge.registries.RegistryObject;
 
 public final class BlockEntityInit extends AbstractInit {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister
-        .create(ForgeRegistries.BLOCK_ENTITY_TYPES, TurtyChemistry.MODID);
+            .create(ForgeRegistries.BLOCK_ENTITY_TYPES, TurtyChemistry.MODID);
 
     public static final RegistryObject<BlockEntityType<ClayAlloyFurnaceBlockEntity>> CLAY_ALLOY_FURNACE = BLOCK_ENTITIES.register("clay_alloy_furnace",
             () -> BlockEntityType.Builder.of(ClayAlloyFurnaceBlockEntity::new, BlockInit.CLAY_ALLOY_FURNACE.get()).build(null));
+
+
 }

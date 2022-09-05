@@ -16,14 +16,14 @@ public final class RubberTreeBlock extends RubberTreeBaseBlock {
     public RubberTreeBlock(final Properties blockProperty) {
         super(blockProperty);
 
-        this.registerDefaultState(this.getStateDefinition().any().setValue(HAS_RUBBER, Boolean.TRUE).setValue(RUBBER_IN_TREE, 5));
+
     }
 
     @Override
     public @Nullable BlockState getToolModifiedState(final BlockState state, final UseOnContext context, final ToolAction toolAction, final boolean simulate) {
         if (toolAction == ToolActions.AXE_STRIP) {
             return BlockInit.RUBBER_TREE_BLOCK_STRIPPED.get().defaultBlockState().setValue(RUBBER_IN_TREE, state.getValue(RUBBER_IN_TREE))
-                    .setValue(HAS_RUBBER, state.getValue(HAS_RUBBER)).setValue(AXIS, state.getValue(AXIS));
+                    .setValue(AXIS, state.getValue(AXIS));
         }
         return super.getToolModifiedState(state, context, toolAction, simulate);
     }
