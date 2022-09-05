@@ -69,14 +69,6 @@ repositories {
     flatDir {
         dir 'libs'
     }
-    maven {
-        name = "Progwml6 maven"
-        url = "https://dvs1.progwml6.com/files/maven/"
-    }
-    maven {
-        name = "ModMaven"
-        url = "https://modmaven.dev"
-    }
 }
 
 dependencies {
@@ -84,10 +76,6 @@ dependencies {
     annotationProcessor 'org.spongepowered:mixin:0.8.3:processor'
     
     implementation fg.deobf("io.github.darealturtywurty.turtylib:turtylib-1.0:0.1");
-
-    compileOnly(fg.deobf("mezz.jei:jei-1.19.2-common-api:11.3.0.260"))
-    compileOnly(fg.deobf("mezz.jei:jei-1.19.2-forge-api:11.3.0.260"))
-    runtimeOnly(fg.deobf("mezz.jei:jei-1.19.2-forge:11.3.0.260"))
 }
 
 jar {

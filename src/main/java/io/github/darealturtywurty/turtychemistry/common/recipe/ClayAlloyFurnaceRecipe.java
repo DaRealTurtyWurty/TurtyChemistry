@@ -27,11 +27,6 @@ public class ClayAlloyFurnaceRecipe implements Recipe<SimpleContainer> {
     }
 
     @Override
-    public NonNullList<Ingredient> getIngredients() {
-        return recipeItems;
-    }
-
-    @Override
     public boolean matches(SimpleContainer container, Level level) {
         if(level.isClientSide()) {
             return false;
