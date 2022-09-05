@@ -1,8 +1,17 @@
 package io.github.darealturtywurty.turtychemistry.common.block;
 
+import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
+import io.github.darealturtywurty.turtychemistry.common.block.entity.ClayAlloyFurnaceBlockEntity;
+import io.github.darealturtywurty.turtychemistry.common.menus.ClayAlloyFurnaceMenu;
 import io.github.darealturtywurty.turtychemistry.core.init.BlockEntityInit;
 import io.github.darealturtywurty.turtylib.common.blockentity.TickableBlockEntity;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.SimpleMenuProvider;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -12,10 +21,12 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -66,5 +77,18 @@ public class ClayAlloyFurnaceBlock extends Block implements EntityBlock {
     @Override
     public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext ctx) {
         return SHAPE;
+    }
+
+    @Override
+    public @NotNull InteractionResult use(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
+        if (!level.isClientSide()) {
+            if (level.getBlockEntity(pos) instanceof ClayAlloyFurnaceBlockEntity blockEntity) {
+                SimpleMenuProvider provider = new SimpleMenuProvider(ClayAlloyFurnaceMenu.getServerMenu(blockEntity,
+                        pos), Component.translatable("container." + TurtyChemistry.MODID + ".clay_alloy_furnace"));
+                NetworkHooks.openScreen((ServerPlayer) player, provider, pos);
+            }
+        }
+
+        return InteractionResult.sidedSuccess(level.isClientSide());
     }
 }
