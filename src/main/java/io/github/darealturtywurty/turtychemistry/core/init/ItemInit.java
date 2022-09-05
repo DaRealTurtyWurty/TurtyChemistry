@@ -2,6 +2,7 @@ package io.github.darealturtywurty.turtychemistry.core.init;
 
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
 import io.github.darealturtywurty.turtychemistry.common.item.ChemistryItem;
+import io.github.darealturtywurty.turtychemistry.common.item.HotIngot;
 import io.github.darealturtywurty.turtylib.core.init.AbstractInit;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
@@ -297,7 +298,8 @@ public class ItemInit extends AbstractInit {
             () -> new ChemistryItem(makeItemProperties()));
     public static final RegistryObject<ChemistryItem> RUBBER = ITEMS.register("rubber",
             () -> new ChemistryItem(makeItemProperties()));
-
+    public static final RegistryObject<HotIngot> TEST = ITEMS.register("test",
+            () -> new HotIngot(makeItemProperties(),RUBBER.get()));
     public static ChemistryItem.Builder makeItemProperties() {
         return new ChemistryItem.Builder(new ChemistryItem.Properties().tab(TurtyChemistry.TAB));
     }

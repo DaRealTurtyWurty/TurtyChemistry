@@ -1,6 +1,5 @@
 package io.github.darealturtywurty.turtychemistry.common.block.treeblocks.rubbertree;
 
-import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
 import io.github.darealturtywurty.turtychemistry.core.init.BlockInit;
 import io.github.darealturtywurty.turtychemistry.core.init.ItemInit;
 import net.minecraft.core.BlockPos;
@@ -26,7 +25,6 @@ import org.jetbrains.annotations.NotNull;
 public final class RubberTreeTap extends Block {
 
     public static final IntegerProperty LATEX_AMOUNT = IntegerProperty.create("latex_amount", 0, 5);
-    public static final Component TITLE = Component.literal("Rubber Tree Tap");
 
     public RubberTreeTap(final Properties properties) {
         super(properties.randomTicks());
