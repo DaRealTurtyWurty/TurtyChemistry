@@ -63,7 +63,7 @@ public final class HotIngot extends ChemistryItem {
         super.inventoryTick(stack, level, entity, slot, selected);
     }
 
-    public boolean containsTemperatureTag(final @NotNull ItemStack stack) {
+    public static boolean containsTemperatureTag(final @NotNull ItemStack stack) {
         if (stack.getTag() == null) {
             return false;
         }
