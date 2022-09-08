@@ -1,17 +1,13 @@
 package io.github.darealturtywurty.turtychemistry.common.item;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.components.TooltipAccessor;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.client.gui.overlay.GuiOverlayManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -43,7 +39,7 @@ public final class HotIngot extends ChemistryItem {
     @Override
     public void appendHoverText(final @NotNull ItemStack stack, @Nullable final Level level, final @NotNull List<Component> texts, final @NotNull TooltipFlag flag) {
         if (stack.getTag() != null) {
-            texts.add(Component.translatable("hot_ingot.temp.status" ,stack.getTag().getFloat(COMPOUND_TAG_ID)));
+            texts.add(Component.translatable("hot_ingot.temp.status", stack.getTag().getFloat(COMPOUND_TAG_ID)));
         }
     }
 
