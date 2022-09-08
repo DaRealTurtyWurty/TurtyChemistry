@@ -1,13 +1,17 @@
 package io.github.darealturtywurty.turtychemistry.common.item;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.components.TooltipAccessor;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.client.gui.overlay.GuiOverlayManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -29,9 +33,9 @@ public final class HotIngot extends ChemistryItem {
     public void onCraftedBy(final @NotNull ItemStack stack, final @NotNull Level level, final @NotNull Player player) {
         if (!level.isClientSide()) {
             if (stack.getTag() == null) {
-                final CompoundTag initalTagOnCraft = new CompoundTag();
-                stack.setTag(initalTagOnCraft);
-                initalTagOnCraft.putFloat(COMPOUND_TAG_ID, ThreadLocalRandom.current().nextFloat(160, 300));
+                final CompoundTag initialTagOnCraft = new CompoundTag();
+                stack.setTag(initialTagOnCraft);
+                initialTagOnCraft.putFloat(COMPOUND_TAG_ID, ThreadLocalRandom.current().nextFloat(160, 300));
             }
         }
     }
@@ -39,7 +43,7 @@ public final class HotIngot extends ChemistryItem {
     @Override
     public void appendHoverText(final @NotNull ItemStack stack, @Nullable final Level level, final @NotNull List<Component> texts, final @NotNull TooltipFlag flag) {
         if (stack.getTag() != null) {
-            texts.add(Component.translatable("hot_ingot.temp.status %s", stack.getTag().getFloat(COMPOUND_TAG_ID)));
+            texts.add(Component.translatable("hot_ingot.temp.status" ,stack.getTag().getFloat(COMPOUND_TAG_ID)));
         }
     }
 
@@ -57,7 +61,6 @@ public final class HotIngot extends ChemistryItem {
                 final float biomesTemperature = level.getBiome(entity.blockPosition()).get().getBaseTemperature();
                 temperatureInCelsius -= temperatureInCelsius / (temperatureInCelsius + (Math.pow(biomesTemperature, COOLING_COEFFICIENT)));
                 temperatureNBTTag.putFloat(COMPOUND_TAG_ID, temperatureInCelsius);
-
             }
         }
         super.inventoryTick(stack, level, entity, slot, selected);
