@@ -17,7 +17,7 @@ import java.util.Objects;
 
 @JeiPlugin
 public class JEITurtyChemistryPlugin implements IModPlugin {
-    public static RecipeType<ClayAlloyFurnaceRecipe> CLAY_ALLOY_FURNACE_TYPE =
+    public static final RecipeType<ClayAlloyFurnaceRecipe> CLAY_ALLOY_FURNACE_TYPE =
             new RecipeType<>(ClayAlloyFurnaceRecipeCategory.UID, ClayAlloyFurnaceRecipe.class);
 
     @Override
