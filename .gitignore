@@ -20,6 +20,9 @@ build
 
 # other
 run
+run_client
+run_server
+run_data
 
 # Files from Forge MDK
 forge*changelog.txt

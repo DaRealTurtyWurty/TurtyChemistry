@@ -8,7 +8,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ItemInit extends AbstractInit {
+public final class ItemInit extends AbstractInit {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,
             TurtyChemistry.MODID);
     public static final RegistryObject<ChemistryItem> REFINARY_GAS = ITEMS.register("refinary_gas",
