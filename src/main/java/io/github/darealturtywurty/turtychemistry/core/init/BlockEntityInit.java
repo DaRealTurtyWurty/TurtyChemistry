@@ -4,6 +4,8 @@ import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
 import io.github.darealturtywurty.turtychemistry.common.block.entity.AnvilBlockEntity;
 import io.github.darealturtywurty.turtychemistry.common.block.entity.ClayAlloyFurnaceBlockEntity;
 import io.github.darealturtywurty.turtylib.core.init.AbstractInit;
+import net.minecraft.world.entity.item.FallingBlockEntity;
+import net.minecraft.world.level.block.AnvilBlock;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
