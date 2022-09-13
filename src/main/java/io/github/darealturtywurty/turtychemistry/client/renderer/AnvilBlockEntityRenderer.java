@@ -3,7 +3,7 @@ package io.github.darealturtywurty.turtychemistry.client.renderer;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Quaternion;
 import com.mojang.math.Vector3f;
-import io.github.darealturtywurty.turtychemistry.common.block.entity.AlternateAnvilMechanicBlockEntity;
+import io.github.darealturtywurty.turtychemistry.common.block.entity.AnvilBlockEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
@@ -12,17 +12,17 @@ import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.world.level.block.AnvilBlock;
 import org.jetbrains.annotations.NotNull;
 
-public final class AlternateAnvilMechanicBlockEntityRenderer implements BlockEntityRenderer<AlternateAnvilMechanicBlockEntity> {
+public final class AnvilBlockEntityRenderer implements BlockEntityRenderer<AnvilBlockEntity> {
 
 
     private final ItemRenderer renderContext;
 
-    public AlternateAnvilMechanicBlockEntityRenderer(BlockEntityRendererProvider.Context ctx) {
+    public AnvilBlockEntityRenderer(BlockEntityRendererProvider.Context ctx) {
         this.renderContext = ctx.getItemRenderer();
     }
 
     @Override
-    public void render(@NotNull AlternateAnvilMechanicBlockEntity pBlockEntity, float pPartialTick, @NotNull PoseStack pPoseStack, @NotNull MultiBufferSource pBufferSource, int pPackedLight, int pPackedOverlay) {
+    public void render(@NotNull AnvilBlockEntity pBlockEntity, float pPartialTick, @NotNull PoseStack pPoseStack, @NotNull MultiBufferSource pBufferSource, int pPackedLight, int pPackedOverlay) {
         pPoseStack.pushPose();
         pPoseStack.translate(0.5D, 1, 0.5D);
 

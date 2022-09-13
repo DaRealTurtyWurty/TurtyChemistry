@@ -7,11 +7,11 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 
-public final class AlternateAnvilMechanicBlockEntity extends ModularBlockEntity {
+public final class AnvilBlockEntity extends ModularBlockEntity {
     public final InventoryModule inventoryModule;
 
-    public AlternateAnvilMechanicBlockEntity(final BlockPos pos, final BlockState state) {
-        super(BlockEntityInit.ALTERNATE_ANVIL.get(), pos, state);
+    public AnvilBlockEntity(final BlockPos pos, final BlockState state) {
+        super(BlockEntityInit.ANVIL_BLOCK_ENTITY.get(), pos, state);
         this.inventoryModule = this.addModule(new InventoryModule(this, 1));
 
     }
