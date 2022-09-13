@@ -1,6 +1,7 @@
 package io.github.darealturtywurty.turtychemistry.core.init;
 
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
+import io.github.darealturtywurty.turtychemistry.common.item.BasicHammer;
 import io.github.darealturtywurty.turtychemistry.common.item.ChemistryItem;
 import io.github.darealturtywurty.turtylib.core.init.AbstractInit;
 import net.minecraft.world.item.Item;
@@ -55,6 +56,8 @@ public final class ItemInit extends AbstractInit {
             () -> new ChemistryItem(makeItemProperties()));
     public static final RegistryObject<ChemistryItem> RUBBER = ITEMS.register("rubber",
             () -> new ChemistryItem(makeItemProperties()));
+    public static final RegistryObject<ChemistryItem> BASIC_HAMMER = ITEMS.register("basic_hammer",
+            () -> new BasicHammer(makeItemProperties()));
 
     static {
         ItemInit.Elements.register();

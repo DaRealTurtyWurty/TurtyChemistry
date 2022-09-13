@@ -25,21 +25,21 @@ public class ClayAlloyFurnaceRecipe implements Recipe<Container> {
     private final int processTime;
 
     public ClayAlloyFurnaceRecipe(ResourceLocation id, ItemStack output, NonNullList<Ingredient> recipeItems,
-            int processTime) {
+                                  int processTime) {
         this.id = id;
         this.output = output;
         this.recipeItems = recipeItems;
         this.processTime = processTime;
     }
 
-	@Override
+    @Override
     public NonNullList<Ingredient> getIngredients() {
         return this.recipeItems;
     }
 
     @Override
     public boolean matches(Container container, Level level) {
-        if (level.isClientSide()) {
+        if (level.isClientSide())
             return false;
 
         return recipeItems.get(0).test(container.getItem(1)) && recipeItems.get(1)

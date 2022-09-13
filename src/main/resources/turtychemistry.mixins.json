@@ -1,10 +1,10 @@
 {
 	"required": true,
-	"package": "io.github.darealturtywurty.turtychemistry.mixins",
+	"package": "io.github.darealturtywurty.turtychemistry.core.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"refmap": "turtychemistry.refmap.json",
 	"mixins": [
-    	
+		"MixinHooks$AnvilMixin"
 	],
 	"server": [],
 	"client": [],
