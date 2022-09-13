@@ -28,6 +28,8 @@ minecraft {
 
     runs {
         client {
+            properties 'mixin.env.remapRefMap': 'true'
+            property 'mixin.env.refMapRemappingFile', "${project.projectDir}/build/createSrgToMcp/output.srg"
             workingDirectory project.file('run_client')
             arg "-mixin.config=" + archivesBaseName + ".mixins.json"
 
@@ -39,6 +41,8 @@ minecraft {
         }
 
         server {
+            properties 'mixin.env.remapRefMap': 'true'
+            property 'mixin.env.refMapRemappingFile', "${project.projectDir}/build/createSrgToMcp/output.srg"
             workingDirectory project.file('run_server')
             arg "-mixin.config=" + archivesBaseName + ".mixins.json"
 
