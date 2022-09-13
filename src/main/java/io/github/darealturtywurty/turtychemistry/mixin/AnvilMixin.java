@@ -36,23 +36,23 @@ public final class AnvilMixin extends FallingBlock implements EntityBlock {
     @Override
     public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, boolean willHarvest, FluidState fluid) {
 
-        if (level.getBlockEntity(pos) instanceof AnvilBlockEntity anvilMechanicBlock) {
+        if (level.getBlockEntity(pos) instanceof AnvilBlockEntity anvilBlockEntity) {
             level.addFreshEntity(
-                    new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), anvilMechanicBlock.getItem()));
+                    new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), anvilBlockEntity.getItem()));
         }
         return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
     }
 
-    @Inject(method = "use", at = @At("HEAD"), remap = false, cancellable = true)
+    @Inject(method = "use", at = @At("HEAD"), cancellable = true)
     public void turtychemistry$addIngotToAnvil(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit, CallbackInfoReturnable<InteractionResult> cir) {
         final Inventory playerInventory = pPlayer.getInventory();
-        if (pPlayer.isCrouching() && pLevel.getBlockEntity(pPos) instanceof AnvilBlockEntity alternateAnvil) {
+        if (pPlayer.isCrouching() && pLevel.getBlockEntity(pPos) instanceof AnvilBlockEntity anvilBlockEntity) {
 
-            if (alternateAnvil.getItem().isEmpty()) {
+            if (anvilBlockEntity.getItem().isEmpty()) {
                 for (ItemStack stack : playerInventory.items) {
                     if ((stack.is(Items.IRON_INGOT) || stack.is(TurtyTags.TURTY_ITEM_TAG_KEY))) {
-                        alternateAnvil.setStackInSlot(stack.split(1));
-                        alternateAnvil.setChanged();
+                        anvilBlockEntity.setStackInSlot(stack.split(1));
+                        anvilBlockEntity.setChanged();
                         cir.setReturnValue(InteractionResult.CONSUME);
                         break;
                     }
@@ -61,7 +61,7 @@ public final class AnvilMixin extends FallingBlock implements EntityBlock {
 
             } else {
 
-                pPlayer.setItemInHand(pHand, alternateAnvil.inventoryModule.getCapability().extractItem(0, 1, false));
+                pPlayer.setItemInHand(pHand, anvilBlockEntity.inventoryModule.getCapability().extractItem(0, 1, false));
                 cir.setReturnValue(InteractionResult.CONSUME);
             }
 
