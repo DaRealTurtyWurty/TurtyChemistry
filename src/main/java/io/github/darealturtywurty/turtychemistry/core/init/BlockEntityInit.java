@@ -11,15 +11,14 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public final class BlockEntityInit extends AbstractInit {
-    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister
-            .create(ForgeRegistries.BLOCK_ENTITY_TYPES, TurtyChemistry.MODID);
+    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(
+            ForgeRegistries.BLOCK_ENTITY_TYPES, TurtyChemistry.MODID);
 
     public static final RegistryObject<BlockEntityType<ClayAlloyFurnaceBlockEntity>> CLAY_ALLOY_FURNACE = BLOCK_ENTITIES.register(
             "clay_alloy_furnace",
             () -> BlockEntityType.Builder.of(ClayAlloyFurnaceBlockEntity::new, BlockInit.CLAY_ALLOY_FURNACE.get())
                     .build(null));
-    public static final RegistryObject<BlockEntityType<AnvilBlockEntity>> ANVIL = BLOCK_ENTITIES.register(
-            "alternate_anvil",
+    public static final RegistryObject<BlockEntityType<AnvilBlockEntity>> ANVIL = BLOCK_ENTITIES.register("anvil",
             () -> BlockEntityType.Builder.of(AnvilBlockEntity::new, Blocks.ANVIL, Blocks.CHIPPED_ANVIL,
                     Blocks.DAMAGED_ANVIL).build(null));
 
