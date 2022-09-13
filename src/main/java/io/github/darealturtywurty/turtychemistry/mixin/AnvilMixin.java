@@ -1,4 +1,4 @@
-package io.github.darealturtywurty.turtychemistry.core.mixin;
+package io.github.darealturtywurty.turtychemistry.mixin;
 
 import io.github.darealturtywurty.turtychemistry.common.TurtyTags;
 import io.github.darealturtywurty.turtychemistry.common.block.entity.AnvilBlockEntity;
@@ -6,7 +6,6 @@ import io.github.darealturtywurty.turtychemistry.core.init.BlockEntityInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -26,7 +25,6 @@ import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(AnvilBlock.class)
@@ -45,7 +43,7 @@ public final class AnvilMixin extends FallingBlock implements EntityBlock {
     }
 
     @Inject(method = "use", at = @At("HEAD"), remap = false, cancellable = true)
-    public void addIngotToAnvil(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit, CallbackInfoReturnable<InteractionResult> cir) {
+    public void turtychemistry$addIngotToAnvil(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit, CallbackInfoReturnable<InteractionResult> cir) {
         final Inventory playerInventory = pPlayer.getInventory();
         if (pPlayer.isCrouching() && pLevel.getBlockEntity(pPos) instanceof AnvilBlockEntity alternateAnvil) {
 
@@ -74,7 +72,7 @@ public final class AnvilMixin extends FallingBlock implements EntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(@NotNull BlockPos pPos, @NotNull BlockState pState) {
-        return BlockEntityInit.ANVIL_BLOCK_ENTITY.get().create(pPos, pState);
+        return BlockEntityInit.ANVIL.get().create(pPos, pState);
     }
 
 }

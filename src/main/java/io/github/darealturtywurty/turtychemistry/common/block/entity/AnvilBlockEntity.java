@@ -11,7 +11,7 @@ public final class AnvilBlockEntity extends ModularBlockEntity {
     public final InventoryModule inventoryModule;
 
     public AnvilBlockEntity(final BlockPos pos, final BlockState state) {
-        super(BlockEntityInit.ANVIL_BLOCK_ENTITY.get(), pos, state);
+        super(BlockEntityInit.ANVIL.get(), pos, state);
         this.inventoryModule = this.addModule(new InventoryModule(this, 1));
 
     }

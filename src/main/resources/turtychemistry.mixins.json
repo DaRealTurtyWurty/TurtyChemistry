@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "io.github.darealturtywurty.turtychemistry.core.mixin",
+	"package": "io.github.darealturtywurty.turtychemistry.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"refmap": "turtychemistry.refmap.json",
 	"mixins": [

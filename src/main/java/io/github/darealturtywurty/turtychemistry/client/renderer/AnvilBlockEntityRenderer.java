@@ -39,14 +39,7 @@ public final class AnvilBlockEntityRenderer implements BlockEntityRenderer<Anvil
         }
 
 
-        renderContext.renderStatic(
-                pBlockEntity.inventoryModule.getCapability().getStackInSlot(0),
-                ItemTransforms.TransformType.FIXED,
-                pPackedLight,
-                pPackedOverlay,
-                pPoseStack,
-                pBufferSource,
-                (int) pBlockEntity.getBlockPos().above().asLong());
+        renderContext.renderStatic(pBlockEntity.inventoryModule.getCapability().getStackInSlot(0), ItemTransforms.TransformType.FIXED, pPackedLight, pPackedOverlay, pPoseStack, pBufferSource, (int) pBlockEntity.getBlockPos().above().asLong());
 
         pPoseStack.popPose();
 

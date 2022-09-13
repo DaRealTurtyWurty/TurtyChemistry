@@ -27,8 +27,7 @@ public final class ClientModEvents {
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(BlockEntityInit.CLAY_ALLOY_FURNACE.get(),
                 ClayAlloyFurnaceBlockEntityRenderer::new);
-        event.registerBlockEntityRenderer(BlockEntityInit.ANVIL_BLOCK_ENTITY.get(),
-                AnvilBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(BlockEntityInit.ANVIL.get(), AnvilBlockEntityRenderer::new);
     }
 
     @SubscribeEvent

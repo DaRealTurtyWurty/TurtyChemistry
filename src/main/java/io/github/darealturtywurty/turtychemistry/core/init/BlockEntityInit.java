@@ -4,8 +4,6 @@ import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
 import io.github.darealturtywurty.turtychemistry.common.block.entity.AnvilBlockEntity;
 import io.github.darealturtywurty.turtychemistry.common.block.entity.ClayAlloyFurnaceBlockEntity;
 import io.github.darealturtywurty.turtylib.core.init.AbstractInit;
-import net.minecraft.world.entity.item.FallingBlockEntity;
-import net.minecraft.world.level.block.AnvilBlock;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
@@ -18,7 +16,7 @@ public final class BlockEntityInit extends AbstractInit {
 
     public static final RegistryObject<BlockEntityType<ClayAlloyFurnaceBlockEntity>> CLAY_ALLOY_FURNACE = BLOCK_ENTITIES.register("clay_alloy_furnace",
             () -> BlockEntityType.Builder.of(ClayAlloyFurnaceBlockEntity::new, BlockInit.CLAY_ALLOY_FURNACE.get()).build(null));
-    public static final RegistryObject<BlockEntityType<AnvilBlockEntity>> ANVIL_BLOCK_ENTITY = BLOCK_ENTITIES.register("alternate_anvil",
+    public static final RegistryObject<BlockEntityType<AnvilBlockEntity>> ANVIL = BLOCK_ENTITIES.register("alternate_anvil",
             () -> BlockEntityType.Builder.of(AnvilBlockEntity::new, Blocks.ANVIL,Blocks.CHIPPED_ANVIL,Blocks.DAMAGED_ANVIL).build(null));
 
 }
