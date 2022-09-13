@@ -37,7 +37,8 @@ public final class AnvilMixin extends FallingBlock implements EntityBlock {
     public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, boolean willHarvest, FluidState fluid) {
 
         if (level.getBlockEntity(pos) instanceof AnvilBlockEntity anvilMechanicBlock) {
-            level.addFreshEntity(new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), anvilMechanicBlock.getItem()));
+            level.addFreshEntity(
+                    new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), anvilMechanicBlock.getItem()));
         }
         return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
     }

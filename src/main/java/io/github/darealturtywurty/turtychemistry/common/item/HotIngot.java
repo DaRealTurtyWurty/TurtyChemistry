@@ -55,7 +55,8 @@ public final class HotIngot extends ChemistryItem {
                 entity.setSecondsOnFire(3);
                 entity.hurt(DamageSource.ON_FIRE, 2);
                 final float biomesTemperature = level.getBiome(entity.blockPosition()).get().getBaseTemperature();
-                temperatureInCelsius -= temperatureInCelsius / (temperatureInCelsius + (Math.pow(biomesTemperature, COOLING_COEFFICIENT)));
+                temperatureInCelsius -= temperatureInCelsius / (temperatureInCelsius + (Math.pow(biomesTemperature,
+                        COOLING_COEFFICIENT)));
                 temperatureNBTTag.putFloat(COMPOUND_TAG_ID, temperatureInCelsius);
             }
         }
