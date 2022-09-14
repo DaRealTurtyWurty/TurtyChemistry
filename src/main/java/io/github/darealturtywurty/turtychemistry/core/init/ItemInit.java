@@ -312,11 +312,8 @@ public final class ItemInit extends AbstractInit {
         }
     }
 
-    public static final ImmutableMap<RegistryObject<? extends Item>, RegistryObject<? extends Item>> INGOT_SHEET_MAP = ImmutableMap.of(
-            Ingots.ACTINIUM_INGOT, Sheets.ACTINIUM_SHEET
-
-
-    );
+    public static final ImmutableMap<RegistryObject<? extends Item>, RegistryObject<? extends Item>> INGOT_SHEET_MAP = ImmutableMap.<RegistryObject<? extends Item>, RegistryObject<? extends Item>>builder()
+            .put(Ingots.ACTINIUM_INGOT, Sheets.ACTINIUM_SHEET).build();
 
     public static final class Sheets {
         public static final RegistryObject<ChemistryItem> IRON_SHEET = ITEMS.register("iron_sheet",
