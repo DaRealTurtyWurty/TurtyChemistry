@@ -47,7 +47,8 @@ public final class AnvilMixin extends FallingBlock implements EntityBlock {
         final ItemStack stack = pPlayer.getItemInHand(pHand);
         if (pPlayer.isCrouching() && pLevel.getBlockEntity(pPos) instanceof AnvilBlockEntity anvilBlockEntity) {
             if (anvilBlockEntity.getItem().isEmpty()) {
-                if (stack.is(Items.IRON_INGOT) || stack.is(TurtyTags.TURTY_ITEM_TAG_KEY) || stack.is(Items.COPPER_INGOT)) {
+                if (stack.is(Items.IRON_INGOT) || stack.is(TurtyTags.TURTY_ITEM_TAG_KEY) || stack.is(
+                        Items.COPPER_INGOT)) {
                     anvilBlockEntity.setStackInSlot(stack.split(1));
                     anvilBlockEntity.setChanged();
                     cir.setReturnValue(InteractionResult.CONSUME);
