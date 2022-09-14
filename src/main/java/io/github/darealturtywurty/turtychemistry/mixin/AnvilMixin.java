@@ -57,16 +57,12 @@ public final class AnvilMixin extends FallingBlock implements EntityBlock {
                 playerInventory.add(anvilBlockEntity.inventoryModule.getCapability().extractItem(0, 1, false));
                 cir.setReturnValue(InteractionResult.CONSUME);
             }
-
-
         }
     }
-
 
     @Nullable
     @Override
     public BlockEntity newBlockEntity(@NotNull BlockPos pPos, @NotNull BlockState pState) {
         return BlockEntityInit.ANVIL.get().create(pPos, pState);
     }
-
 }
