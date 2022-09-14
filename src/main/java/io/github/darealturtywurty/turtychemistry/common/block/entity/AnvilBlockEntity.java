@@ -25,6 +25,9 @@ public final class AnvilBlockEntity extends ModularBlockEntity {
         if (getItem().is(Items.IRON_INGOT)) {
             setStackInSlot(new ItemStack(ItemInit.Sheets.IRON_SHEET.get()));
             return;
+        } else if (getItem().is(Items.COPPER_INGOT)) {
+            setStackInSlot(new ItemStack(ItemInit.Sheets.COPPER_SHEET.get()));
+            return;
         }
         ItemInit.INGOT_SHEET_MAP.entrySet().parallelStream().forEach(registryObjectRegistryObjectEntry -> {
             if (getItem().is(registryObjectRegistryObjectEntry.getKey().get())) {

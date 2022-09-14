@@ -59,6 +59,8 @@ public final class ItemInit extends AbstractInit {
             () -> new ChemistryItem(makeItemProperties()));
     public static final RegistryObject<ChemistryItem> BASIC_HAMMER = ITEMS.register("basic_hammer",
             () -> new BasicHammer(makeItemProperties()));
+    public static final ImmutableMap<RegistryObject<? extends Item>, RegistryObject<? extends Item>> INGOT_SHEET_MAP = ImmutableMap.<RegistryObject<? extends Item>, RegistryObject<? extends Item>>builder()
+            .put(Ingots.ALUMINUM_INGOT, Sheets.ALUMINUM_SHEET).build();
 
     static {
         ItemInit.Elements.register();
@@ -312,13 +314,14 @@ public final class ItemInit extends AbstractInit {
         }
     }
 
-    public static final ImmutableMap<RegistryObject<? extends Item>, RegistryObject<? extends Item>> INGOT_SHEET_MAP = ImmutableMap.<RegistryObject<? extends Item>, RegistryObject<? extends Item>>builder()
-            .put(Ingots.ACTINIUM_INGOT, Sheets.ACTINIUM_SHEET).build();
-    //TODO:Add the rest of the sheets
     public static final class Sheets {
         public static final RegistryObject<ChemistryItem> IRON_SHEET = ITEMS.register("iron_sheet",
                 () -> new ChemistryItem(makeItemProperties()));
-        public static final RegistryObject<ChemistryItem> ACTINIUM_SHEET = ITEMS.register("actinium_sheet",
+        public static final RegistryObject<ChemistryItem> ALUMINUM_SHEET = ITEMS.register("aluminum_sheet",
+                () -> new ChemistryItem(makeItemProperties()));
+        public static final RegistryObject<ChemistryItem> COPPER_SHEET = ITEMS.register("copper_sheet",
+                () -> new ChemistryItem(makeItemProperties()));
+        public static final RegistryObject<ChemistryItem> STEEL_SHEET = ITEMS.register("steel_sheet",
                 () -> new ChemistryItem(makeItemProperties()));
 
         private static void register() {

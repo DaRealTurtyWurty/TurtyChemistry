@@ -3,7 +3,6 @@ package io.github.darealturtywurty.turtychemistry.mixin;
 import io.github.darealturtywurty.turtychemistry.common.TurtyTags;
 import io.github.darealturtywurty.turtychemistry.common.block.entity.AnvilBlockEntity;
 import io.github.darealturtywurty.turtychemistry.core.init.BlockEntityInit;
-import io.github.darealturtywurty.turtychemistry.core.init.ItemInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -11,6 +10,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.AnvilBlock;
 import net.minecraft.world.level.block.EntityBlock;
@@ -35,7 +35,6 @@ public final class AnvilMixin extends FallingBlock implements EntityBlock {
 
     @Override
     public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, boolean willHarvest, FluidState fluid) {
-
         if (level.getBlockEntity(pos) instanceof AnvilBlockEntity anvilBlockEntity) {
             level.addFreshEntity(new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), anvilBlockEntity.getItem()));
         }
@@ -47,20 +46,13 @@ public final class AnvilMixin extends FallingBlock implements EntityBlock {
         final Inventory playerInventory = pPlayer.getInventory();
         final ItemStack stack = pPlayer.getItemInHand(pHand);
         if (pPlayer.isCrouching() && pLevel.getBlockEntity(pPos) instanceof AnvilBlockEntity anvilBlockEntity) {
-
             if (anvilBlockEntity.getItem().isEmpty()) {
-
-                    if ((stack.is(ItemInit.Ingots.ACTINIUM_INGOT.get()) || stack.is(TurtyTags.TURTY_ITEM_TAG_KEY))) {
-                        anvilBlockEntity.setStackInSlot(stack.split(1));
-                        anvilBlockEntity.setChanged();
-                        cir.setReturnValue(InteractionResult.CONSUME);
-
-                    }
-
-
-
+                if (stack.is(Items.IRON_INGOT) || stack.is(TurtyTags.TURTY_ITEM_TAG_KEY) || stack.is(Items.COPPER_INGOT)) {
+                    anvilBlockEntity.setStackInSlot(stack.split(1));
+                    anvilBlockEntity.setChanged();
+                    cir.setReturnValue(InteractionResult.CONSUME);
+                }
             } else {
-
                 playerInventory.add(anvilBlockEntity.inventoryModule.getCapability().extractItem(0, 1, false));
                 cir.setReturnValue(InteractionResult.CONSUME);
             }
