@@ -59,7 +59,7 @@ public final class ItemInit extends AbstractInit {
             () -> new ChemistryItem(makeItemProperties()));
     public static final RegistryObject<ChemistryItem> BASIC_HAMMER = ITEMS.register("basic_hammer",
             () -> new BasicHammer(makeItemProperties()));
-    public static final ImmutableMap<RegistryObject<? extends Item>, RegistryObject<? extends Item>> INGOT_SHEET_MAP = ImmutableMap.<RegistryObject<? extends Item>, RegistryObject<? extends Item>>builder()
+    public static final ImmutableMap<Supplier<Item>, Supplier<Item>> INGOT_SHEET_MAP = ImmutableMap.<Supplier<Item>, Supplier<Item>>builder()
             .put(Ingots.ALUMINUM_INGOT, Sheets.ALUMINUM_SHEET).build();
 
     static {
