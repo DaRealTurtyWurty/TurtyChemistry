@@ -314,7 +314,7 @@ public final class ItemInit extends AbstractInit {
 
     public static final ImmutableMap<RegistryObject<? extends Item>, RegistryObject<? extends Item>> INGOT_SHEET_MAP = ImmutableMap.<RegistryObject<? extends Item>, RegistryObject<? extends Item>>builder()
             .put(Ingots.ACTINIUM_INGOT, Sheets.ACTINIUM_SHEET).build();
-
+    //TODO:Add the rest of the sheets
     public static final class Sheets {
         public static final RegistryObject<ChemistryItem> IRON_SHEET = ITEMS.register("iron_sheet",
                 () -> new ChemistryItem(makeItemProperties()));

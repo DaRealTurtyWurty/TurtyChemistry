@@ -45,18 +45,19 @@ public final class AnvilMixin extends FallingBlock implements EntityBlock {
     @Inject(method = "use", at = @At("HEAD"), cancellable = true)
     public void turtychemistry$addIngotToAnvil(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit, CallbackInfoReturnable<InteractionResult> cir) {
         final Inventory playerInventory = pPlayer.getInventory();
+        final ItemStack stack = pPlayer.getItemInHand(pHand);
         if (pPlayer.isCrouching() && pLevel.getBlockEntity(pPos) instanceof AnvilBlockEntity anvilBlockEntity) {
 
             if (anvilBlockEntity.getItem().isEmpty()) {
-                for (ItemStack stack : playerInventory.items) {
+
                     if ((stack.is(ItemInit.Ingots.ACTINIUM_INGOT.get()) || stack.is(TurtyTags.TURTY_ITEM_TAG_KEY))) {
                         anvilBlockEntity.setStackInSlot(stack.split(1));
                         anvilBlockEntity.setChanged();
                         cir.setReturnValue(InteractionResult.CONSUME);
-                        break;
+
                     }
 
-                }
+
 
             } else {
 
