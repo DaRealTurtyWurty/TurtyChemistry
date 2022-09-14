@@ -18,6 +18,7 @@ public final class BlockEntityInit extends AbstractInit {
             "clay_alloy_furnace",
             () -> BlockEntityType.Builder.of(ClayAlloyFurnaceBlockEntity::new, BlockInit.CLAY_ALLOY_FURNACE.get())
                     .build(null));
+
     public static final RegistryObject<BlockEntityType<AnvilBlockEntity>> ANVIL = BLOCK_ENTITIES.register("anvil",
             () -> BlockEntityType.Builder.of(AnvilBlockEntity::new, Blocks.ANVIL, Blocks.CHIPPED_ANVIL,
                     Blocks.DAMAGED_ANVIL).build(null));
