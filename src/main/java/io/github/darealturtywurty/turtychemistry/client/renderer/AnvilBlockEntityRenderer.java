@@ -13,8 +13,6 @@ import net.minecraft.world.level.block.AnvilBlock;
 import org.jetbrains.annotations.NotNull;
 
 public final class AnvilBlockEntityRenderer implements BlockEntityRenderer<AnvilBlockEntity> {
-
-
     private final ItemRenderer renderContext;
 
     public AnvilBlockEntityRenderer(BlockEntityRendererProvider.Context ctx) {
@@ -25,25 +23,19 @@ public final class AnvilBlockEntityRenderer implements BlockEntityRenderer<Anvil
     public void render(@NotNull AnvilBlockEntity pBlockEntity, float pPartialTick, @NotNull PoseStack pPoseStack, @NotNull MultiBufferSource pBufferSource, int pPackedLight, int pPackedOverlay) {
         pPoseStack.pushPose();
         pPoseStack.translate(0.5D, 1, 0.5D);
-
         switch (pBlockEntity.getBlockState().getValue(AnvilBlock.FACING)) {
             case SOUTH, NORTH -> {
                 pPoseStack.mulPose(Vector3f.ZP.rotationDegrees(90));
                 pPoseStack.mulPose(Vector3f.YP.rotationDegrees(90));
             }
             case EAST, WEST -> {
-
                 pPoseStack.mulPose(new Quaternion(Vector3f.YP, 180, true));
                 pPoseStack.mulPose(Vector3f.XP.rotationDegrees(90));
             }
         }
-
-
         renderContext.renderStatic(pBlockEntity.inventoryModule.getCapability().getStackInSlot(0),
                 ItemTransforms.TransformType.FIXED, pPackedLight, pPackedOverlay, pPoseStack, pBufferSource,
                 (int) pBlockEntity.getBlockPos().above().asLong());
-
         pPoseStack.popPose();
-
     }
 }

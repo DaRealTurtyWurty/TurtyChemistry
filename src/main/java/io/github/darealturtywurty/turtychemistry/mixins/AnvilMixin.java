@@ -1,4 +1,4 @@
-package io.github.darealturtywurty.turtychemistry.mixin;
+package io.github.darealturtywurty.turtychemistry.mixins;
 
 import io.github.darealturtywurty.turtychemistry.common.TurtyTags;
 import io.github.darealturtywurty.turtychemistry.common.block.entity.AnvilBlockEntity;

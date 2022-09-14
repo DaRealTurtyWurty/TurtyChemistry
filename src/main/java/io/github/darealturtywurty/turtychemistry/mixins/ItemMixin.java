@@ -1,4 +1,4 @@
-package io.github.darealturtywurty.turtychemistry.mixin;
+package io.github.darealturtywurty.turtychemistry.mixins;
 
 import io.github.darealturtywurty.turtychemistry.common.block.entity.AnvilBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -15,6 +15,9 @@ public abstract class ItemMixin implements ItemLike, IForgeItem {
 
     @Override
     public boolean doesSneakBypassUse(ItemStack stack, LevelReader level, BlockPos pos, Player player) {
-        return level.getBlockEntity(pos) instanceof AnvilBlockEntity;
+        if (level.getBlockEntity(pos) instanceof AnvilBlockEntity) {
+            return true;
+        }
+        return IForgeItem.super.doesSneakBypassUse(stack, level, pos, player);
     }
 }

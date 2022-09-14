@@ -14,15 +14,6 @@ public final class BasicHammer extends ChemistryItem {
         super(builder);
     }
 
-    @Override
-    public boolean isDamageable(ItemStack stack) {
-        return true;
-    }
-
-    @Override
-    public int getMaxDamage(ItemStack stack) {
-        return 70;
-    }
 
     @Override
     public ItemStack getCraftingRemainingItem(ItemStack itemStack) {
@@ -31,10 +22,6 @@ public final class BasicHammer extends ChemistryItem {
         return stack;
     }
 
-    @Override
-    public int getMaxStackSize(ItemStack stack) {
-        return 1;
-    }
 
     @Override
     public boolean hasCraftingRemainingItem(ItemStack stack) {
