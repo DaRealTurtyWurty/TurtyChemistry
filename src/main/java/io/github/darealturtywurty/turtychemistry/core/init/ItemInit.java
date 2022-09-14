@@ -1,5 +1,6 @@
 package io.github.darealturtywurty.turtychemistry.core.init;
 
+import com.google.common.collect.ImmutableMap;
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
 import io.github.darealturtywurty.turtychemistry.common.item.BasicHammer;
 import io.github.darealturtywurty.turtychemistry.common.item.ChemistryItem;
@@ -62,6 +63,7 @@ public final class ItemInit extends AbstractInit {
     static {
         ItemInit.Elements.register();
         ItemInit.Ingots.register();
+        ItemInit.Sheets.register();
     }
 
     public static ChemistryItem.Builder makeItemProperties() {
@@ -307,6 +309,23 @@ public final class ItemInit extends AbstractInit {
                 () -> new ChemistryItem(makeItemProperties()));
 
         public static void register() {
+        }
+    }
+
+    public static final ImmutableMap<RegistryObject<? extends Item>, RegistryObject<? extends Item>> INGOT_SHEET_MAP = ImmutableMap.of(
+            Ingots.ACTINIUM_INGOT, Sheets.ACTINIUM_SHEET
+
+
+    );
+
+    public static final class Sheets {
+        public static final RegistryObject<ChemistryItem> IRON_SHEET = ITEMS.register("iron_sheet",
+                () -> new ChemistryItem(makeItemProperties()));
+        public static final RegistryObject<ChemistryItem> ACTINIUM_SHEET = ITEMS.register("actinium_sheet",
+                () -> new ChemistryItem(makeItemProperties()));
+
+        private static void register() {
+
         }
     }
 

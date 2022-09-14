@@ -1,10 +1,12 @@
 package io.github.darealturtywurty.turtychemistry.common.block.entity;
 
 import io.github.darealturtywurty.turtychemistry.core.init.BlockEntityInit;
+import io.github.darealturtywurty.turtychemistry.core.init.ItemInit;
 import io.github.darealturtywurty.turtylib.common.blockentity.ModularBlockEntity;
 import io.github.darealturtywurty.turtylib.common.blockentity.module.InventoryModule;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.state.BlockState;
 
 public final class AnvilBlockEntity extends ModularBlockEntity {
@@ -21,7 +23,15 @@ public final class AnvilBlockEntity extends ModularBlockEntity {
     }
 
     public void smithItem() {
-        //TODO:check to see what sheet the ingot should make
+        if (getItem().is(Items.IRON_INGOT)) {
+            setStackInSlot(new ItemStack(ItemInit.Sheets.IRON_SHEET.get()));
+            return;
+        }
+        ItemInit.INGOT_SHEET_MAP.entrySet().parallelStream().forEach(registryObjectRegistryObjectEntry -> {
+            if (getItem().is(registryObjectRegistryObjectEntry.getKey().get())) {
+                setStackInSlot(new ItemStack(registryObjectRegistryObjectEntry.getValue().get()));
+            }
+        });
     }
 
     public ItemStack getItem() {
