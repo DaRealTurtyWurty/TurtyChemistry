@@ -61,7 +61,7 @@ public final class ItemInit extends AbstractInit {
             () -> new ChemistryItem(makeItemProperties()));
     public static final RegistryObject<ChemistryItem> BASIC_HAMMER = ITEMS.register("basic_hammer",
             () -> new BasicHammer(new ChemistryItem.Builder(
-                    new Item.Properties().tab(TurtyChemistry.TAB).durability(70).stacksTo(1))));
+                    new Item.Properties().tab(TurtyChemistry.TAB).durability(70))));
     public static final ImmutableMap<Supplier<Item>, Supplier<Item>> INGOT_SHEET_MAP = ImmutableMap.<Supplier<Item>, Supplier<Item>>builder()
             .put(Ingots.ALUMINUM_INGOT::get, Sheets.ALUMINUM_SHEET::get).build();
 
