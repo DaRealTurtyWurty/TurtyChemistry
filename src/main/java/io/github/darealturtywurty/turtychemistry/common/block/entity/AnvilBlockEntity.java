@@ -30,8 +30,8 @@ public final class AnvilBlockEntity extends ModularBlockEntity {
             return;
         }
         ItemInit.INGOT_SHEET_MAP.forEach((ingot, sheet) -> {
-            if (getItem().is(ingot.get())) {
-                setStackInSlot(new ItemStack(sheet.get()));
+            if (getItem().is(ingot.get().get().asItem())) {
+                setStackInSlot(new ItemStack(sheet.get().get().asItem()));
             }
         });
     }

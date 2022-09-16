@@ -33,9 +33,8 @@ public final class AnvilBlockEntityRenderer implements BlockEntityRenderer<Anvil
                 pPoseStack.mulPose(Vector3f.XP.rotationDegrees(90));
             }
         }
-        renderContext.renderStatic(pBlockEntity.inventoryModule.getCapability().getStackInSlot(0),
-                ItemTransforms.TransformType.FIXED, pPackedLight, pPackedOverlay, pPoseStack, pBufferSource,
-                (int) pBlockEntity.getBlockPos().above().asLong());
+        renderContext.renderStatic(pBlockEntity.getItem(), ItemTransforms.TransformType.FIXED, pPackedLight,
+                pPackedOverlay, pPoseStack, pBufferSource, (int) pBlockEntity.getBlockPos().above().asLong());
         pPoseStack.popPose();
     }
 }
