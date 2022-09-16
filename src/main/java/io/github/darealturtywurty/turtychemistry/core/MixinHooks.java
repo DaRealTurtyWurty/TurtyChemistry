@@ -13,8 +13,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.BlockHitResult;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 public final class MixinHooks {
@@ -28,7 +26,7 @@ public final class MixinHooks {
         return stack.is(ItemInit.BASIC_HAMMER.get());
     }
 
-    public static void addIngotToAnvil(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit, CallbackInfoReturnable<InteractionResult> cir) {
+    public static void addIngotToAnvil(final Level pLevel, final BlockPos pPos, final Player pPlayer, final InteractionHand pHand, final CallbackInfoReturnable<InteractionResult> cir) {
         final Inventory playerInventory = pPlayer.getInventory();
         final ItemStack stack = pPlayer.getItemInHand(pHand);
 
