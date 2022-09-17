@@ -6,10 +6,12 @@ import io.github.darealturtywurty.turtychemistry.core.init.ItemInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -19,7 +21,14 @@ public final class MixinHooks {
 
 
     private static boolean isValidStackForAnvil(final ItemStack stack) {
-        return stack.is(Items.IRON_INGOT) || stack.is(TurtyTags.TURTY_INGOT_TAG_KEY[0]) || stack.is(Items.COPPER_INGOT);
+
+        for (TagKey<Item> itemTagKey : TurtyTags.TURTY_INGOT_TAG_KEY) {
+            if (stack.is(itemTagKey)) {
+                return stack.is(Items.IRON_INGOT) || stack.is(Items.COPPER_INGOT) || stack.is(itemTagKey);
+            }
+
+        }
+        return false;
     }
 
     private static boolean isValidHammerForAnvil(final ItemStack stack) {
@@ -42,7 +51,7 @@ public final class MixinHooks {
                     playerInventory.add(anvilBlockEntity.inventoryModule.getCapability().extractItem(0, 1, false));
                     cir.setReturnValue(InteractionResult.CONSUME);
                 }
-            } else if(isValidHammerForAnvil(stack)){
+            } else if (isValidHammerForAnvil(stack)) {
                 anvilBlockEntity.smithItem();
                 pLevel.playSound(null, pPos, SoundEvents.ANVIL_USE, SoundSource.BLOCKS, 1, 1);
                 if (stack.getDamageValue() < stack.getDamageValue() - 1) {

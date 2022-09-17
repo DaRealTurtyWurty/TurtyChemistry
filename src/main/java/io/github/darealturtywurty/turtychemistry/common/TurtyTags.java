@@ -9,10 +9,14 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
 public final class TurtyTags {
+    private static ResourceLocation createForgeBasedResourceLocation(final String location)
+    {
+        return new ResourceLocation("forge",location);
+    }
     public static final TagKey<Item>[] TURTY_INGOT_TAG_KEY = new TagKey[]{
-            ItemInit.ITEMS.createTagKey(new ResourceLocation("forge", "ingots/aluminum")),
-            ItemInit.ITEMS.createTagKey(new ResourceLocation("forge", "ingots/brass"))
-    };
+            ItemInit.ITEMS.createTagKey(createForgeBasedResourceLocation("ingots/aluminum")),
+            ItemInit.ITEMS.createTagKey(createForgeBasedResourceLocation("ingots/brass")),
+            ItemInit.ITEMS.createTagKey(createForgeBasedResourceLocation("ingots/steel"))};
 
     public static final TagKey<Block> TURTY_BLOCK_TAG_KEY = BlockInit.BLOCKS.createTagKey(TurtyChemistry.MODID);
 }
