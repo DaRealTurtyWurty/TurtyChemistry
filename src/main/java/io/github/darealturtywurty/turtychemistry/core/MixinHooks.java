@@ -21,14 +21,13 @@ public final class MixinHooks {
 
 
     private static boolean isValidStackForAnvil(final ItemStack stack) {
-
         for (TagKey<Item> itemTagKey : TurtyTags.TURTY_INGOT_TAG_KEY) {
             if (stack.is(itemTagKey)) {
-                return stack.is(Items.IRON_INGOT) || stack.is(Items.COPPER_INGOT) || stack.is(itemTagKey);
+                return true;
             }
 
         }
-        return false;
+        return stack.is(Items.IRON_INGOT) || stack.is(Items.COPPER_INGOT);
     }
 
     private static boolean isValidHammerForAnvil(final ItemStack stack) {
