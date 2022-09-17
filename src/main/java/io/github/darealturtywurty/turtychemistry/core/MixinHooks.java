@@ -18,11 +18,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public final class MixinHooks {
 
 
-    public static boolean isValidStackForAnvil(final ItemStack stack) {
+    private static boolean isValidStackForAnvil(final ItemStack stack) {
         return stack.is(Items.IRON_INGOT) || stack.is(TurtyTags.TURTY_ITEM_TAG_KEY) || stack.is(Items.COPPER_INGOT);
     }
 
-    public static boolean isValidHammerForAnvil(final ItemStack stack) {
+    private static boolean isValidHammerForAnvil(final ItemStack stack) {
         return stack.is(ItemInit.BASIC_HAMMER.get());
     }
 
@@ -31,9 +31,9 @@ public final class MixinHooks {
         final ItemStack stack = pPlayer.getItemInHand(pHand);
 
         if (pPlayer.isCrouching() && pLevel.getBlockEntity(pPos) instanceof AnvilBlockEntity anvilBlockEntity) {
-            if (!MixinHooks.isValidHammerForAnvil(stack)) {
+            if (!isValidHammerForAnvil(stack)) {
                 if (anvilBlockEntity.getItem().isEmpty()) {
-                    if (MixinHooks.isValidStackForAnvil(stack)) {
+                    if (isValidStackForAnvil(stack)) {
                         anvilBlockEntity.setStackInSlot(stack.split(1));
                         anvilBlockEntity.setChanged();
                         cir.setReturnValue(InteractionResult.CONSUME);
@@ -42,7 +42,7 @@ public final class MixinHooks {
                     playerInventory.add(anvilBlockEntity.inventoryModule.getCapability().extractItem(0, 1, false));
                     cir.setReturnValue(InteractionResult.CONSUME);
                 }
-            } else {
+            } else if(isValidHammerForAnvil(stack)){
                 anvilBlockEntity.smithItem();
                 pLevel.playSound(null, pPos, SoundEvents.ANVIL_USE, SoundSource.BLOCKS, 1, 1);
                 if (stack.getDamageValue() < stack.getDamageValue() - 1) {
