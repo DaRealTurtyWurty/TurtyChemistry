@@ -52,7 +52,7 @@ public final class HotIngot extends ChemistryItem {
                 stack.setTag(temperatureNBTTag);
             } else if (temperatureNBTTag.getFloat(COMPOUND_TAG_ID) > 35f) {
                 float temperatureInCelsius = temperatureNBTTag.getFloat(COMPOUND_TAG_ID);
-                entity.setSecondsOnFire(3);
+                entity.setSecondsOnFire(entity.getRemainingFireTicks() + 1);
                 entity.hurt(DamageSource.ON_FIRE, 2);
                 final float biomesTemperature = level.getBiome(entity.blockPosition()).get().getBaseTemperature();
                 temperatureInCelsius -= temperatureInCelsius / (temperatureInCelsius + (Math.pow(biomesTemperature,
@@ -62,13 +62,14 @@ public final class HotIngot extends ChemistryItem {
         }
         super.inventoryTick(stack, level, entity, slot, selected);
     }
+
     public static float getTemperature(final @NotNull ItemStack stack) {
-        if (containsTemperatureTag(stack))
-        {
+        if (containsTemperatureTag(stack)) {
             return stack.getTag().getFloat(COMPOUND_TAG_ID);
         }
         return 0;
     }
+
     public static boolean containsTemperatureTag(final @NotNull ItemStack stack) {
         if (stack.getTag() == null) {
             return false;
