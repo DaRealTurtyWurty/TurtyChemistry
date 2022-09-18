@@ -54,7 +54,7 @@ public final class MixinHooks {
             } else if (isValidHammerForAnvil(stack)) {
                 anvilBlockEntity.smithItem();
                 pLevel.playSound(null, pPos, SoundEvents.ANVIL_USE, SoundSource.BLOCKS, 1, 1);
-                if (stack.getDamageValue() < stack.getDamageValue() - 1) {
+                if (stack.getDamageValue() < stack.getMaxDamage() - 1) {
                     stack.setDamageValue(stack.getDamageValue() + 1);
                 } else {
                     stack.shrink(1);
