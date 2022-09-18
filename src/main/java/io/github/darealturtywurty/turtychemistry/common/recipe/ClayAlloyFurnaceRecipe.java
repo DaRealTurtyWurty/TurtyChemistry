@@ -13,6 +13,7 @@ import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.wrapper.RecipeWrapper;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class ClayAlloyFurnaceRecipe implements Recipe<Container> {
@@ -24,7 +25,7 @@ public class ClayAlloyFurnaceRecipe implements Recipe<Container> {
     private final int processTime;
 
     public ClayAlloyFurnaceRecipe(ResourceLocation id, ItemStack output, NonNullList<Ingredient> recipeItems,
-            int processTime) {
+                                  int processTime) {
         this.id = id;
         this.output = output;
         this.recipeItems = recipeItems;
@@ -32,12 +33,18 @@ public class ClayAlloyFurnaceRecipe implements Recipe<Container> {
     }
 
     @Override
-    public boolean matches(Container container, Level level) {
-        if (level.isClientSide()) {
-            return false;
-        }
+    public NonNullList<Ingredient> getIngredients() {
+        return this.recipeItems;
+    }
 
-        return recipeItems.get(0).test(container.getItem(1)) && recipeItems.get(1).test(container.getItem(2));
+    @Override
+    public boolean matches(Container container, Level level) {
+        if (level.isClientSide())
+            return false;
+
+        return recipeItems.get(0).test(container.getItem(1)) && recipeItems.get(1)
+                .test(container.getItem(2)) || recipeItems.get(0).test(container.getItem(2)) && recipeItems.get(1)
+                .test(container.getItem(1));
     }
 
     public boolean matches(IItemHandlerModifiable container, Level level) {
@@ -45,11 +52,7 @@ public class ClayAlloyFurnaceRecipe implements Recipe<Container> {
     }
 
     @Override
-    public ItemStack assemble(Container container) {
-        return this.output;
-    }
-
-    public ItemStack getOutput() {
+    public @NotNull ItemStack assemble(@NotNull Container container) {
         return this.output;
     }
 
@@ -63,22 +66,22 @@ public class ClayAlloyFurnaceRecipe implements Recipe<Container> {
     }
 
     @Override
-    public ItemStack getResultItem() {
+    public @NotNull ItemStack getResultItem() {
         return this.output.copy();
     }
 
     @Override
-    public ResourceLocation getId() {
+    public @NotNull ResourceLocation getId() {
         return this.id;
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
+    public @NotNull RecipeSerializer<?> getSerializer() {
         return Serializer.INSTANCE;
     }
 
     @Override
-    public RecipeType<?> getType() {
+    public @NotNull RecipeType<?> getType() {
         return Type.INSTANCE;
     }
 

@@ -7,6 +7,7 @@ import io.github.darealturtywurty.turtylib.common.blockentity.ModularBlockEntity
 import io.github.darealturtywurty.turtylib.common.blockentity.module.InventoryModule;
 import io.github.darealturtywurty.turtylib.common.blockentity.module.MultiblockModule;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
@@ -14,6 +15,7 @@ import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collections;
@@ -155,5 +157,25 @@ public class ClayAlloyFurnaceBlockEntity extends ModularBlockEntity {
 
     public ContainerData getContainerData() {
         return this.data;
+    }
+
+    @Override
+    protected void saveAdditional(CompoundTag nbt) {
+        super.saveAdditional(nbt);
+
+        nbt.putInt("Progress", this.progress);
+        nbt.putInt("FuelProgress", this.fuelProgress);
+        if (this.leftover != null)
+            nbt.put("Leftover", this.leftover.save(new CompoundTag()));
+    }
+
+    @Override
+    public void load(@NotNull CompoundTag nbt) {
+        super.load(nbt);
+
+        this.progress = nbt.getInt("Progress");
+        this.fuelProgress = nbt.getInt("FuelProgress");
+        if (nbt.contains("Leftover"))
+            this.leftover = ItemStack.of(nbt.getCompound("Leftover"));
     }
 }

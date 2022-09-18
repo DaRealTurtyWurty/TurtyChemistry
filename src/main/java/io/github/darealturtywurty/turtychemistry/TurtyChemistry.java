@@ -17,12 +17,17 @@ public class TurtyChemistry {
     public static final CreativeModeTab TAB = new CreativeModeTab(MODID) {
         @Override
         public @NotNull ItemStack makeIcon() {
-            return ItemInit.THULIUM.get().getDefaultInstance();
+            return ItemInit.Elements.THULIUM.get().getDefaultInstance();
         }
 
         @Override
         public boolean hasSearchBar() {
             return true;
+        }
+
+        @Override
+        public int getSearchbarWidth() {
+            return 60;
         }
     };
 

@@ -22,13 +22,15 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
-    mappings channel: 'official', version: '1.19.2'
+    mappings channel: 'parchment', version: '2022.09.04-1.19.2'
 
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
     runs {
         client {
-            workingDirectory project.file('run')
+            properties 'mixin.env.remapRefMap': 'true'
+            property 'mixin.env.refMapRemappingFile', "${project.projectDir}/build/createSrgToMcp/output.srg"
+            workingDirectory project.file('run_client')
             arg "-mixin.config=" + archivesBaseName + ".mixins.json"
 
             mods {
@@ -39,7 +41,9 @@ minecraft {
         }
 
         server {
-            workingDirectory project.file('run')
+            properties 'mixin.env.remapRefMap': 'true'
+            property 'mixin.env.refMapRemappingFile', "${project.projectDir}/build/createSrgToMcp/output.srg"
+            workingDirectory project.file('run_server')
             arg "-mixin.config=" + archivesBaseName + ".mixins.json"
 
             mods {
@@ -50,7 +54,7 @@ minecraft {
         }
 
         data {
-            workingDirectory project.file('run')
+            workingDirectory project.file('run_data')
 
             args '--mod', archivesBaseName, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
@@ -69,6 +73,14 @@ repositories {
     flatDir {
         dir 'libs'
     }
+    maven {
+        name = "Progwml6 maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
+    maven {
+        name = "ModMaven"
+        url = "https://modmaven.dev"
+    }
 }
 
 dependencies {
@@ -76,6 +88,10 @@ dependencies {
     annotationProcessor 'org.spongepowered:mixin:0.8.3:processor'
     
     implementation fg.deobf("io.github.darealturtywurty.turtylib:turtylib-1.0:0.1");
+
+    compileOnly(fg.deobf("mezz.jei:jei-1.19.2-common-api:11.3.0.260"))
+    compileOnly(fg.deobf("mezz.jei:jei-1.19.2-forge-api:11.3.0.260"))
+    runtimeOnly(fg.deobf("mezz.jei:jei-1.19.2-forge:11.3.0.260"))
 }
 
 jar {
@@ -106,4 +122,10 @@ publishing {
             url "file://${project.projectDir}/mcmodsrepo"
         }
     }
+}
+
+apply plugin: 'org.spongepowered.mixin'
+
+mixin {
+    add sourceSets.main, "${archivesBaseName}.refmap.json"
 }
