@@ -13,6 +13,7 @@ public final class TurtyTags {
             ItemInit.ITEMS.createTagKey(forgeResourceLocation("ingots/aluminum")),
             ItemInit.ITEMS.createTagKey(forgeResourceLocation("ingots/brass")),
             ItemInit.ITEMS.createTagKey(forgeResourceLocation("ingots/steel"))};
+    public static final TagKey<Item> TURTY_HAMMER_TAG_KET = ItemInit.ITEMS.createTagKey("basic_hammers");
     public static final TagKey<Item>[] TURTY_SHEET_TAG_KEY = new TagKey[]{
             ItemInit.ITEMS.createTagKey(forgeResourceLocation("sheetmetals/aluminum")),
             ItemInit.ITEMS.createTagKey(forgeResourceLocation("sheetmetals/steel"))

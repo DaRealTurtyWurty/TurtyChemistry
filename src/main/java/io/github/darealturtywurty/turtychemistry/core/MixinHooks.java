@@ -2,6 +2,7 @@ package io.github.darealturtywurty.turtychemistry.core;
 
 import io.github.darealturtywurty.turtychemistry.common.TurtyTags;
 import io.github.darealturtywurty.turtychemistry.common.block.entity.AnvilBlockEntity;
+import io.github.darealturtywurty.turtychemistry.common.item.HotIngot;
 import io.github.darealturtywurty.turtychemistry.core.init.ItemInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
@@ -22,12 +23,12 @@ public final class MixinHooks {
 
     private static boolean isValidStackForAnvil(final ItemStack stack) {
         for (TagKey<Item> itemTagKey : TurtyTags.TURTY_INGOT_TAG_KEY) {
-            if (stack.is(itemTagKey)) {
+            if (stack.is(itemTagKey) && HotIngot.containsTemperatureTag(stack)) {
                 return true;
             }
 
         }
-        return stack.is(Items.IRON_INGOT) || stack.is(Items.COPPER_INGOT);
+        return (stack.is(Items.IRON_INGOT) || stack.is(Items.COPPER_INGOT)) && HotIngot.containsTemperatureTag(stack);
     }
 
     private static boolean isValidHammerForAnvil(final ItemStack stack) {
@@ -41,7 +42,7 @@ public final class MixinHooks {
         if (pPlayer.isCrouching() && pLevel.getBlockEntity(pPos) instanceof AnvilBlockEntity anvilBlockEntity) {
             if (!isValidHammerForAnvil(stack)) {
                 if (anvilBlockEntity.getItem().isEmpty()) {
-                    if (isValidStackForAnvil(stack)) {
+                    if (isValidStackForAnvil(stack) && HotIngot.getTemperature(stack) > 35f) {
                         anvilBlockEntity.setStackInSlot(stack.split(1));
                         anvilBlockEntity.setChanged();
                         cir.setReturnValue(InteractionResult.CONSUME);
