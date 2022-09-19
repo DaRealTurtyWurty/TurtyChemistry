@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 public final class MixinHooks {
 
-
+    //anvil mixin
     private static boolean isValidStackForAnvil(final ItemStack stack) {
         for (TagKey<Item> itemTagKey : TurtyTags.TURTY_INGOT_TAG_KEY) {
             if (stack.is(itemTagKey) && HotIngot.containsTemperatureTag(stack)) {
@@ -28,7 +28,8 @@ public final class MixinHooks {
             }
 
         }
-        return (stack.is(Items.IRON_INGOT) || stack.is(Items.COPPER_INGOT)) && HotIngot.containsTemperatureTag(stack);
+        return (stack.is(Items.IRON_INGOT) || stack.is(Items.COPPER_INGOT)) /*&& HotIngot.containsTemperatureTag
+        (stack)*/;
     }
 
     private static boolean isValidHammerForAnvil(final ItemStack stack) {
@@ -42,7 +43,7 @@ public final class MixinHooks {
         if (pPlayer.isCrouching() && pLevel.getBlockEntity(pPos) instanceof AnvilBlockEntity anvilBlockEntity) {
             if (!isValidHammerForAnvil(stack)) {
                 if (anvilBlockEntity.getItem().isEmpty()) {
-                    if (isValidStackForAnvil(stack) && HotIngot.getTemperature(stack) > 35f) {
+                    if (isValidStackForAnvil(stack) /*&& HotIngot.getTemperature(stack) > 35f*/) {
                         anvilBlockEntity.setStackInSlot(stack.split(1));
                         anvilBlockEntity.setChanged();
                         cir.setReturnValue(InteractionResult.CONSUME);
@@ -51,7 +52,7 @@ public final class MixinHooks {
                     playerInventory.add(anvilBlockEntity.inventoryModule.getCapability().extractItem(0, 1, false));
                     cir.setReturnValue(InteractionResult.CONSUME);
                 }
-            } else if (isValidHammerForAnvil(stack)) {
+            } else if (isValidHammerForAnvil(stack) && isValidStackForAnvil(anvilBlockEntity.getItem())) {
                 anvilBlockEntity.smithItem();
                 pLevel.playSound(null, pPos, SoundEvents.ANVIL_USE, SoundSource.BLOCKS, 1, 1);
                 if (stack.getDamageValue() < stack.getMaxDamage() - 1) {
