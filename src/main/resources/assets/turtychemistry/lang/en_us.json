@@ -265,5 +265,6 @@
     "item.turtychemistry.fermium_ingot": "Fermium Ingot",
     "item.turtychemistry.mendelevium_ingot": "Mendelevium Ingot",
     "item.turtychemistry.nobelium_ingot": "Nobelium Ingot",
-    "item.turtychemistry.lawrencium_ingot": "Lawrencium Ingot"
+    "item.turtychemistry.lawrencium_ingot": "Lawrencium Ingot",
+    "hot_ingot.temp.status": "%s°c"
 }

@@ -1,12 +1,16 @@
 package io.github.darealturtywurty.turtychemistry.core.init;
 
+import com.google.common.collect.ImmutableMap;
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
+import io.github.darealturtywurty.turtychemistry.common.item.BasicHammer;
 import io.github.darealturtywurty.turtychemistry.common.item.ChemistryItem;
 import io.github.darealturtywurty.turtylib.core.init.AbstractInit;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.function.Supplier;
 
 public final class ItemInit extends AbstractInit {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,
@@ -55,10 +59,16 @@ public final class ItemInit extends AbstractInit {
             () -> new ChemistryItem(makeItemProperties()));
     public static final RegistryObject<ChemistryItem> RUBBER = ITEMS.register("rubber",
             () -> new ChemistryItem(makeItemProperties()));
+    public static final RegistryObject<ChemistryItem> BASIC_HAMMER = ITEMS.register("basic_hammer",
+            () -> new BasicHammer(new ChemistryItem.Builder(
+                    new Item.Properties().tab(TurtyChemistry.TAB).durability(70))));
+    public static final ImmutableMap<Supplier<Item>, Supplier<Item>> INGOT_SHEET_MAP = ImmutableMap.<Supplier<Item>, Supplier<Item>>builder()
+            .put(Ingots.ALUMINUM_INGOT::get, Sheets.ALUMINUM_SHEET::get).build();
 
     static {
         ItemInit.Elements.register();
         ItemInit.Ingots.register();
+        ItemInit.Sheets.register();
     }
 
     public static ChemistryItem.Builder makeItemProperties() {
@@ -304,6 +314,21 @@ public final class ItemInit extends AbstractInit {
                 () -> new ChemistryItem(makeItemProperties()));
 
         public static void register() {
+        }
+    }
+
+    public static final class Sheets {
+        public static final RegistryObject<ChemistryItem> IRON_SHEET = ITEMS.register("iron_sheet",
+                () -> new ChemistryItem(makeItemProperties()));
+        public static final RegistryObject<ChemistryItem> ALUMINUM_SHEET = ITEMS.register("aluminum_sheet",
+                () -> new ChemistryItem(makeItemProperties()));
+        public static final RegistryObject<ChemistryItem> COPPER_SHEET = ITEMS.register("copper_sheet",
+                () -> new ChemistryItem(makeItemProperties()));
+        public static final RegistryObject<ChemistryItem> STEEL_SHEET = ITEMS.register("steel_sheet",
+                () -> new ChemistryItem(makeItemProperties()));
+
+        private static void register() {
+
         }
     }
 
