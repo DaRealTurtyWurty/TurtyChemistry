@@ -40,7 +40,7 @@ public final class AnvilMixin extends FallingBlock implements EntityBlock {
 
     @Inject(method = "use", at = @At("HEAD"), cancellable = true)
     private void turtychemistry$use(final BlockState pState, final Level pLevel, final BlockPos pPos, final Player pPlayer, final InteractionHand pHand, final BlockHitResult pHit, final CallbackInfoReturnable<InteractionResult> cir) {
-        MixinHooks.addIngotToAnvil(pLevel, pPos, pPlayer, pHand, cir);
+        MixinHooks.AnvilMixinImplementation.addIngotToAnvil(pLevel, pPos, pPlayer, pHand, cir);
     }
 
     @Nullable
