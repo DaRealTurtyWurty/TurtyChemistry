@@ -56,7 +56,7 @@ public final class MixinHooks {
                             cir.setReturnValue(InteractionResult.CONSUME);
                         }
                     } else {
-                        playerInventory.add(anvilBlockEntity.inventoryModule.getCapability().extractItem(0, 1, false));
+                        playerInventory.add(anvilBlockEntity.extractItem());
                         cir.setReturnValue(InteractionResult.CONSUME);
                     }
                 } else if (isValidHammerForAnvil(stack) && isValidStackForAnvil(anvilBlockEntity.getItem())) {

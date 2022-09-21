@@ -10,7 +10,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.state.BlockState;
 
 public final class AnvilBlockEntity extends ModularBlockEntity {
-    public final InventoryModule inventoryModule;
+    private final InventoryModule inventoryModule;
 
     public AnvilBlockEntity(final BlockPos pos, final BlockState state) {
         super(BlockEntityInit.ANVIL.get(), pos, state);
@@ -19,6 +19,14 @@ public final class AnvilBlockEntity extends ModularBlockEntity {
 
     private void setStackInSlot(final ItemStack stack) {
         inventoryModule.getCapability().setStackInSlot(0, stack);
+    }
+
+    public ItemStack extractItem() {
+        return inventoryModule.getCapability().extractItem(0, 1, false);
+    }
+
+    public ItemStack extractItem(final int amount) {
+        return inventoryModule.getCapability().extractItem(0, amount, false);
     }
 
     public void addStackToSlot(final ItemStack stack) {
