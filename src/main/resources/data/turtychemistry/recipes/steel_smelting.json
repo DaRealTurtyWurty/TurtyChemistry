@@ -1,0 +1,16 @@
+{
+    "type": "turtychemistry:clay_alloy",
+    "ingredients": [
+        {
+            "item": "minecraft:iron_ingot"
+        },
+        {
+            "item": "turtychemistry:carbon"
+        }
+    ],
+    "output": {
+        "item": "turtychemistry:steel_ingot",
+        "count": 1
+    },
+    "process_time": 100
+}

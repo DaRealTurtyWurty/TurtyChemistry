@@ -60,15 +60,22 @@ public final class ItemInit extends AbstractInit {
     public static final RegistryObject<ChemistryItem> RUBBER = ITEMS.register("rubber",
             () -> new ChemistryItem(makeItemProperties()));
     public static final RegistryObject<ChemistryItem> BASIC_HAMMER = ITEMS.register("basic_hammer",
-            () -> new BasicHammer(new ChemistryItem.Builder(
-                    new Item.Properties().tab(TurtyChemistry.TAB).durability(70))));
+            () -> new BasicHammer(
+                    new ChemistryItem.Builder(new Item.Properties().tab(TurtyChemistry.TAB).durability(70))));
+    public static final RegistryObject<ChemistryItem> CONVEYOR_BELT = ITEMS.register("conveyor_belt",
+            () -> new ChemistryItem(makeItemProperties()));
     public static final ImmutableMap<Supplier<Item>, Supplier<Item>> INGOT_SHEET_MAP = ImmutableMap.<Supplier<Item>, Supplier<Item>>builder()
-            .put(Ingots.ALUMINUM_INGOT::get, Sheets.ALUMINUM_SHEET::get).build();
+            .put(Ingots.ALUMINUM_INGOT::get, Sheets.ALUMINUM_SHEET::get)
+            .put(Ingots.STEEL_INGOT::get,Sheets.STEEL_SHEET::get).build();
+    public static final ImmutableMap<Supplier<Item>, Supplier<Item>> INGOT_ROD_MAP = ImmutableMap.<Supplier<Item>, Supplier<Item>>builder()
+            .put(Ingots.ALUMINUM_INGOT::get, Rods.ALUMINUM_ROD::get)
+            .put(Ingots.STEEL_INGOT::get,Rods.STEEL_ROD::get).build();
 
     static {
         ItemInit.Elements.register();
         ItemInit.Ingots.register();
         ItemInit.Sheets.register();
+        ItemInit.Rods.register();
     }
 
     public static ChemistryItem.Builder makeItemProperties() {
@@ -317,6 +324,21 @@ public final class ItemInit extends AbstractInit {
         }
     }
 
+    public static final class Rods {
+
+        public static final RegistryObject<ChemistryItem> IRON_ROD = ITEMS.register("iron_rod",
+                () -> new ChemistryItem(makeItemProperties()));
+        public static final RegistryObject<ChemistryItem> ALUMINUM_ROD = ITEMS.register("aluminum_rod",
+                () -> new ChemistryItem(makeItemProperties()));
+        public static final RegistryObject<ChemistryItem> COPPER_ROD = ITEMS.register("copper_rod",
+                () -> new ChemistryItem(makeItemProperties()));
+        public static final RegistryObject<ChemistryItem> STEEL_ROD = ITEMS.register("steel_rod",
+                () -> new ChemistryItem(makeItemProperties()));
+
+        public static void register() {
+        }
+    }
+
     public static final class Sheets {
         public static final RegistryObject<ChemistryItem> IRON_SHEET = ITEMS.register("iron_sheet",
                 () -> new ChemistryItem(makeItemProperties()));
@@ -333,6 +355,8 @@ public final class ItemInit extends AbstractInit {
     }
 
     public static final class Ingots {
+        public static final RegistryObject<ChemistryItem> STEEL_INGOT = ITEMS.register("steel_ingot",
+                () -> new ChemistryItem(makeItemProperties()));
         public static final RegistryObject<ChemistryItem> LITHIUM_INGOT = ITEMS.register("lithium_ingot",
                 () -> new ChemistryItem(makeItemProperties()));
         public static final RegistryObject<ChemistryItem> SODIUM_INGOT = ITEMS.register("sodium_ingot",
