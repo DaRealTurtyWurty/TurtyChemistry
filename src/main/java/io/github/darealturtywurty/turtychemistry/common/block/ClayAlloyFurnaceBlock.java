@@ -30,7 +30,7 @@ import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class ClayAlloyFurnaceBlock extends Block implements EntityBlock {
+public final class ClayAlloyFurnaceBlock extends Block implements EntityBlock {
     private static final VoxelShape SHAPE = createShape();
 
     public ClayAlloyFurnaceBlock(Properties properties) {
