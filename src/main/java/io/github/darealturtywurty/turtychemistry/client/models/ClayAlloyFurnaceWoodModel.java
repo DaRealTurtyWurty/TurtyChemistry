@@ -12,7 +12,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 
-public class ClayAlloyFurnaceWoodModel extends Model {
+public final class ClayAlloyFurnaceWoodModel extends Model {
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(
             new ResourceLocation(TurtyChemistry.MODID, "clay_alloy_furnace_wood"), "main");
     public static final ResourceLocation TEXTURE = new ResourceLocation(TurtyChemistry.MODID,

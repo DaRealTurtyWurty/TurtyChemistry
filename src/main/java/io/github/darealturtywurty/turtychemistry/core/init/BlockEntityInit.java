@@ -3,6 +3,7 @@ package io.github.darealturtywurty.turtychemistry.core.init;
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
 import io.github.darealturtywurty.turtychemistry.common.block.entity.AnvilBlockEntity;
 import io.github.darealturtywurty.turtychemistry.common.block.entity.ClayAlloyFurnaceBlockEntity;
+import io.github.darealturtywurty.turtychemistry.common.block.entity.MolderBlockEntity;
 import io.github.darealturtywurty.turtylib.core.init.AbstractInit;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -23,4 +24,6 @@ public final class BlockEntityInit extends AbstractInit {
             () -> BlockEntityType.Builder.of(AnvilBlockEntity::new, Blocks.ANVIL, Blocks.CHIPPED_ANVIL,
                     Blocks.DAMAGED_ANVIL).build(null));
 
+    public static final RegistryObject<BlockEntityType<MolderBlockEntity>> MOLDER = BLOCK_ENTITIES.register("molder",
+            () -> BlockEntityType.Builder.of(MolderBlockEntity::new, BlockInit.MOLDER_BLOCK.get()).build(null));
 }

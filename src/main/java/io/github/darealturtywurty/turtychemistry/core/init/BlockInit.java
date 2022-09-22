@@ -4,6 +4,7 @@ import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
 import io.github.darealturtywurty.turtychemistry.common.block.ClayAlloyFurnaceBlock;
 import io.github.darealturtywurty.turtychemistry.common.block.core.ChemistryBlock;
 import io.github.darealturtywurty.turtychemistry.common.block.grower.RubberTreeGrower;
+import io.github.darealturtywurty.turtychemistry.common.block.molder.MolderBlock;
 import io.github.darealturtywurty.turtychemistry.common.block.treeblocks.rubbertree.RubberTreeBlock;
 import io.github.darealturtywurty.turtychemistry.common.block.treeblocks.rubbertree.RubberTreeBlockStripped;
 import io.github.darealturtywurty.turtychemistry.common.block.treeblocks.rubbertree.RubberTreeTap;
@@ -151,6 +152,10 @@ public final class BlockInit extends AbstractInit {
 
     public static final RegistryObject<RubberTreeTap> RUBBER_TREE_TAP = register("rubber_tree_tap",
             () -> new RubberTreeTap(BlockBehaviour.Properties.of(Material.METAL)), new Item.Properties().tab(TurtyChemistry.TAB));
+
+    public static final RegistryObject<MolderBlock> MOLDER_BLOCK = register("molder_block",
+            () -> new MolderBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)),
+            new Item.Properties().tab(TurtyChemistry.TAB));
 
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> supplier,
                                                                 Item.Properties properties) {
