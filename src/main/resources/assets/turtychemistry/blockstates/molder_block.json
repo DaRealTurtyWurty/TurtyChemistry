@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": {"model": "turtychemistry:block/molder_block", "y" : 180},
+        "facing=south": {"model": "turtychemistry:block/molder_block", "y" : 0},
+        "facing=east": {"model": "turtychemistry:block/molder_block", "y" : 90},
+        "facing=west": {"model": "turtychemistry:block/molder_block", "y" : 270}
+    }
+}

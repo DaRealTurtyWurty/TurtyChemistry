@@ -35,8 +35,6 @@ public final class ClientModEvents {
         event.registerLayerDefinition(ClayAlloyFurnaceModel.LAYER_LOCATION, ClayAlloyFurnaceModel::createLayer);
         event.registerLayerDefinition(ClayAlloyFurnaceWoodModel.LAYER_LOCATION, ClayAlloyFurnaceWoodModel::createLayer);
         event.registerLayerDefinition(ClayAlloyFurnaceTrayModel.LAYER_LOCATION, ClayAlloyFurnaceTrayModel::createLayer);
-        event.registerLayerDefinition(MolderMainBody.LAYER_LOCATION,MolderMainBody::createBodyLayer);
-        event.registerLayerDefinition(MolderPiston.LAYER_LOCATION, MolderPiston::createBodyLayer);
     }
 
     @SubscribeEvent

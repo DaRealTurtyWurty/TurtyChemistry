@@ -14,19 +14,30 @@ public final class MolderBlockEntity extends ModularBlockEntity {
 
     public MolderBlockEntity(final BlockPos pPos, final BlockState pBlockState) {
         super(BlockEntityInit.MOLDER.get(), pPos, pBlockState);
-        this.inventoryModule = addModule(new InventoryModule(this, 2));
+        this.inventoryModule = addModule(new InventoryModule(this, 1));
 
 
     }
 
 
-    public ItemStack getItem(final int slot) {
-        return this.inventoryModule.getCapability().getStackInSlot(slot);
+    public ItemStack getItem() {
+        return this.inventoryModule.getCapability().getStackInSlot(0);
+    }
+    public ItemStack removeItemOutOfSlot()
+    {
+        return this.inventoryModule.getCapability().extractItem(0,1,false);
+    }
+    public boolean hasItem() {
+        return !getItem().isEmpty();
     }
 
-    public boolean hasItem(final int slot) {
-        return !getItem(slot).isEmpty();
+    public void insertItem(final ItemStack stack)
+    {
+        inventoryModule.getCapability().insertItem(0,stack,false);
     }
-
+    public void setItem(final ItemStack stack)
+    {
+        inventoryModule.getCapability().setStackInSlot(0,stack);
+    }
 
 }
