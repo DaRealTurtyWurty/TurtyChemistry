@@ -3,6 +3,7 @@ package io.github.darealturtywurty.turtychemistry.client.screens;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
+import io.github.darealturtywurty.turtychemistry.common.block.entity.MolderBlockEntity;
 import io.github.darealturtywurty.turtychemistry.core.network.PacketHandler;
 import io.github.darealturtywurty.turtychemistry.core.network.molder.ServerBoundMolderClickPacket;
 import io.github.darealturtywurty.turtychemistry.core.util.MoldingPatternVertexHolders;
@@ -32,11 +33,11 @@ public final class MolderScreen extends Screen {
     private final BlockPos blockPos;
     private DrawingSpace drawingPanelWidget;
     private ItemStack currentStack = ItemStack.EMPTY;
-
-    public MolderScreen(final Component pTitle, final BlockPos pos) {
+    private MolderBlockEntity molderBlockEntity;
+    public MolderScreen(final Component pTitle, final BlockPos pos,final MolderBlockEntity molderBlockEntity) {
         super(pTitle);
         this.blockPos = pos;
-
+        this.molderBlockEntity = molderBlockEntity;
     }
 
 
@@ -144,7 +145,7 @@ public final class MolderScreen extends Screen {
 
         @Override
         public void playDownSound(final @NotNull SoundManager pHandler) {
-
+                super.playDownSound(pHandler);
         }
 
         @Override
@@ -165,16 +166,16 @@ public final class MolderScreen extends Screen {
         public void onRelease(final double pMouseX, final double pMouseY) {
             super.onRelease(pMouseX, pMouseY);
             if (!molderScreen.currentStack.isEmpty()) {
-                PacketHandler.CHANNEL.sendToServer(
-                        new ServerBoundMolderClickPacket(true, pos, molderScreen.currentStack));
+
+                PacketHandler.CHANNEL.sendToServer(new ServerBoundMolderClickPacket(pos, molderScreen.currentStack));
             }
             for (final PatternButton button : buttonList) {
                 for (final PatternVertex vertex : button.moldingPatternHolder.getVertices()) {
                     if (!vertex.isSelected()) {
                         return;
                     } else if (vertex.isFinalVertex() && molderScreen.currentStack != null) {
-                        PacketHandler.CHANNEL.sendToServer(
-                                new ServerBoundMolderClickPacket(true, pos, molderScreen.currentStack));
+                        molderScreen.molderBlockEntity.setItem(molderScreen.currentStack);
+                        PacketHandler.CHANNEL.sendToServer(new ServerBoundMolderClickPacket(pos, molderScreen.currentStack));
                     }
                 }
             }

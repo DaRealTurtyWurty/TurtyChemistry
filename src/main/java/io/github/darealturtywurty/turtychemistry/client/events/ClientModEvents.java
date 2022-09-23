@@ -42,7 +42,6 @@ public final class ClientModEvents {
         event.enqueueWork(() -> {
             MenuScreens.register(MenuInit.CLAY_ALLOY_FURNACE.get(), ClayAlloyFurnaceScreen::new);
             //MenuScreens.register(MenuInit.MOLDER.get(), MolderScreen::new);
-
         });
     }
 }
