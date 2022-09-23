@@ -1,9 +1,11 @@
 package io.github.darealturtywurty.turtychemistry.common.block.molder;
 
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
+import io.github.darealturtywurty.turtychemistry.client.screens.MolderScreen;
 import io.github.darealturtywurty.turtychemistry.common.block.entity.MolderBlockEntity;
 import io.github.darealturtywurty.turtychemistry.common.menus.MolderMenu;
 import io.github.darealturtywurty.turtychemistry.core.init.BlockEntityInit;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -42,14 +44,15 @@ public final class MolderBlock extends BaseEntityBlock {
 
     @Override
     public @NotNull InteractionResult use(final @NotNull BlockState pState, final @NotNull Level pLevel, final @NotNull BlockPos pPos, final @NotNull Player pPlayer, final @NotNull InteractionHand pHand, final @NotNull BlockHitResult pHit) {
-        if (!pLevel.isClientSide()) {
+        if (pLevel.isClientSide()) {
             if (pLevel.getBlockEntity(pPos) instanceof MolderBlockEntity molderBlockEntity) {
-                final SimpleMenuProvider menuProvider = new SimpleMenuProvider(
-                        (pContainerId, pPlayerInventory, pPlayer1) -> new MolderMenu(pContainerId, pPlayerInventory,
-                                molderBlockEntity.inventoryModule.getCapability(), pPos,
-                                molderBlockEntity.getContainerData()),
-                        Component.translatable("container." + TurtyChemistry.MODID + ".molder"));
-                NetworkHooks.openScreen((ServerPlayer) pPlayer,menuProvider,pPos);
+                //final SimpleMenuProvider menuProvider = new SimpleMenuProvider(
+                //        (pContainerId, pPlayerInventory, pPlayer1) -> new MolderMenu(pContainerId, pPlayerInventory,
+                //                molderBlockEntity.inventoryModule.getCapability(), pPos,
+                //                molderBlockEntity.getContainerData()),
+                //        Component.translatable("container." + TurtyChemistry.MODID + ".molder"));
+                //NetworkHooks.openScreen((ServerPlayer) pPlayer,menuProvider,pPos);
+                Minecraft.getInstance().setScreen(new MolderScreen(null,null, Component.translatable("container." + TurtyChemistry.MODID + ".molder")));
             }
         }
         return InteractionResult.sidedSuccess(pLevel.isClientSide());
