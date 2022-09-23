@@ -10,13 +10,15 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -28,13 +30,30 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.Tags;
-import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public final class MolderBlock extends BaseEntityBlock {
-
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    private static final VoxelShape thisShape;
+
+    static {
+        VoxelShape shape = Shapes.empty();
+        shape = Shapes.join(shape, Shapes.box(0.8125, 0, 0, 1, 0.875, 0.1875), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(0.8125, 0.875, 0, 1, 1, 0.1875), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(0, 0.875, 0, 0.1875, 1, 0.1875), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(0, 0, 0, 0.1875, 0.875, 0.1875), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(0, 0.875, 0.8125, 0.1875, 1, 1), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(0, 0, 0.8125, 0.1875, 0.875, 1), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(0.8125, 0.875, 0.8125, 1, 1, 1), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(0.8125, 0, 0.8125, 1, 0.875, 1), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(0.8125, 0.875, 0.1875, 1, 1, 0.8125), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(0, 0.875, 0.1875, 0.1875, 1, 0.8125), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(0.1875, 0.875, 0.8125, 0.8125, 1, 1), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(0.1875, 0.875, 0, 0.8125, 1, 0.1875), BooleanOp.OR);
+        shape = Shapes.join(shape, Shapes.box(0.1875, 0.875, 0.1875, 0.8125, 0.9375, 0.8125), BooleanOp.OR);
+        thisShape = shape.optimize();
+    }
 
     public MolderBlock(final Properties pProperties) {
         super(pProperties);
@@ -46,7 +65,6 @@ public final class MolderBlock extends BaseEntityBlock {
         super.createBlockStateDefinition(pBuilder.add(FACING));
     }
 
-
     @Override
     public @NotNull InteractionResult use(final @NotNull BlockState pState, final @NotNull Level pLevel, final @NotNull BlockPos pPos, final @NotNull Player pPlayer, final @NotNull InteractionHand pHand, final @NotNull BlockHitResult pHit) {
         final ItemStack heldItem = pPlayer.getItemInHand(pHand);
@@ -55,7 +73,7 @@ public final class MolderBlock extends BaseEntityBlock {
                 if (pLevel.isClientSide() && !heldItem.is(Tags.Items.INGOTS_IRON) && molderBlockEntity.hasItem()) {
                     Minecraft.getInstance().setScreen(
                             new MolderScreen(Component.translatable("container." + TurtyChemistry.MODID + ".molder"),
-                                    pPos,molderBlockEntity));
+                                    pPos, molderBlockEntity));
                 } else if (!molderBlockEntity.hasItem() && heldItem.is(Tags.Items.INGOTS_IRON)) {
                     molderBlockEntity.insertItem(heldItem.split(1));
                 } else {
@@ -79,38 +97,40 @@ public final class MolderBlock extends BaseEntityBlock {
     }
 
     @Override
-    public @NotNull VoxelShape getOcclusionShape(final @NotNull BlockState pState, final @NotNull BlockGetter pLevel, final @NotNull BlockPos pPos) {
-        return makeShape();
-    }
-
-    @Override
     public boolean onDestroyedByPlayer(final BlockState state, final Level level, final BlockPos pos, final Player player, final boolean willHarvest, final FluidState fluid) {
         if (level.getBlockEntity(pos) instanceof MolderBlockEntity molderBlockEntity) {
-            StaticReusableMethods.dropItemsOnDestroy(level,molderBlockEntity.getItem(),pos);
+            StaticReusableMethods.dropItemsOnDestroy(level, molderBlockEntity.getItem(), pos);
         }
         return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
     }
-    private static VoxelShape makeShape(){
-        VoxelShape shape = Shapes.empty();
-        shape = Shapes.join(shape, Shapes.box(0.8125, 0, 0, 1, 0.875, 0.1875), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0.8125, 0.875, 0, 1, 1, 0.1875), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0, 0.875, 0, 0.1875, 1, 0.1875), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0, 0, 0, 0.1875, 0.875, 0.1875), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0, 0.875, 0.8125, 0.1875, 1, 1), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0, 0, 0.8125, 0.1875, 0.875, 1), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0.8125, 0.875, 0.8125, 1, 1, 1), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0.8125, 0, 0.8125, 1, 0.875, 1), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0.8125, 0.875, 0.1875, 1, 1, 0.8125), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0, 0.875, 0.1875, 0.1875, 1, 0.8125), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0.1875, 0.875, 0.8125, 0.8125, 1, 1), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0.1875, 0.875, 0, 0.8125, 1, 0.1875), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0.1875, 0.875, 0.1875, 0.8125, 0.9375, 0.8125), BooleanOp.OR);
-        return shape.optimize();
+
+
+    @Override
+    public @NotNull VoxelShape getCollisionShape(final @NotNull BlockState pState, final @NotNull BlockGetter pLevel, final @NotNull BlockPos pPos, final @NotNull CollisionContext pContext) {
+        return thisShape;
     }
+
+    @Override
+    public @NotNull VoxelShape getVisualShape(final @NotNull BlockState pState, final @NotNull BlockGetter pLevel, final @NotNull BlockPos pPos, final @NotNull CollisionContext pContext) {
+        return thisShape;
+    }
+
+    @Override
+    public @NotNull VoxelShape getOcclusionShape(final @NotNull BlockState pState, final @NotNull BlockGetter pLevel, final @NotNull BlockPos pPos) {
+        return thisShape;
+    }
+
+
+    @Override
+    public @NotNull VoxelShape getBlockSupportShape(final @NotNull BlockState pState, final @NotNull BlockGetter pReader, final @NotNull BlockPos pPos) {
+        return thisShape;
+    }
+
     @Override
     public @NotNull VoxelShape getShape(final @NotNull BlockState pState, final @NotNull BlockGetter pLevel, final @NotNull BlockPos pPos, final @NotNull CollisionContext pContext) {
-        return makeShape();
+        return thisShape;
     }
+
 
     @Override
     public @NotNull RenderShape getRenderShape(final @NotNull BlockState pState) {
