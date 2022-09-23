@@ -165,8 +165,10 @@ public final class MolderScreen extends Screen {
         @Override
         public void onRelease(final double pMouseX, final double pMouseY) {
             super.onRelease(pMouseX, pMouseY);
-            if (!molderScreen.currentStack.isEmpty()) {
 
+            //TODO:remove this after testing
+            if (!molderScreen.currentStack.isEmpty()) {
+                molderScreen.molderBlockEntity.setItem(molderScreen.currentStack);
                 PacketHandler.CHANNEL.sendToServer(new ServerBoundMolderClickPacket(pos, molderScreen.currentStack));
             }
             for (final PatternButton button : buttonList) {
