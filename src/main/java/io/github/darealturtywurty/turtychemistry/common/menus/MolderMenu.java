@@ -26,29 +26,11 @@ public final class MolderMenu extends AbstractContainerMenu {
         super(MenuInit.MOLDER.get(), pContainerId);
         containerLevelAccess = ContainerLevelAccess.create(playerInventory.player.getLevel(), pos);
         this.data = data;
-        final int slotSizePlus2 = 18;
-
-
         // Input Slots
         this.addSlot(new SlotItemHandler(slots, 0, 42, 35));
 
         // Output Slot
         this.addSlot(new SlotNoPlace(slots, 1, 116, 35));
-
-
-
-        // Player Inventory
-        for (int row = 0; row < 3; ++row) {
-            for (int col = 0; col < 9; ++col) {
-                this.addSlot(new Slot(playerInventory, col + row * 9 + 9, 8 + col * slotSizePlus2,
-                        84 + row * slotSizePlus2));
-            }
-        }
-
-        // Player Hotbar
-        for (int row = 0; row < 9; ++row) {
-            this.addSlot(new Slot(playerInventory, row, 8 + row * slotSizePlus2, 142));
-        }
 
         this.addDataSlots(data);
     }
