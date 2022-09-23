@@ -55,7 +55,7 @@ public final class MolderBlock extends BaseEntityBlock {
                 if (pLevel.isClientSide() && !heldItem.is(Tags.Items.INGOTS_IRON) && molderBlockEntity.hasItem()) {
                     Minecraft.getInstance().setScreen(
                             new MolderScreen(Component.translatable("container." + TurtyChemistry.MODID + ".molder"),
-                                    pPos));
+                                    pPos,molderBlockEntity));
                 } else if (!molderBlockEntity.hasItem() && heldItem.is(Tags.Items.INGOTS_IRON)) {
                     molderBlockEntity.insertItem(heldItem.split(1));
                 } else {
