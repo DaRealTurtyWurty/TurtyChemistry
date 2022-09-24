@@ -36,11 +36,11 @@ public final class MolderScreen extends Screen {
         super(pTitle);
         this.blockPos = pos;
         this.molderBlockEntity = molderBlockEntity;
-        initPattternButtons(this);
+        initPatternButtons(this);
 
     }
 
-    private static void initPattternButtons(final MolderScreen molderScreen) {
+    private static void initPatternButtons(final MolderScreen molderScreen) {
         for (int i = 0; i < 4; i++) {
             for (int z = 0; z < 10; z++) {
                 if (i < HOLDERS.length && z < HOLDERS[i].length) {
