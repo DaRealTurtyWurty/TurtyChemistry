@@ -1,7 +1,7 @@
 package io.github.darealturtywurty.turtychemistry.client.screens;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.*;
+import com.mojang.blaze3d.vertex.PoseStack;
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
 import io.github.darealturtywurty.turtychemistry.common.block.entity.MolderBlockEntity;
 import io.github.darealturtywurty.turtychemistry.core.util.DrawingSpace;
@@ -41,13 +41,13 @@ public final class MolderScreen extends Screen {
     }
 
     private static void initPatternButtons(final MolderScreen molderScreen) {
-        for (int i = 0; i < 4; i++) {
-            for (int z = 0; z < 10; z++) {
-                if (i < HOLDERS.length && z < HOLDERS[i].length) {
-                    PATTERN_BUTTON_LIST.add(
-                            new PatternButton(85 + (i * BUTTON_SIZE), (z * BUTTON_SIZE) + 30, BUTTON_SIZE, BUTTON_SIZE,
-                                    HOLDERS[i][z], molderScreen));
-                }
+        final int moldingPatternFirstDimensionLength = HOLDERS.length;
+        for (int i = 0; i < moldingPatternFirstDimensionLength; i++) {
+            final int moldingPatternSecondDimensionLength = HOLDERS[i].length;
+            for (int z = 0; z < moldingPatternSecondDimensionLength; z++) {
+                PATTERN_BUTTON_LIST.add(
+                        new PatternButton(85 + (i * BUTTON_SIZE), (z * BUTTON_SIZE) + 30, BUTTON_SIZE, BUTTON_SIZE,
+                                HOLDERS[i][z], molderScreen));
             }
         }
     }
