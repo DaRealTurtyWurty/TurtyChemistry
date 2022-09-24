@@ -8,6 +8,7 @@ import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
 import io.github.darealturtywurty.turtychemistry.client.screens.MolderScreen;
 import io.github.darealturtywurty.turtychemistry.core.network.PacketHandler;
 import io.github.darealturtywurty.turtychemistry.core.network.molder.ServerBoundMolderClickPacket;
+import io.github.darealturtywurty.turtylib.client.util.GuiUtils;
 import net.minecraft.client.gui.components.AbstractButton;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.renderer.GameRenderer;
@@ -15,6 +16,7 @@ import net.minecraft.client.sounds.SoundManager;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -59,24 +61,7 @@ public class DrawingSpace extends AbstractButton {
         pPoseStack.pushPose();
         //render line to cursor
         if (isHeld() && isMouseOnDrawingArea()) {
-            GlStateManager._disableTexture();
-            GlStateManager._depthMask(false);
-            GlStateManager._disableCull();
-            RenderSystem.setShader(GameRenderer::getRendertypeLinesShader);
-            final Tesselator renderThreadTessellator = RenderSystem.renderThreadTesselator();
-            final BufferBuilder bufferBuilder = renderThreadTessellator.getBuilder();
-            RenderSystem.lineWidth(2.0F);
-            bufferBuilder.begin(VertexFormat.Mode.LINES, DefaultVertexFormat.POSITION_COLOR_NORMAL);
-            final Vector3d xDistance = new Vector3d((int) endX - (int) beginX, (int) endY - (int) beginY, 0);
-            final Vector3d yDistance = new Vector3d((int) beginX - (int) endX, (int) beginY - (int) endY, 0);
-            bufferBuilder.vertex((int) beginX, (int) beginY, 0.0D).color(0, 0, 255, 255)
-                    .normal((float) xDistance.x, (float) xDistance.y, 0.0F).endVertex();
-            bufferBuilder.vertex((int) endX, (int) endY, 0.0D).color(0, 0, 255, 255)
-                    .normal((float) yDistance.x, (float) yDistance.y, 0.0F).endVertex();
-            renderThreadTessellator.end();
-            GlStateManager._enableCull();
-            GlStateManager._depthMask(true);
-            GlStateManager._enableTexture();
+            GuiUtils.drawLine(beginX,beginY,endX,endY, 0,0,255,255,10);
         }
         pPoseStack.popPose();
 
@@ -131,6 +116,10 @@ public class DrawingSpace extends AbstractButton {
     public void mouseMoved(final double pMouseX, final double pMouseY) {
         super.mouseMoved(pMouseX, pMouseY);
         isOnArea = !(pMouseX < this.x) && !(pMouseX > this.width + this.x) && !(pMouseY < this.y) && !(pMouseY > this.y + this.height);
+        if(!isOnArea)
+        {
+            mouseReleased(pMouseX,pMouseY,0);
+        }
     }
 
     private void clearLine() {
