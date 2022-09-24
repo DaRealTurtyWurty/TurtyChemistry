@@ -35,18 +35,18 @@ public record ServerBoundMolderClickPacket(BlockPos molderBlockEntityPos, ItemSt
         contextSupplier.get().enqueueWork(() -> {
 
             if (sender == null) {
-                TurtyChemistry.LOGGER.info("no sender");
+                TurtyChemistry.LOGGER.debug("no sender");
                 return;
             }
             final Level serverLevel = sender.level;
             if (!serverLevel.hasChunkAt(clickPacket.molderBlockEntityPos)) {
+                TurtyChemistry.LOGGER.debug("not chunk present for block entity operations");
                 return;
             }
             if (sender.level.getBlockEntity(
                     clickPacket.molderBlockEntityPos) instanceof MolderBlockEntity molderBlockEntity) {
                 if (!molderBlockEntity.getItem().sameItem(clickPacket.stack)) {
                     molderBlockEntity.setItem(clickPacket.stack);
-                    molderBlockEntity.update();
                 }
             }
 
