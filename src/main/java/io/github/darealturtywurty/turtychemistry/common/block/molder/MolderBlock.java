@@ -7,6 +7,7 @@ import io.github.darealturtywurty.turtychemistry.core.init.BlockEntityInit;
 import io.github.darealturtywurty.turtychemistry.core.util.StaticReusableMethods;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -15,15 +16,15 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.BaseEntityBlock;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -33,36 +34,54 @@ import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public final class MolderBlock extends BaseEntityBlock {
+public final class MolderBlock extends BaseEntityBlock implements SimpleWaterloggedBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    private static final BooleanProperty IS_WATERLOGGED = BlockStateProperties.WATERLOGGED;
     private static final VoxelShape thisShape;
-
-    static {
-        VoxelShape shape = Shapes.empty();
-        shape = Shapes.join(shape, Shapes.box(0.8125, 0, 0, 1, 0.875, 0.1875), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0.8125, 0.875, 0, 1, 1, 0.1875), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0, 0.875, 0, 0.1875, 1, 0.1875), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0, 0, 0, 0.1875, 0.875, 0.1875), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0, 0.875, 0.8125, 0.1875, 1, 1), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0, 0, 0.8125, 0.1875, 0.875, 1), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0.8125, 0.875, 0.8125, 1, 1, 1), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0.8125, 0, 0.8125, 1, 0.875, 1), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0.8125, 0.875, 0.1875, 1, 1, 0.8125), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0, 0.875, 0.1875, 0.1875, 1, 0.8125), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0.1875, 0.875, 0.8125, 0.8125, 1, 1), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0.1875, 0.875, 0, 0.8125, 1, 0.1875), BooleanOp.OR);
-        shape = Shapes.join(shape, Shapes.box(0.1875, 0.875, 0.1875, 0.8125, 0.9375, 0.8125), BooleanOp.OR);
-        thisShape = shape.optimize();
-    }
+static {
+    VoxelShape shape = Shapes.empty();
+    shape = Shapes.join(shape, Shapes.box(0.8125, 0, 0, 1, 0.875, 0.1875), BooleanOp.OR);
+    shape = Shapes.join(shape, Shapes.box(0.8125, 0.875, 0, 1, 1, 0.1875), BooleanOp.OR);
+    shape = Shapes.join(shape, Shapes.box(0, 0.875, 0, 0.1875, 1, 0.1875), BooleanOp.OR);
+    shape = Shapes.join(shape, Shapes.box(0, 0, 0, 0.1875, 0.875, 0.1875), BooleanOp.OR);
+    shape = Shapes.join(shape, Shapes.box(0, 0.875, 0.8125, 0.1875, 1, 1), BooleanOp.OR);
+    shape = Shapes.join(shape, Shapes.box(0, 0, 0.8125, 0.1875, 0.875, 1), BooleanOp.OR);
+    shape = Shapes.join(shape, Shapes.box(0.8125, 0.875, 0.8125, 1, 1, 1), BooleanOp.OR);
+    shape = Shapes.join(shape, Shapes.box(0.8125, 0, 0.8125, 1, 0.875, 1), BooleanOp.OR);
+    shape = Shapes.join(shape, Shapes.box(0.8125, 0.875, 0.1875, 1, 1, 0.8125), BooleanOp.OR);
+    shape = Shapes.join(shape, Shapes.box(0, 0.875, 0.1875, 0.1875, 1, 0.8125), BooleanOp.OR);
+    shape = Shapes.join(shape, Shapes.box(0.1875, 0.875, 0.8125, 0.8125, 1, 1), BooleanOp.OR);
+    shape = Shapes.join(shape, Shapes.box(0.1875, 0.875, 0, 0.8125, 1, 0.1875), BooleanOp.OR);
+    shape = Shapes.join(shape, Shapes.box(0.1875, 0.875, 0.1875, 0.8125, 0.9375, 0.8125), BooleanOp.OR);
+    thisShape = shape.optimize();
+}
 
     public MolderBlock(final Properties pProperties) {
         super(pProperties);
+        this.registerDefaultState(
+                this.getStateDefinition().any().setValue(FACING, Direction.NORTH).setValue(IS_WATERLOGGED, false));
+
     }
 
 
     @Override
     protected void createBlockStateDefinition(final StateDefinition.Builder<Block, BlockState> pBuilder) {
-        super.createBlockStateDefinition(pBuilder.add(FACING));
+        super.createBlockStateDefinition(pBuilder.add(FACING).add(IS_WATERLOGGED));
+    }
+
+    @Override
+    public @NotNull FluidState getFluidState(final BlockState pState) {
+        return pState.getValue(IS_WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
+    }
+
+    @Override
+    public @NotNull BlockState rotate(final BlockState pState, final Rotation pRotation) {
+        return pState.setValue(FACING,pRotation.rotate(pState.getValue(FACING)));
+    }
+
+    @Override
+    public @NotNull BlockState mirror(final BlockState pState, final Mirror pMirror) {
+        return pState.rotate(pMirror.getRotation(pState.getValue(FACING)));
     }
 
     @Override
@@ -93,7 +112,9 @@ public final class MolderBlock extends BaseEntityBlock {
 
     @Override
     public @NotNull BlockState getStateForPlacement(final @NotNull BlockPlaceContext pContext) {
-        return super.getStateForPlacement(pContext).setValue(FACING, pContext.getHorizontalDirection());
+        final boolean isInWater = pContext.getLevel().getFluidState(pContext.getClickedPos()).getType() == Fluids.WATER;
+        return super.getStateForPlacement(pContext).setValue(FACING, pContext.getHorizontalDirection())
+                .setValue(IS_WATERLOGGED, isInWater);
     }
 
     @Override
@@ -106,31 +127,9 @@ public final class MolderBlock extends BaseEntityBlock {
 
 
     @Override
-    public @NotNull VoxelShape getCollisionShape(final @NotNull BlockState pState, final @NotNull BlockGetter pLevel, final @NotNull BlockPos pPos, final @NotNull CollisionContext pContext) {
-        return thisShape;
-    }
-
-    @Override
-    public @NotNull VoxelShape getVisualShape(final @NotNull BlockState pState, final @NotNull BlockGetter pLevel, final @NotNull BlockPos pPos, final @NotNull CollisionContext pContext) {
-        return thisShape;
-    }
-
-    @Override
-    public @NotNull VoxelShape getOcclusionShape(final @NotNull BlockState pState, final @NotNull BlockGetter pLevel, final @NotNull BlockPos pPos) {
-        return thisShape;
-    }
-
-
-    @Override
-    public @NotNull VoxelShape getBlockSupportShape(final @NotNull BlockState pState, final @NotNull BlockGetter pReader, final @NotNull BlockPos pPos) {
-        return thisShape;
-    }
-
-    @Override
     public @NotNull VoxelShape getShape(final @NotNull BlockState pState, final @NotNull BlockGetter pLevel, final @NotNull BlockPos pPos, final @NotNull CollisionContext pContext) {
         return thisShape;
     }
-
 
     @Override
     public @NotNull RenderShape getRenderShape(final @NotNull BlockState pState) {

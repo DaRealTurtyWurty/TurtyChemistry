@@ -13,8 +13,6 @@ public VoxelShape makeShape(){
 	shape = VoxelShapes.join(shape, VoxelShapes.box(0.1875, 0.875, 0.8125, 0.8125, 1, 1), IBooleanFunction.OR);
 	shape = VoxelShapes.join(shape, VoxelShapes.box(0.1875, 0.875, 0, 0.8125, 1, 0.1875), IBooleanFunction.OR);
 	shape = VoxelShapes.join(shape, VoxelShapes.box(0.1875, 0.875, 0.1875, 0.8125, 0.9375, 0.8125), IBooleanFunction.OR);
-	shape = VoxelShapes.join(shape, VoxelShapes.box(0.875, 1, 0.375, 0.9375, 1.0625, 0.6875), IBooleanFunction.OR);
-	shape = VoxelShapes.join(shape, VoxelShapes.box(0.90625, 1.01875, 0.3125, 0.90625, 1.05, 0.375), IBooleanFunction.OR);
 
 	return shape;
 }

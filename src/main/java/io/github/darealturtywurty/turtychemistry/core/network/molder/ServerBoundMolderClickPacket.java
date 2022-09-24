@@ -11,11 +11,12 @@ import net.minecraftforge.network.NetworkEvent;
 
 import java.util.function.Supplier;
 
-public record  ServerBoundMolderClickPacket(BlockPos molderBlockEntityPos,ItemStack stack) {
+public record ServerBoundMolderClickPacket(BlockPos molderBlockEntityPos, ItemStack stack) {
 
     ServerBoundMolderClickPacket(final FriendlyByteBuf byteBuf) {
-        this(byteBuf.readBlockPos(),byteBuf.readItem());
+        this(byteBuf.readBlockPos(), byteBuf.readItem());
     }
+
 
     public static void encode(final ServerBoundMolderClickPacket clickPacket, final FriendlyByteBuf byteBuf) {
 
@@ -24,6 +25,7 @@ public record  ServerBoundMolderClickPacket(BlockPos molderBlockEntityPos,ItemSt
     }
 
     public static ServerBoundMolderClickPacket decode(final FriendlyByteBuf byteBuf) {
+
         return new ServerBoundMolderClickPacket(byteBuf.readBlockPos(), byteBuf.readItem());
     }
 
@@ -40,7 +42,8 @@ public record  ServerBoundMolderClickPacket(BlockPos molderBlockEntityPos,ItemSt
             if (!serverLevel.hasChunkAt(clickPacket.molderBlockEntityPos)) {
                 return;
             }
-            if (sender.level.getBlockEntity(clickPacket.molderBlockEntityPos) instanceof MolderBlockEntity molderBlockEntity) {
+            if (sender.level.getBlockEntity(
+                    clickPacket.molderBlockEntityPos) instanceof MolderBlockEntity molderBlockEntity) {
                 if (!molderBlockEntity.getItem().sameItem(clickPacket.stack)) {
                     molderBlockEntity.setItem(clickPacket.stack);
                     molderBlockEntity.update();
@@ -50,5 +53,6 @@ public record  ServerBoundMolderClickPacket(BlockPos molderBlockEntityPos,ItemSt
         });
         contextSupplier.get().setPacketHandled(true);
     }
+
 
 }

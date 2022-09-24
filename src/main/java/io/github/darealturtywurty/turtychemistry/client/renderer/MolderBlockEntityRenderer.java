@@ -1,7 +1,6 @@
 package io.github.darealturtywurty.turtychemistry.client.renderer;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Quaternion;
 import com.mojang.math.Vector3f;
 import io.github.darealturtywurty.turtychemistry.common.block.entity.MolderBlockEntity;
 import io.github.darealturtywurty.turtychemistry.common.block.molder.MolderBlock;

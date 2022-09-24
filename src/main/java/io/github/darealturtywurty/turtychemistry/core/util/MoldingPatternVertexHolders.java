@@ -1,7 +1,6 @@
 package io.github.darealturtywurty.turtychemistry.core.util;
 
 import io.github.darealturtywurty.turtychemistry.core.init.BlockInit;
-import io.github.darealturtywurty.turtychemistry.core.init.ItemInit;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
