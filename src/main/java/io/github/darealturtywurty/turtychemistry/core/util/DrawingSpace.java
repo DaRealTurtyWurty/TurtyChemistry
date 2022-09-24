@@ -1,9 +1,7 @@
 package io.github.darealturtywurty.turtychemistry.core.util;
 
-import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.*;
-import com.mojang.math.Vector3d;
+import com.mojang.blaze3d.vertex.PoseStack;
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
 import io.github.darealturtywurty.turtychemistry.client.screens.MolderScreen;
 import io.github.darealturtywurty.turtychemistry.core.network.PacketHandler;
@@ -16,7 +14,6 @@ import net.minecraft.client.sounds.SoundManager;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -52,19 +49,15 @@ public class DrawingSpace extends AbstractButton {
 
     @Override
     public void renderButton(final @NotNull PoseStack pPoseStack, final int pMouseX, final int pMouseY, final float pPartialTick) {
-
-
         RenderSystem.setShader(GameRenderer::getPositionTexColorShader);
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
         RenderSystem.setShaderTexture(0, DRAWING_AREA_TEXTURE);
         this.blit(pPoseStack, (this.width >> 1) + 40, (this.height >> 3) + 7, 0, 0, (this.width) - 1, this.height);
         pPoseStack.pushPose();
-        //render line to cursor
         if (isHeld() && isMouseOnDrawingArea()) {
-            GuiUtils.drawLine(beginX,beginY,endX,endY, 0,0,255,255,10);
+            GuiUtils.drawLine(beginX, beginY, endX, endY, 0, 0, 255, 255, 10);
         }
         pPoseStack.popPose();
-
     }
 
     @Override
@@ -100,8 +93,6 @@ public class DrawingSpace extends AbstractButton {
             } else {
                 endY = pMouseY;
             }
-
-
             for (final MolderScreen.PatternButton button : buttonList) {
                 for (final PatternVertex vertex : button.moldingPatternHolder.getVertices()) {
                     if (pMouseX == vertex.x && pMouseX == vertex.y) {
@@ -116,9 +107,8 @@ public class DrawingSpace extends AbstractButton {
     public void mouseMoved(final double pMouseX, final double pMouseY) {
         super.mouseMoved(pMouseX, pMouseY);
         isOnArea = !(pMouseX < this.x) && !(pMouseX > this.width + this.x) && !(pMouseY < this.y) && !(pMouseY > this.y + this.height);
-        if(!isOnArea)
-        {
-            mouseReleased(pMouseX,pMouseY,0);
+        if (!isOnArea) {
+            mouseReleased(pMouseX, pMouseY, 0);
         }
     }
 
