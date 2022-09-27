@@ -12,10 +12,7 @@ import net.minecraft.client.renderer.entity.ItemRenderer;
 import org.jetbrains.annotations.NotNull;
 
 public final class MolderBlockEntityRenderer implements BlockEntityRenderer<MolderBlockEntity> {
-
-
     private final ItemRenderer itemRenderer;
-
 
     public MolderBlockEntityRenderer(BlockEntityRendererProvider.Context ctx) {
         this.itemRenderer = ctx.getItemRenderer();
