@@ -110,7 +110,7 @@ public final class MixinHooks {
         }
 
         public static void calculateStackTemperature(final ItemStack stack, final Level level, final Entity entity) {
-            if (!level.isClientSide() && checkHeatableIngot(stack)) {
+            if (checkHeatableIngot(stack)) {
                 CompoundTag temperatureNBTTag = stack.getTag();
                 if (temperatureNBTTag == null || !containsTemperatureTag(stack)) {
                     temperatureNBTTag = new CompoundTag();
