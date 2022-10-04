@@ -1,8 +1,8 @@
 package io.github.darealturtywurty.turtychemistry.mixins;
 
-import io.github.darealturtywurty.turtychemistry.common.block.entity.AnvilBlockEntity;
+import io.github.darealturtywurty.turtychemistry.block.entity.AnvilBlockEntity;
 import io.github.darealturtywurty.turtychemistry.core.MixinHooks;
-import io.github.darealturtywurty.turtychemistry.core.init.BlockEntityInit;
+import io.github.darealturtywurty.turtychemistry.init.BlockEntityInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;

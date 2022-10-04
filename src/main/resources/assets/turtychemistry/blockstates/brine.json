@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "turtychemistry:block/brine"
-		}
-	}
+    "variants": {
+        "": {
+            "model": "turtychemistry:block/brine"
+        }
+    }
 }

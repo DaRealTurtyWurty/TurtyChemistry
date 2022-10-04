@@ -1,7 +1,7 @@
 package io.github.darealturtywurty.turtychemistry.core;
 
-import io.github.darealturtywurty.turtychemistry.common.TurtyTags;
-import io.github.darealturtywurty.turtychemistry.common.block.entity.AnvilBlockEntity;
+import io.github.darealturtywurty.turtychemistry.block.entity.AnvilBlockEntity;
+import io.github.darealturtywurty.turtychemistry.init.TagInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -29,7 +29,7 @@ public final class MixinHooks {
 
     public static final class AnvilMixinImplementation {
         private static boolean isValidStackForAnvil(final ItemStack stack) {
-            for (TagKey<Item> itemTagKey : TurtyTags.TURTY_INGOT_TAG_KEY) {
+            for (TagKey<Item> itemTagKey : TagInit.TURTY_INGOT_TAG_KEY) {
                 if (stack.is(itemTagKey) && ItemMixinImplementation.containsTemperatureTag(stack)) {
                     return true;
                 }
@@ -39,7 +39,7 @@ public final class MixinHooks {
         }
 
         private static boolean isValidHammerForAnvil(final ItemStack stack) {
-            return stack.is(TurtyTags.TURTY_HAMMER_TAG_KEY);
+            return stack.is(TagInit.TURTY_HAMMER_TAG_KEY);
         }
 
         public static void addIngotToAnvil(final Level pLevel, final BlockPos pPos, final Player pPlayer, final InteractionHand pHand, final CallbackInfoReturnable<InteractionResult> cir) {
@@ -87,7 +87,7 @@ public final class MixinHooks {
         }
 
         private static boolean checkHeatableIngot(final ItemStack stack) {
-            for (TagKey<Item> itemTagKey : TurtyTags.TURTY_INGOT_TAG_KEY) {
+            for (TagKey<Item> itemTagKey : TagInit.TURTY_INGOT_TAG_KEY) {
                 if (stack.is(itemTagKey)) {
                     return true;
                 }

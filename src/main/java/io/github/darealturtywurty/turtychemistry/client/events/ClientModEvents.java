@@ -1,13 +1,15 @@
 package io.github.darealturtywurty.turtychemistry.client.events;
 
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
-import io.github.darealturtywurty.turtychemistry.client.models.*;
+import io.github.darealturtywurty.turtychemistry.client.models.ClayAlloyFurnaceModel;
+import io.github.darealturtywurty.turtychemistry.client.models.ClayAlloyFurnaceTrayModel;
+import io.github.darealturtywurty.turtychemistry.client.models.ClayAlloyFurnaceWoodModel;
 import io.github.darealturtywurty.turtychemistry.client.renderer.AnvilBlockEntityRenderer;
 import io.github.darealturtywurty.turtychemistry.client.renderer.ClayAlloyFurnaceBlockEntityRenderer;
 import io.github.darealturtywurty.turtychemistry.client.renderer.MolderBlockEntityRenderer;
-import io.github.darealturtywurty.turtychemistry.client.screens.ClayAlloyFurnaceScreen;
-import io.github.darealturtywurty.turtychemistry.core.init.BlockEntityInit;
-import io.github.darealturtywurty.turtychemistry.core.init.MenuInit;
+import io.github.darealturtywurty.turtychemistry.client.util.screens.ClayAlloyFurnaceScreen;
+import io.github.darealturtywurty.turtychemistry.init.BlockEntityInit;
+import io.github.darealturtywurty.turtychemistry.init.MenuInit;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -39,9 +41,6 @@ public final class ClientModEvents {
 
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent event) {
-        event.enqueueWork(() -> {
-            MenuScreens.register(MenuInit.CLAY_ALLOY_FURNACE.get(), ClayAlloyFurnaceScreen::new);
-            //MenuScreens.register(MenuInit.MOLDER.get(), MolderScreen::new);
-        });
+        event.enqueueWork(() -> MenuScreens.register(MenuInit.CLAY_ALLOY_FURNACE.get(), ClayAlloyFurnaceScreen::new));
     }
 }

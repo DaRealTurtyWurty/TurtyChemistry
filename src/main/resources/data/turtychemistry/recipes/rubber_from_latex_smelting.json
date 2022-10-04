@@ -1,9 +1,9 @@
 {
-  "type": "minecraft:smelting",
-  "ingredient": {
-    "item": "turtychemistry:latex"
-  },
-  "result": "turtychemistry:rubber",
-  "experience": 1,
-  "cookingtime": 2
+    "type": "minecraft:smelting",
+    "ingredient": {
+        "item": "turtychemistry:latex"
+    },
+    "result": "turtychemistry:rubber",
+    "experience": 1,
+    "cookingtime": 2
 }

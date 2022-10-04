@@ -5,7 +5,7 @@ import com.mojang.math.Vector3f;
 import io.github.darealturtywurty.turtychemistry.client.models.ClayAlloyFurnaceModel;
 import io.github.darealturtywurty.turtychemistry.client.models.ClayAlloyFurnaceTrayModel;
 import io.github.darealturtywurty.turtychemistry.client.models.ClayAlloyFurnaceWoodModel;
-import io.github.darealturtywurty.turtychemistry.common.block.entity.ClayAlloyFurnaceBlockEntity;
+import io.github.darealturtywurty.turtychemistry.block.entity.ClayAlloyFurnaceBlockEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
