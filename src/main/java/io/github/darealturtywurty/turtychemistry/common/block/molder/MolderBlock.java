@@ -61,7 +61,6 @@ public final class MolderBlock extends BaseEntityBlock implements SimpleWaterlog
         super(pProperties);
         this.registerDefaultState(
                 this.getStateDefinition().any().setValue(FACING, Direction.NORTH).setValue(IS_WATERLOGGED, false));
-
     }
 
     @Override

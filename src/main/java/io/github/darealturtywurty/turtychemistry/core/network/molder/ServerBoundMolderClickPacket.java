@@ -17,23 +17,18 @@ public record ServerBoundMolderClickPacket(BlockPos molderBlockEntityPos, ItemSt
         this(byteBuf.readBlockPos(), byteBuf.readItem());
     }
 
-
     public static void encode(final ServerBoundMolderClickPacket clickPacket, final FriendlyByteBuf byteBuf) {
-
         byteBuf.writeBlockPos(clickPacket.molderBlockEntityPos);
         byteBuf.writeItem(clickPacket.stack);
     }
 
     public static ServerBoundMolderClickPacket decode(final FriendlyByteBuf byteBuf) {
-
         return new ServerBoundMolderClickPacket(byteBuf.readBlockPos(), byteBuf.readItem());
     }
 
     public static void handle(final ServerBoundMolderClickPacket clickPacket, final Supplier<NetworkEvent.Context> contextSupplier) {
         final ServerPlayer sender = contextSupplier.get().getSender();
-
         contextSupplier.get().enqueueWork(() -> {
-
             if (sender == null) {
                 TurtyChemistry.LOGGER.debug("no sender");
                 return;
@@ -53,6 +48,4 @@ public record ServerBoundMolderClickPacket(BlockPos molderBlockEntityPos, ItemSt
         });
         contextSupplier.get().setPacketHandled(true);
     }
-
-
 }
