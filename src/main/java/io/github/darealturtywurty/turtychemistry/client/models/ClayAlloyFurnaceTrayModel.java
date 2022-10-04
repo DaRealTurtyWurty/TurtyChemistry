@@ -30,18 +30,9 @@ public final class ClayAlloyFurnaceTrayModel extends Model {
         PartDefinition partdefinition = meshdefinition.getRoot();
 
         partdefinition.addOrReplaceChild("tray", CubeListBuilder.create().texOffs(0, 0)
-                        .addBox(-11.0F, -1.5F, -4.6667F,
-                                22.0F, 1.0F, 24.0F,
-                                new CubeDeformation(0.0F))
-                        .texOffs(0, 4)
-                        .addBox(10.0F, -0.5F, -4.6667F,
-                                1.0F, 2.0F, 2.0F,
-                                new CubeDeformation(0.0F))
-                        .texOffs(0, 0)
-                        .addBox(-11.0F, -0.5F, -4.6667F,
-                                1.0F, 2.0F, 2.0F,
-                                new CubeDeformation(
-                                        0.0F)),
+                        .addBox(-11.0F, -1.5F, -4.6667F, 22.0F, 1.0F, 24.0F, new CubeDeformation(0.0F)).texOffs(0, 4)
+                        .addBox(10.0F, -0.5F, -4.6667F, 1.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)).texOffs(0, 0)
+                        .addBox(-11.0F, -0.5F, -4.6667F, 1.0F, 2.0F, 2.0F, new CubeDeformation(0.0F)),
                 PartPose.offset(0.0F, 11.5F, -8.3333F));
 
         return LayerDefinition.create(meshdefinition, 128, 128);

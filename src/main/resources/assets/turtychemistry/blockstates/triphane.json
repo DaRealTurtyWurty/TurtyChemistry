@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "turtychemistry:block/triphane"
-		}
-	}
+    "variants": {
+        "": {
+            "model": "turtychemistry:block/triphane"
+        }
+    }
 }

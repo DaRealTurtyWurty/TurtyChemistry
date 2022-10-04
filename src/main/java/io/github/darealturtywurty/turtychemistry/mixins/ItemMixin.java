@@ -1,6 +1,6 @@
 package io.github.darealturtywurty.turtychemistry.mixins;
 
-import io.github.darealturtywurty.turtychemistry.common.block.entity.AnvilBlockEntity;
+import io.github.darealturtywurty.turtychemistry.block.entity.AnvilBlockEntity;
 import io.github.darealturtywurty.turtychemistry.core.MixinHooks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;

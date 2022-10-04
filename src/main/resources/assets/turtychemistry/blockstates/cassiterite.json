@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "turtychemistry:block/cassiterite"
-		}
-	}
+    "variants": {
+        "": {
+            "model": "turtychemistry:block/cassiterite"
+        }
+    }
 }

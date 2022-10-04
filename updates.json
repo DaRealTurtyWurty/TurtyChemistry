@@ -1,12 +1,10 @@
 {
-	"homepage": "https://github.com/DaRealTurtyWurty/TurtyChemistry",
-	"promos": {
-		"1.17.1-latest": "1.0"
-	},
-	
-	"1.17.1": {
-		"1.0": {
-			
-		}
-	}
+    "homepage": "https://github.com/DaRealTurtyWurty/TurtyChemistry",
+    "promos": {
+        "1.17.1-latest": "1.0"
+    },
+    "1.17.1": {
+        "1.0": {
+        }
+    }
 }

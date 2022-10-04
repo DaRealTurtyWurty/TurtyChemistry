@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "turtychemistry:block/boracite"
-		}
-	}
+    "variants": {
+        "": {
+            "model": "turtychemistry:block/boracite"
+        }
+    }
 }

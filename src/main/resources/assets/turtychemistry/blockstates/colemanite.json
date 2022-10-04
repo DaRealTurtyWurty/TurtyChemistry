@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "turtychemistry:block/colemanite"
-		}
-	}
+    "variants": {
+        "": {
+            "model": "turtychemistry:block/colemanite"
+        }
+    }
 }

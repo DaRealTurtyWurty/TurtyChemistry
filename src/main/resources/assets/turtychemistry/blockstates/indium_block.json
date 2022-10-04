@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "turtychemistry:block/indium_block"
-		}
-	}
+    "variants": {
+        "": {
+            "model": "turtychemistry:block/indium_block"
+        }
+    }
 }

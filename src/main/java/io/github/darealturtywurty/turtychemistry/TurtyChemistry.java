@@ -1,6 +1,6 @@
 package io.github.darealturtywurty.turtychemistry;
 
-import io.github.darealturtywurty.turtychemistry.core.init.*;
+import io.github.darealturtywurty.turtychemistry.init.*;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
@@ -36,7 +36,6 @@ public final class TurtyChemistry {
         BlockInit.BLOCKS.register(bus);
         ItemInit.ITEMS.register(bus);
         BlockEntityInit.BLOCK_ENTITIES.register(bus);
-        ContainerInit.MENU_TYPES.register(bus);
         RecipeInit.SERIALIZERS.register(bus);
         MultiblockInit.MULTIBLOCKS.register(bus);
         MenuInit.MENUS.register(bus);
