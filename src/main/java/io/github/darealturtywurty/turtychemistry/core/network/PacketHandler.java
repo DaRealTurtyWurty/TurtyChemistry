@@ -17,7 +17,7 @@ public final class PacketHandler extends AbstractInit {
     public static void init() {
         int index = 0;
         CHANNEL.registerMessage(index++, ServerBoundMolderClickPacket.class, ServerBoundMolderClickPacket::encode,
-                ServerBoundMolderClickPacket::decode,ServerBoundMolderClickPacket::handle);
+                ServerBoundMolderClickPacket::decode, ServerBoundMolderClickPacket::handle);
         TurtyChemistry.LOGGER.info("Registered {} packets!", index);
 
     }

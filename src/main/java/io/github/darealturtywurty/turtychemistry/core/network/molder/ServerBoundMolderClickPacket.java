@@ -40,7 +40,7 @@ public record ServerBoundMolderClickPacket(BlockPos molderBlockEntityPos, ItemSt
             }
             final Level serverLevel = sender.level;
             if (!serverLevel.hasChunkAt(clickPacket.molderBlockEntityPos)) {
-                TurtyChemistry.LOGGER.debug("not chunk present for block entity operations");
+                TurtyChemistry.LOGGER.debug("no chunk present for block entity operations");
                 return;
             }
             if (sender.level.getBlockEntity(

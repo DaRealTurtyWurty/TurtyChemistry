@@ -25,7 +25,7 @@ public final class MolderScreen extends Screen {
             "textures/gui/molder/molder_gui.png");
 
     private static final int BUTTON_SIZE = 18;
-    private static final MoldingPatternVertexHolders[][] HOLDERS = new MoldingPatternVertexHolders[][]{MoldingPatternVertexHolders.values()};
+    private static final MoldingPatternVertexHolders[] HOLDERS = MoldingPatternVertexHolders.values();
     private static final List<PatternButton> PATTERN_BUTTON_LIST = new ArrayList<>();
     private final BlockPos blockPos;
     private final MolderBlockEntity molderBlockEntity;
@@ -41,15 +41,12 @@ public final class MolderScreen extends Screen {
     }
 
     private static void initPatternButtons(final MolderScreen molderScreen) {
-        final int moldingPatternFirstDimensionLength = HOLDERS.length;
-        for (int i = 0; i < moldingPatternFirstDimensionLength; i++) {
-            final int moldingPatternSecondDimensionLength = HOLDERS[i].length;
-            for (int z = 0; z < moldingPatternSecondDimensionLength; z++) {
-                PATTERN_BUTTON_LIST.add(
-                        new PatternButton(85 + (i * BUTTON_SIZE), (z * BUTTON_SIZE) + 30, BUTTON_SIZE, BUTTON_SIZE,
-                                HOLDERS[i][z], molderScreen));
-            }
+        final int moldingPatternSecondDimensionLength = HOLDERS.length;
+        for (int z = 0; z < moldingPatternSecondDimensionLength; z++) {
+            PATTERN_BUTTON_LIST.add(
+                    new PatternButton(85, (z * BUTTON_SIZE) + 30, BUTTON_SIZE, BUTTON_SIZE, HOLDERS[z], molderScreen));
         }
+
     }
 
     @Override

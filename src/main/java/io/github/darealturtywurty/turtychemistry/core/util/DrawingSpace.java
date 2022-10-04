@@ -25,7 +25,6 @@ public class DrawingSpace extends AbstractButton {
     private final BlockPos pos;
     private final MolderScreen molderScreen;
     private boolean isHeld;
-
     private double beginX, beginY, endX, endY;
     private boolean isOnArea = true;
 
@@ -43,8 +42,6 @@ public class DrawingSpace extends AbstractButton {
     @Override
     public void onPress() {
         isHeld = true;
-
-
     }
 
     @Override

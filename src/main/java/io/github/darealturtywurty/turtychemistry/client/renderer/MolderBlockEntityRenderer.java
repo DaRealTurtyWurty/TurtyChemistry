@@ -12,25 +12,19 @@ import net.minecraft.client.renderer.entity.ItemRenderer;
 import org.jetbrains.annotations.NotNull;
 
 public final class MolderBlockEntityRenderer implements BlockEntityRenderer<MolderBlockEntity> {
-
-
     private final ItemRenderer itemRenderer;
-
-
     public MolderBlockEntityRenderer(BlockEntityRendererProvider.Context ctx) {
         this.itemRenderer = ctx.getItemRenderer();
     }
-
     @Override
     public void render(final @NotNull MolderBlockEntity pBlockEntity, final float pPartialTick, final @NotNull PoseStack pPoseStack, final @NotNull MultiBufferSource pBufferSource, final int pPackedLight, final int pPackedOverlay) {
         pPoseStack.pushPose();
         pPoseStack.translate(0.5f, 0.96f, 0.5f);
         switch (pBlockEntity.getBlockState().getValue(MolderBlock.FACING)) {
-            case SOUTH-> {
+            case SOUTH -> {
                 pPoseStack.mulPose(Vector3f.ZN.rotationDegrees(180));
                 pPoseStack.mulPose(Vector3f.YP.rotationDegrees(180));
                 pPoseStack.mulPose(Vector3f.XP.rotationDegrees(90));
-
             }
             case NORTH -> {
                 pPoseStack.mulPose(Vector3f.ZP.rotationDegrees(-180));
@@ -46,9 +40,9 @@ public final class MolderBlockEntityRenderer implements BlockEntityRenderer<Mold
                 pPoseStack.mulPose(Vector3f.XP.rotationDegrees(90));
             }
         }
-        pPoseStack.scale(0.6f,0.6f,0.6f);
-        itemRenderer.renderStatic(pBlockEntity.getItem(), ItemTransforms.TransformType.FIXED,pPackedLight,
-                pPackedOverlay,pPoseStack,pBufferSource,(int)pBlockEntity.getBlockPos().asLong());
+        pPoseStack.scale(0.6f, 0.6f, 0.6f);
+        itemRenderer.renderStatic(pBlockEntity.getItem(), ItemTransforms.TransformType.FIXED, pPackedLight,
+                pPackedOverlay, pPoseStack, pBufferSource, (int) pBlockEntity.getBlockPos().asLong());
 
         pPoseStack.popPose();
     }
