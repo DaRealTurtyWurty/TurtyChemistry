@@ -1,6 +1,7 @@
 package io.github.darealturtywurty.turtychemistry.core.network;
 
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
+import io.github.darealturtywurty.turtychemistry.core.network.molder.ServerBoundMolderClickPacket;
 import io.github.darealturtywurty.turtylib.core.init.AbstractInit;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.network.NetworkRegistry;
@@ -15,6 +16,8 @@ public final class PacketHandler extends AbstractInit {
 
     public static void init() {
         int index = 0;
+        CHANNEL.registerMessage(index++, ServerBoundMolderClickPacket.class, ServerBoundMolderClickPacket::encode,
+                ServerBoundMolderClickPacket::decode, ServerBoundMolderClickPacket::handle);
         TurtyChemistry.LOGGER.info("Registered {} packets!", index);
 
     }

@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.state.predicate.BlockStatePredicate;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
-public class MultiblockInit {
+public final class MultiblockInit {
     public static final DeferredRegister<Multiblock> MULTIBLOCKS = DeferredRegister.create(
             TurtyLib.MULTIBLOCK_REGISTRY_KEY, TurtyChemistry.MODID);
 
@@ -29,4 +29,6 @@ public class MultiblockInit {
                                     blockPos, player))
             )
     );
+
+
 }

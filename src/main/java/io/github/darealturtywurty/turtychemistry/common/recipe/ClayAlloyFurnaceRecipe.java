@@ -16,7 +16,7 @@ import net.minecraftforge.items.wrapper.RecipeWrapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class ClayAlloyFurnaceRecipe implements Recipe<Container> {
+public final class ClayAlloyFurnaceRecipe implements Recipe<Container> {
     public static final String ID = "clay_alloy"; //This can be changed to whatever
 
     private final ResourceLocation id;

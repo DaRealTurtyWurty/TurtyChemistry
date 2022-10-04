@@ -12,7 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import org.jetbrains.annotations.NotNull;
 
-public class ClayAlloyFurnaceScreen extends AbstractContainerScreen<ClayAlloyFurnaceMenu> {
+public final class ClayAlloyFurnaceScreen extends AbstractContainerScreen<ClayAlloyFurnaceMenu> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(TurtyChemistry.MODID,
             "textures/gui/clay_alloy_furnace.png");
 

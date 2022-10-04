@@ -1,11 +1,10 @@
 package io.github.darealturtywurty.turtychemistry.client.events;
 
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
-import io.github.darealturtywurty.turtychemistry.client.models.ClayAlloyFurnaceModel;
-import io.github.darealturtywurty.turtychemistry.client.models.ClayAlloyFurnaceTrayModel;
-import io.github.darealturtywurty.turtychemistry.client.models.ClayAlloyFurnaceWoodModel;
+import io.github.darealturtywurty.turtychemistry.client.models.*;
 import io.github.darealturtywurty.turtychemistry.client.renderer.AnvilBlockEntityRenderer;
 import io.github.darealturtywurty.turtychemistry.client.renderer.ClayAlloyFurnaceBlockEntityRenderer;
+import io.github.darealturtywurty.turtychemistry.client.renderer.MolderBlockEntityRenderer;
 import io.github.darealturtywurty.turtychemistry.client.screens.ClayAlloyFurnaceScreen;
 import io.github.darealturtywurty.turtychemistry.core.init.BlockEntityInit;
 import io.github.darealturtywurty.turtychemistry.core.init.MenuInit;
@@ -28,6 +27,7 @@ public final class ClientModEvents {
         event.registerBlockEntityRenderer(BlockEntityInit.CLAY_ALLOY_FURNACE.get(),
                 ClayAlloyFurnaceBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(BlockEntityInit.ANVIL.get(), AnvilBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(BlockEntityInit.MOLDER.get(), MolderBlockEntityRenderer::new);
     }
 
     @SubscribeEvent
@@ -41,6 +41,7 @@ public final class ClientModEvents {
     public static void clientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             MenuScreens.register(MenuInit.CLAY_ALLOY_FURNACE.get(), ClayAlloyFurnaceScreen::new);
+            //MenuScreens.register(MenuInit.MOLDER.get(), MolderScreen::new);
         });
     }
 }

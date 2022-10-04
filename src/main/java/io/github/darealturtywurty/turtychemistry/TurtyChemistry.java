@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 @Mod(TurtyChemistry.MODID)
-public class TurtyChemistry {
+public final class TurtyChemistry {
     public static final String MODID = "turtychemistry";
     public static final Logger LOGGER = LogManager.getLogger();
 

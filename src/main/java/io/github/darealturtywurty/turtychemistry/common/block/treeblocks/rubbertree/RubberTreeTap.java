@@ -2,6 +2,7 @@ package io.github.darealturtywurty.turtychemistry.common.block.treeblocks.rubber
 
 import io.github.darealturtywurty.turtychemistry.core.init.BlockInit;
 import io.github.darealturtywurty.turtychemistry.core.init.ItemInit;
+import io.github.darealturtywurty.turtychemistry.core.util.StaticReusableMethods;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -56,10 +57,7 @@ public final class RubberTreeTap extends Block {
     @Override
     public boolean onDestroyedByPlayer(final BlockState state, final Level level, final BlockPos pos, final Player player, final boolean willHarvest, final FluidState fluid) {
         final int currentLatexAmount = state.getValue(LATEX_AMOUNT);
-        final Inventory playerInventory = player.getInventory();
-        for (int i = 0; i < currentLatexAmount; i++) {
-            playerInventory.setItem(playerInventory.getFreeSlot(), new ItemStack(ItemInit.LATEX.get()));
-        }
+        StaticReusableMethods.dropItemsOnDestroy(level,new ItemStack(ItemInit.LATEX.get()),pos,currentLatexAmount);
         return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
     }
 

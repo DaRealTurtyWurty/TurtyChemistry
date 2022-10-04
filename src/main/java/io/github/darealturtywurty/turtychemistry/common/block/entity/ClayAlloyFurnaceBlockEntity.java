@@ -22,7 +22,7 @@ import java.util.Collections;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class ClayAlloyFurnaceBlockEntity extends ModularBlockEntity {
+public final class ClayAlloyFurnaceBlockEntity extends ModularBlockEntity {
     public static final int MAX_BURN_TIME = 200;
     public final MultiblockModule multiblock;
     public final InventoryModule inventory;
