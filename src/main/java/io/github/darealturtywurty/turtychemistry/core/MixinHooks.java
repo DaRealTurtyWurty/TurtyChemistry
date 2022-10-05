@@ -114,7 +114,7 @@ public final class MixinHooks {
                 CompoundTag temperatureNBTTag = stack.getTag();
                 if (temperatureNBTTag == null || !containsTemperatureTag(stack)) {
                     temperatureNBTTag = new CompoundTag();
-                    temperatureNBTTag.putFloat(COMPOUND_TAG_ID, ThreadLocalRandom.current().nextFloat(160, 300));
+                    temperatureNBTTag.putFloat(COMPOUND_TAG_ID, ThreadLocalRandom.current().nextFloat(28, 34));
                     stack.setTag(temperatureNBTTag);
                 } else if (temperatureNBTTag.getFloat(COMPOUND_TAG_ID) > 35f) {
                     float temperatureInCelsius = temperatureNBTTag.getFloat(COMPOUND_TAG_ID);
