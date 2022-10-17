@@ -5,6 +5,7 @@ import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
 import io.github.darealturtywurty.turtychemistry.item.BasicHammer;
 import io.github.darealturtywurty.turtychemistry.item.ChemistryItem;
 import io.github.darealturtywurty.turtylib.core.init.AbstractInit;
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -82,7 +83,11 @@ public final class ItemInit extends AbstractInit {
     public static ChemistryItem.Builder makeItemProperties() {
         return new ChemistryItem.Builder(new ChemistryItem.Properties().tab(TurtyChemistry.TAB));
     }
-
+    public static final class Buckets
+    {
+        public static final RegistryObject<BucketItem> MOLTEN_STEEL_BUCKET = ITEMS.register("molten_steel_bucket",
+                () -> new BucketItem(FluidInit.MOLTEN_STEEL,new Item.Properties().tab(TurtyChemistry.TAB)));
+    }
     public static final class Elements {
         public static final RegistryObject<ChemistryItem> HYDROGEN = ITEMS.register("hydrogen",
                 () -> new ChemistryItem(makeItemProperties()));

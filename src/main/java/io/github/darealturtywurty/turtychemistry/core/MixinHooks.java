@@ -116,7 +116,7 @@ public final class MixinHooks {
                     temperatureNBTTag = new CompoundTag();
                     temperatureNBTTag.putFloat(COMPOUND_TAG_ID, ThreadLocalRandom.current().nextFloat(28, 34));
                     stack.setTag(temperatureNBTTag);
-                } else if (temperatureNBTTag.getFloat(COMPOUND_TAG_ID) > 35f) {
+                } else if (temperatureNBTTag.getFloat(COMPOUND_TAG_ID) > 48f) {
                     float temperatureInCelsius = temperatureNBTTag.getFloat(COMPOUND_TAG_ID);
                     if (!(entity instanceof Player player)) {
                         entity.getArmorSlots().forEach(stack1 -> {
@@ -126,9 +126,22 @@ public final class MixinHooks {
                         });
                     } else if (player.getItemBySlot(EquipmentSlot.CHEST).is(Items.LEATHER_CHESTPLATE)) {
                         player.hurt(hotIngotDamageSource, 0.5f);
+                        switch (level.getDifficulty())
+                        {
+                            case PEACEFUL -> player.hurt(hotIngotDamageSource, 0.5f);
+                            case EASY -> player.hurt(hotIngotDamageSource, (temperatureInCelsius * 0.f));
+                            case NORMAL -> player.hurt(hotIngotDamageSource, (temperatureInCelsius * 0.1f));
+                            case HARD -> player.hurt(hotIngotDamageSource, (temperatureInCelsius * 0.2f));
+                        }
                     } else {
                         entity.setSecondsOnFire(4);
-                        entity.hurt(hotIngotDamageSource, 4);
+                        switch(level.getDifficulty())
+                        {
+                            case PEACEFUL -> entity.hurt(hotIngotDamageSource, (temperatureInCelsius * 0.3f));
+                            case EASY -> entity.hurt(hotIngotDamageSource, (temperatureInCelsius * 0.4f));
+                            case NORMAL -> entity.hurt(hotIngotDamageSource, (temperatureInCelsius * 0.5f));
+                            case HARD -> entity.hurt(hotIngotDamageSource, (temperatureInCelsius * 0.6f));
+                        }
                     }
                     final float biomesTemperature = level.getBiome(entity.blockPosition()).get().getBaseTemperature();
                     temperatureInCelsius -= temperatureInCelsius / (temperatureInCelsius + (Math.pow(biomesTemperature,

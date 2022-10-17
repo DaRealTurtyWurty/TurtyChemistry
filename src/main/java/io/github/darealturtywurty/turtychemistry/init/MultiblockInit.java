@@ -2,6 +2,7 @@ package io.github.darealturtywurty.turtychemistry.init;
 
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
 import io.github.darealturtywurty.turtychemistry.block.ClayAlloyFurnaceBlock;
+import io.github.darealturtywurty.turtychemistry.block.FoundryBlock;
 import io.github.darealturtywurty.turtylib.TurtyLib;
 import io.github.darealturtywurty.turtylib.core.multiblock.Multiblock;
 import net.minecraft.world.level.block.Blocks;
@@ -29,4 +30,19 @@ public final class MultiblockInit {
                                     blockPos, player))
             )
     );
+
+    public static final RegistryObject<Multiblock> FOUNDRY = MULTIBLOCKS.register("foundry",
+            () -> new Multiblock(
+                    Multiblock.Builder.start()
+                            .aisle("III","III","III")
+                            .aisle("III","IAI","IEI")
+                            .aisle("III","III","III")
+                            .where('I',BlockStatePredicate.forBlock(Blocks.IRON_BLOCK))
+                            .where('A', BlockBehaviour.BlockStateBase::isAir)
+                            .where('E',BlockStatePredicate.forBlock(BlockInit.RUTHENIUM_BLOCK.get()))
+                            .finish()
+                            .controller(0,0,0,BlockInit.FOUNDRY_BLOCK.get().defaultBlockState())
+                            .useFunction((blockState, level, blockPos, player, interactionHand, blockHitResult,
+                                    vec3i) -> FoundryBlock.use(level,blockPos,player))
+            ));
 }

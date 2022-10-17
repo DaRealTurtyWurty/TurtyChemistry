@@ -159,6 +159,9 @@ public final class BlockInit extends AbstractInit {
     public static final RegistryObject<MolderBlock> MOLDER_BLOCK = register("molder_block",
             () -> new MolderBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)),
             new Item.Properties().tab(TurtyChemistry.TAB));
+    public static final RegistryObject<FoundryBlock> FOUNDRY_BLOCK = register("foundry_block",
+            () -> new FoundryBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)),
+            new Item.Properties().tab(TurtyChemistry.TAB));
 
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> supplier, Item.Properties properties) {
         final RegistryObject<T> block = BLOCKS.register(name, supplier);

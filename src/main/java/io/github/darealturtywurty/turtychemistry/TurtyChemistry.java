@@ -33,9 +33,12 @@ public final class TurtyChemistry {
 
     public TurtyChemistry() {
         final var bus = FMLJavaModLoadingContext.get().getModEventBus();
+        FluidInit.FLUIDS.register(bus);
+        FluidInit.FLUID_TYPES.register(bus);
         BlockInit.BLOCKS.register(bus);
         ItemInit.ITEMS.register(bus);
         BlockEntityInit.BLOCK_ENTITIES.register(bus);
+
         RecipeInit.SERIALIZERS.register(bus);
         MultiblockInit.MULTIBLOCKS.register(bus);
         MenuInit.MENUS.register(bus);

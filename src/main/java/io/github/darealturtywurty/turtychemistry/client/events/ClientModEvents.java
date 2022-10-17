@@ -8,6 +8,7 @@ import io.github.darealturtywurty.turtychemistry.client.renderer.AnvilBlockEntit
 import io.github.darealturtywurty.turtychemistry.client.renderer.ClayAlloyFurnaceBlockEntityRenderer;
 import io.github.darealturtywurty.turtychemistry.client.renderer.MolderBlockEntityRenderer;
 import io.github.darealturtywurty.turtychemistry.client.util.screens.ClayAlloyFurnaceScreen;
+import io.github.darealturtywurty.turtychemistry.client.util.screens.FoundryScreen;
 import io.github.darealturtywurty.turtychemistry.init.BlockEntityInit;
 import io.github.darealturtywurty.turtychemistry.init.MenuInit;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -41,6 +42,9 @@ public final class ClientModEvents {
 
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent event) {
-        event.enqueueWork(() -> MenuScreens.register(MenuInit.CLAY_ALLOY_FURNACE.get(), ClayAlloyFurnaceScreen::new));
+        event.enqueueWork(() -> {
+            MenuScreens.register(MenuInit.CLAY_ALLOY_FURNACE.get(), ClayAlloyFurnaceScreen::new);
+            MenuScreens.register(MenuInit.FOUNDRY.get(), FoundryScreen::new);
+        });
     }
 }
