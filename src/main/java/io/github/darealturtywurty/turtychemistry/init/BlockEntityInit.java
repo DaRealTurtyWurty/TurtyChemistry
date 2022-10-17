@@ -27,6 +27,6 @@ public final class BlockEntityInit extends AbstractInit {
 
     public static final RegistryObject<BlockEntityType<MolderBlockEntity>> MOLDER = BLOCK_ENTITIES.register("molder",
             () -> BlockEntityType.Builder.of(MolderBlockEntity::new, BlockInit.MOLDER_BLOCK.get()).build(null));
-    public static final RegistryObject<BlockEntityType<FoundryBlockEntity>> FOUNDRY = BLOCK_ENTITIES.register(
-            "foundry",() -> BlockEntityType.Builder.of(FoundryBlockEntity::new,BlockInit.FOUNDRY_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<FoundryBlockEntity>> FOUNDRY = BLOCK_ENTITIES.register("foundry",
+            () -> BlockEntityType.Builder.of(FoundryBlockEntity::new, BlockInit.FOUNDRY_BLOCK.get()).build(null));
 }

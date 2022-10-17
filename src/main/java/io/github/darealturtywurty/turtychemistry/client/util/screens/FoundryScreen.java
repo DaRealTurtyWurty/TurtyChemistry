@@ -5,18 +5,22 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
 import io.github.darealturtywurty.turtychemistry.block.entity.FoundryBlockEntity;
 import io.github.darealturtywurty.turtychemistry.menu.FoundryMenu;
+import io.github.darealturtywurty.turtylib.client.ui.components.FluidWidget;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraftforge.fluids.FluidStack;
 import org.jetbrains.annotations.NotNull;
 
 public final class FoundryScreen extends AbstractContainerScreen<FoundryMenu> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(TurtyChemistry.MODID,
             "textures/gui/clay_alloy_furnace.png");
+    private FluidWidget fluidWidget;
 
-    public FoundryScreen(final FoundryMenu screenContainer,final Inventory inv,final Component title) {
+    public FoundryScreen(final FoundryMenu screenContainer, final Inventory inv, final Component title) {
         super(screenContainer, inv, title);
         this.leftPos = 0;
         this.topPos = 0;
@@ -25,10 +29,29 @@ public final class FoundryScreen extends AbstractContainerScreen<FoundryMenu> {
     }
 
     @Override
+    protected void init() {
+        super.init();
+        this.fluidWidget = addRenderableOnly(
+                new FluidWidget(new FluidStack(Fluids.LAVA, this.menu.getData().get(2)), 1920 >> 4, 1080 >> 4, 9, 9, 9,
+                        9));
+    }
+
+    @Override
+    protected void containerTick() {
+        super.containerTick();
+    }
+
+    @Override
     public void render(@NotNull PoseStack poseStack, int mouseX, int mouseY, float partialTicks) {
         this.renderBackground(poseStack);
         super.render(poseStack, mouseX, mouseY, partialTicks);
         this.renderTooltip(poseStack, mouseX, mouseY);
+        if (this.fluidWidget != null) {
+            this.fluidWidget.render(poseStack, mouseX, mouseY, partialTicks);
+            this.fluidWidget.blit(poseStack, 1920 >> 4, 1080 >> 4, 0, 0, 10, 10);
+            this.fluidWidget.drawTooltip(poseStack, mouseX, mouseY, partialTicks);
+            this.fluidWidget.renderToolTip(poseStack, mouseX, mouseY);
+        }
     }
 
     @Override

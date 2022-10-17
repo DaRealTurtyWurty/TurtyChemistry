@@ -20,7 +20,7 @@ public final class FoundryMenu extends AbstractContainerMenu {
     private final ContainerData data;
 
     private FoundryMenu(final int id, final Inventory playerInventory, final IItemHandler slots, final BlockPos pos, final ContainerData data) {
-        super(MenuInit.CLAY_ALLOY_FURNACE.get(), id);
+        super(MenuInit.FOUNDRY.get(), id);
         this.access = ContainerLevelAccess.create(playerInventory.player.level, pos);
         this.data = data;
 
@@ -37,7 +37,7 @@ public final class FoundryMenu extends AbstractContainerMenu {
         for (int row = 0; row < 3; ++row) {
             for (int col = 0; col < 9; ++col) {
                 this.addSlot(
-                        new Slot(playerInventory, col + row * 18, 8 + col * slotSizePlus2, 84 + row * slotSizePlus2));
+                        new Slot(playerInventory, col + row * 9+9, 8 + col * slotSizePlus2, 84 + row * slotSizePlus2));
             }
         }
 
@@ -55,7 +55,7 @@ public final class FoundryMenu extends AbstractContainerMenu {
     }
 
     public static FoundryMenu getClientMenu(int id, Inventory playerInventory) {
-        return new FoundryMenu(id, playerInventory, new ItemStackHandler(2), BlockPos.ZERO, new SimpleContainerData(2));
+        return new FoundryMenu(id, playerInventory, new ItemStackHandler(2), BlockPos.ZERO, new SimpleContainerData(3));
     }
 
     @Override

@@ -10,8 +10,10 @@ import io.github.darealturtywurty.turtylib.common.blockentity.module.InventoryMo
 import io.github.darealturtywurty.turtylib.common.blockentity.module.MultiblockModule;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.capability.IFluidHandler;
@@ -23,12 +25,14 @@ public final class FoundryBlockEntity extends ModularBlockEntity {
     public final InventoryModule inventory;
     private final MultiblockModule multiblockModule;
     private int progress, fuelProgress;
+    private FluidStack currentFluid;
     private final ContainerData containerData = new ContainerData() {
         @Override
         public int get(int pIndex) {
             return switch (pIndex) {
                 case 0 -> FoundryBlockEntity.this.progress;
                 case 1 -> FoundryBlockEntity.this.fuelProgress;
+                case 2 -> FoundryBlockEntity.this.fluidInventory.getCapability().getFluidAmount();
                 default -> 0;
             };
         }
@@ -38,6 +42,7 @@ public final class FoundryBlockEntity extends ModularBlockEntity {
             switch (pIndex) {
                 case 0 -> FoundryBlockEntity.this.progress = pValue;
                 case 1 -> FoundryBlockEntity.this.fuelProgress = pValue;
+                case 2 -> FoundryBlockEntity.this.setFluidLevel(pValue,FluidStack.EMPTY);
                 default -> {
                 }
             }
@@ -45,18 +50,29 @@ public final class FoundryBlockEntity extends ModularBlockEntity {
 
         @Override
         public int getCount() {
-            return 2;
+            return 3;
         }
     };
 
     public FoundryBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(BlockEntityInit.FOUNDRY.get(), pPos, pBlockState);
-        fluidInventory = addModule(new FluidModule(this, 80));
-        inventory = addModule(new InventoryModule(this, 2));
+        this.fluidInventory = addModule(new FluidModule(this, 80));
+        this.inventory = addModule(new InventoryModule(this, 2));
         this.multiblockModule = addModule(new MultiblockModule(MultiblockInit.FOUNDRY));
 
     }
 
+    public static boolean isFuel(ItemStack stack) {
+        return stack.is(ItemTags.COALS) || stack.is(Items.LAVA_BUCKET);
+    }
+
+    public int getFluidLevel() {
+        return this.fluidInventory.getCapability().getFluidAmount();
+    }
+    public void setFluidLevel(final int newLevel, final FluidStack stack)
+    {
+        this.fluidInventory.getCapability().fill(stack, IFluidHandler.FluidAction.EXECUTE);
+    }
     public ContainerData getContainerData() {
         return this.containerData;
     }
@@ -64,31 +80,28 @@ public final class FoundryBlockEntity extends ModularBlockEntity {
     @Override
     protected void saveAdditional(CompoundTag nbt) {
         super.saveAdditional(nbt);
-
         nbt.putInt("Progress", this.progress);
         nbt.putInt("FuelProgress", this.fuelProgress);
-
     }
 
     @Override
     public void load(@NotNull CompoundTag nbt) {
         super.load(nbt);
-
         this.progress = nbt.getInt("Progress");
         this.fuelProgress = nbt.getInt("FuelProgress");
-
     }
 
-
+    public FluidStack getFluidType()
+    {
+        this.currentFluid = this.fluidInventory.getCapability().getFluid();
+        return currentFluid;
+    }
     @Override
     public void tick() {
         super.tick();
         if (this.level == null) return;
-
         if (!this.level.isClientSide) {
             if (!hasFuel()) return;
-
-
             if (this.fuelProgress >= MAX_BURN_TIME || this.fuelProgress == 0) {
                 this.fuelProgress = 0;
                 if (hasItem(0)) {
@@ -100,8 +113,6 @@ public final class FoundryBlockEntity extends ModularBlockEntity {
             } else {
                 this.fuelProgress++;
             }
-
-
             if (this.progress >= 100) {
                 this.progress = 0;
                 processFluid(getItem(1));
