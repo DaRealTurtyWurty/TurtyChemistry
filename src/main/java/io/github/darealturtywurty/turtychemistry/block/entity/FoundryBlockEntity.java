@@ -21,6 +21,7 @@ import org.jetbrains.annotations.NotNull;
 
 public final class FoundryBlockEntity extends ModularBlockEntity {
     public static final int MAX_BURN_TIME = 200;
+    
     public final FluidModule fluidInventory;
     public final InventoryModule inventory;
     private final MultiblockModule multiblockModule;
