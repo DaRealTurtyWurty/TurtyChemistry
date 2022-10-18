@@ -83,8 +83,7 @@ public final class ItemInit extends AbstractInit {
     public static ChemistryItem.Builder makeItemProperties() {
         return new ChemistryItem.Builder(new ChemistryItem.Properties().tab(TurtyChemistry.TAB));
     }
-    public static final class Buckets
-    {
+    public static final class Buckets {
         public static final RegistryObject<BucketItem> MOLTEN_STEEL_BUCKET = ITEMS.register("molten_steel_bucket",
                 () -> new BucketItem(FluidInit.MOLTEN_STEEL,new Item.Properties().tab(TurtyChemistry.TAB)));
     }
