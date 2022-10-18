@@ -57,7 +57,7 @@ public final class MolderScreen extends Screen {
         super.init();
         PATTERN_BUTTON_LIST.forEach(this::addRenderableWidget);
         this.drawingPanelWidget = addRenderableWidget(
-                new DrawingSpace((this.width >> 1) - 80, (this.height >> 3) - 2, width >> 1, (int) (height * 0.714f),
+                new DrawingSpace((this.width / 2) - 80, (this.height / 8) - 2, width >> 1, (int) (height * 0.714f),
                         Component.empty(), PATTERN_BUTTON_LIST, blockPos, this));
     }
 
@@ -84,12 +84,12 @@ public final class MolderScreen extends Screen {
         RenderSystem.setShader(GameRenderer::getPositionTexColorShader);
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
         RenderSystem.setShaderTexture(0, TEXTURE);
-        this.blit(pPoseStack, (this.width >> 3) + 8, this.height >> 4, 0, 0, (int) (this.width / 1.4f),
+        this.blit(pPoseStack, (this.width / 8) + 8, this.height / 16, 0, 0, (int) (this.width / 1.4f),
                 (int) (this.height / 1.2f));
         super.render(pPoseStack, pMouseX, pMouseY, pPartialTick);
-        this.font.draw(pPoseStack, this.title, width >> 1, (height >> 3) - 10, Mth.color(128, 128, 128));
+        this.font.draw(pPoseStack, this.title, width / 2f, (height / 8f) - 10, Mth.color(128, 128, 128));
         this.font.draw(pPoseStack, Component.translatable("molder.indicated_item").append(":")
-                        .append(currentStack.getItem().getDescription()), (width >> 2) - 30, (height >> 3) - 10,
+                        .append(currentStack.getItem().getDescription()), (width / 4f) - 30, (height  / 8f) - 10,
                 Mth.color(1, 1, 1));
     }
 
