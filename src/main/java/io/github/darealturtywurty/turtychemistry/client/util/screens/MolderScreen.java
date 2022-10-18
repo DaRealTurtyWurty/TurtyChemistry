@@ -57,7 +57,7 @@ public final class MolderScreen extends Screen {
         super.init();
         PATTERN_BUTTON_LIST.forEach(this::addRenderableWidget);
         this.drawingPanelWidget = addRenderableWidget(
-                new DrawingSpace((this.width / 2) - 80, (this.height / 8) - 2, width >> 1, (int) (height * 0.714f),
+                new DrawingSpace((this.width / 2) - 80, (this.height / 8) - 2, width / 2, (int) (height * 0.714f),
                         Component.empty(), PATTERN_BUTTON_LIST, blockPos, this));
     }
 
@@ -89,7 +89,7 @@ public final class MolderScreen extends Screen {
         super.render(pPoseStack, pMouseX, pMouseY, pPartialTick);
         this.font.draw(pPoseStack, this.title, width / 2f, (height / 8f) - 10, Mth.color(128, 128, 128));
         this.font.draw(pPoseStack, Component.translatable("molder.indicated_item").append(":")
-                        .append(currentStack.getItem().getDescription()), (width / 4f) - 30, (height  / 8f) - 10,
+                        .append(currentStack.getItem().getDescription()), (width / 4f) - 30, (height / 8f) - 10,
                 Mth.color(1, 1, 1));
     }
 
