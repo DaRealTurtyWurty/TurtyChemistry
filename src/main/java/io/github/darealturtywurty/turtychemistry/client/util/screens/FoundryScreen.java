@@ -32,7 +32,7 @@ public final class FoundryScreen extends AbstractContainerScreen<FoundryMenu> {
     protected void init() {
         super.init();
         this.fluidWidget = addRenderableOnly(
-                new FluidWidget(new FluidStack(Fluids.LAVA, this.menu.getData().get(2)), 1920 >> 4, 1080 >> 4, 9, 9, 9,
+                new FluidWidget(new FluidStack(Fluids.LAVA, this.menu.getData().get(2)), 1920 / 4, 1080 / 4, 9, 9, 9,
                         9));
     }
 
@@ -48,7 +48,7 @@ public final class FoundryScreen extends AbstractContainerScreen<FoundryMenu> {
         this.renderTooltip(poseStack, mouseX, mouseY);
         if (this.fluidWidget != null) {
             this.fluidWidget.render(poseStack, mouseX, mouseY, partialTicks);
-            this.fluidWidget.blit(poseStack, 1920 >> 4, 1080 >> 4, 0, 0, 10, 10);
+            this.fluidWidget.blit(poseStack, 1920 / 4, 1080 / 4, 0, 0, 10, 10);
             this.fluidWidget.drawTooltip(poseStack, mouseX, mouseY, partialTicks);
             this.fluidWidget.renderToolTip(poseStack, mouseX, mouseY);
         }
