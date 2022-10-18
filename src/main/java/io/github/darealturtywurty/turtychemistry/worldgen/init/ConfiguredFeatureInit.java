@@ -15,7 +15,7 @@ import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSi
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 
-public class ConfiguredFeatureInit {
+public final class ConfiguredFeatureInit {
     public static final Holder<ConfiguredFeature<TreeConfiguration, ?>> RUBBER_TREE = register("rubber_tree",
             Feature.TREE,
             new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(BlockInit.RUBBER_TREE_BLOCK.get()),

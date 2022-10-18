@@ -19,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.function.BiConsumer;
 
-public class RubberTreeTrunkPlacer extends TrunkPlacer {
+public final class RubberTreeTrunkPlacer extends TrunkPlacer {
     public static final Codec<RubberTreeTrunkPlacer> CODEC = RecordCodecBuilder.create(
             (codec) -> trunkPlacerParts(codec).and(codec.group(IntProvider.POSITIVE_CODEC.fieldOf("branch_start_height")
                                     .forGetter((placer) -> placer.branchStartHeight),
@@ -42,11 +42,11 @@ public class RubberTreeTrunkPlacer extends TrunkPlacer {
 
     @Override
     public @NotNull List<FoliagePlacer.FoliageAttachment> placeTrunk(@NotNull LevelSimulatedReader pLevel, @NotNull BiConsumer<BlockPos, BlockState> pBlockSetter, @NotNull RandomSource pRandom, int pFreeTreeHeight, BlockPos pPos, @NotNull TreeConfiguration pConfig) {
-        List<FoliagePlacer.FoliageAttachment> list = Lists.newArrayList();
+        final List<FoliagePlacer.FoliageAttachment> list = Lists.newArrayList();
         setDirtAt(pLevel, pBlockSetter, pRandom, pPos.below(), pConfig);
         list.add(new FoliagePlacer.FoliageAttachment(pPos.above(pFreeTreeHeight), 0, false));
 
-        int height = this.branchStartHeight.sample(pRandom);
+        final int height = this.branchStartHeight.sample(pRandom);
         float branchingPossibility = 0.8F;
         Direction branchingDirection = null;
         for (int yPos = 0; yPos < pFreeTreeHeight; ++yPos) {

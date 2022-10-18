@@ -12,7 +12,7 @@ import net.minecraftforge.fluids.FluidType;
 
 import java.util.function.Consumer;
 
-public class MoltenSteelType extends FluidType {
+public final class MoltenSteelType extends FluidType {
    public static final ResourceLocation MOLTEN_STEEL_STILL = new ResourceLocation(TurtyChemistry.MODID);
     public static final ResourceLocation MOLTEN_STEEL_FLOWING = new ResourceLocation(TurtyChemistry.MODID);
 

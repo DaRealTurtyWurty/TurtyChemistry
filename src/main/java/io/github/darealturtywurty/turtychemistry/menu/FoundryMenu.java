@@ -15,7 +15,8 @@ import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.SlotItemHandler;
 import org.jetbrains.annotations.NotNull;
 
-import static io.github.darealturtywurty.turtylib.core.init.BlockInit.*;
+import static io.github.darealturtywurty.turtylib.core.init.BlockInit.MULTIBLOCK;
+
 public final class FoundryMenu extends AbstractContainerMenu {
     private final ContainerLevelAccess access;
     private final ContainerData data;
@@ -37,8 +38,8 @@ public final class FoundryMenu extends AbstractContainerMenu {
         // Player Inventory
         for (int row = 0; row < 3; ++row) {
             for (int col = 0; col < 9; ++col) {
-                this.addSlot(
-                        new Slot(playerInventory, col + row * 9+9, 8 + col * slotSizePlus2, 84 + row * slotSizePlus2));
+                this.addSlot(new Slot(playerInventory, col + row * 9 + 9, 8 + col * slotSizePlus2,
+                        84 + row * slotSizePlus2));
             }
         }
 

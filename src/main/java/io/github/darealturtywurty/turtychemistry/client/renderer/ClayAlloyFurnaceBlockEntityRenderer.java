@@ -12,14 +12,14 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import org.jetbrains.annotations.NotNull;
 
-public class ClayAlloyFurnaceBlockEntityRenderer implements BlockEntityRenderer<ClayAlloyFurnaceBlockEntity> {
-    private final BlockEntityRendererProvider.Context context;
+public final class ClayAlloyFurnaceBlockEntityRenderer implements BlockEntityRenderer<ClayAlloyFurnaceBlockEntity> {
+    //private final BlockEntityRendererProvider.Context context;
     private final ClayAlloyFurnaceModel furnaceModel;
     private final ClayAlloyFurnaceWoodModel woodModel;
     private final ClayAlloyFurnaceTrayModel trayModel;
 
     public ClayAlloyFurnaceBlockEntityRenderer(BlockEntityRendererProvider.Context ctx) {
-        this.context = ctx;
+        //this.context = ctx;
         this.furnaceModel = new ClayAlloyFurnaceModel(ctx.bakeLayer(ClayAlloyFurnaceModel.LAYER_LOCATION));
         this.woodModel = new ClayAlloyFurnaceWoodModel(ctx.bakeLayer(ClayAlloyFurnaceWoodModel.LAYER_LOCATION));
         this.trayModel = new ClayAlloyFurnaceTrayModel(ctx.bakeLayer(ClayAlloyFurnaceTrayModel.LAYER_LOCATION));

@@ -7,7 +7,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
 
-public class TrunkPlacerInit {
+public final class TrunkPlacerInit {
     public static final TrunkPlacerType<RubberTreeTrunkPlacer> RUBBER_TREE_TRUNK_PLACER = register(
             "straight_trunk_placer", RubberTreeTrunkPlacer.CODEC);
 
