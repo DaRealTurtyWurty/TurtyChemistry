@@ -30,7 +30,7 @@ public final class FoundryMenu extends AbstractContainerMenu {
         this.addSlot(new SlotWithRestriction(slots, 0, 56, 53, ClayAlloyFurnaceBlockEntity::isFuel));
 
         // Input Slots
-        this.addSlot(new SlotItemHandler(slots, 1, (int) 55.5f, 17));
+        this.addSlot(new SlotItemHandler(slots, 1, 55, 17));
 
 
         // Player Inventory
