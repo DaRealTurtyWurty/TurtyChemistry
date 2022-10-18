@@ -38,7 +38,6 @@ public final class TurtyChemistry {
         BlockInit.BLOCKS.register(bus);
         ItemInit.ITEMS.register(bus);
         BlockEntityInit.BLOCK_ENTITIES.register(bus);
-
         RecipeInit.SERIALIZERS.register(bus);
         MultiblockInit.MULTIBLOCKS.register(bus);
         MenuInit.MENUS.register(bus);

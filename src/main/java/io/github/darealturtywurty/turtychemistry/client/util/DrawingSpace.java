@@ -18,7 +18,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class DrawingSpace extends AbstractButton {
+public final class DrawingSpace extends AbstractButton {
     private static final ResourceLocation DRAWING_AREA_TEXTURE = new ResourceLocation(TurtyChemistry.MODID,
             "textures/gui/molder/molder_drawing_area.png");
 
@@ -50,7 +50,7 @@ public class DrawingSpace extends AbstractButton {
         RenderSystem.setShader(GameRenderer::getPositionTexColorShader);
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
         RenderSystem.setShaderTexture(0, DRAWING_AREA_TEXTURE);
-        this.blit(pPoseStack, (this.width >> 1) + 40, (this.height >> 3) + 7, 0, 0, (this.width) - 1, this.height);
+        this.blit(pPoseStack, (this.width / 2) + 40, (this.height / 8) + 7, 0, 0, (this.width) - 1, this.height);
 
         pPoseStack.pushPose();
 
