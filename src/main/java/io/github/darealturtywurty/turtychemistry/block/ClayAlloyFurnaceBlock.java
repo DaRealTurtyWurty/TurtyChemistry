@@ -32,6 +32,11 @@ import org.jetbrains.annotations.Nullable;
 
 public final class ClayAlloyFurnaceBlock extends Block implements EntityBlock {
     private static final VoxelShape SHAPE = createShape();
+    private static final Component TRANSLATION_COMPONENT;
+
+    static {
+        TRANSLATION_COMPONENT = Component.translatable("container." + TurtyChemistry.MODID + ".clay_alloy_furnace");
+    }
 
     public ClayAlloyFurnaceBlock(Properties properties) {
         super(properties);
@@ -60,8 +65,8 @@ public final class ClayAlloyFurnaceBlock extends Block implements EntityBlock {
     public static InteractionResult use(Level level, BlockPos pos, Player player) {
         if (!level.isClientSide()) {
             if (level.getBlockEntity(pos) instanceof ClayAlloyFurnaceBlockEntity blockEntity) {
-                SimpleMenuProvider provider = new SimpleMenuProvider(ClayAlloyFurnaceMenu.getServerMenu(blockEntity,
-                        pos), Component.translatable("container." + TurtyChemistry.MODID + ".clay_alloy_furnace"));
+                SimpleMenuProvider provider = new SimpleMenuProvider(
+                        ClayAlloyFurnaceMenu.getServerMenu(blockEntity, pos), TRANSLATION_COMPONENT);
                 NetworkHooks.openScreen((ServerPlayer) player, provider, pos);
             }
         }

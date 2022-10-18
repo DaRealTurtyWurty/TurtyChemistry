@@ -15,6 +15,7 @@ import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.SlotItemHandler;
 import org.jetbrains.annotations.NotNull;
 
+import static io.github.darealturtywurty.turtylib.core.init.BlockInit.*;
 public final class FoundryMenu extends AbstractContainerMenu {
     private final ContainerLevelAccess access;
     private final ContainerData data;
@@ -86,7 +87,7 @@ public final class FoundryMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(@NotNull Player player) {
         return stillValid(this.access, player, BlockInit.FOUNDRY_BLOCK.get()) || stillValid(this.access, player,
-                io.github.darealturtywurty.turtylib.core.init.BlockInit.MULTIBLOCK.get());
+                MULTIBLOCK.get());
     }
 
     public ContainerData getData() {

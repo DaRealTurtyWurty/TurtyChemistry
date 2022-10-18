@@ -21,26 +21,32 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public final class FoundryBlock extends BaseEntityBlock {
-    public FoundryBlock(Properties pProperties) {
-        super(pProperties);
+    private static final Component TRANSLATION_COMPONENT;
+
+    static {
+        TRANSLATION_COMPONENT = Component.translatable("container." + TurtyChemistry.MODID + ".foundry");
     }
 
-    @Nullable
-    @Override
-    public BlockEntity newBlockEntity(@NotNull BlockPos pPos, @NotNull BlockState pState) {
-        return BlockEntityInit.FOUNDRY.get().create(pPos,pState);
+    public FoundryBlock(Properties pProperties) {
+        super(pProperties);
     }
 
     public static InteractionResult use(Level level, BlockPos pos, Player player) {
         if (!level.isClientSide()) {
             if (level.getBlockEntity(pos) instanceof FoundryBlockEntity blockEntity) {
-               final SimpleMenuProvider provider = new SimpleMenuProvider(FoundryMenu.getServerMenu(blockEntity,
-                        pos), Component.translatable("container." + TurtyChemistry.MODID + ".foundry"));
+                final SimpleMenuProvider provider = new SimpleMenuProvider(FoundryMenu.getServerMenu(blockEntity, pos),
+                        TRANSLATION_COMPONENT);
                 NetworkHooks.openScreen((ServerPlayer) player, provider, pos);
             }
         }
 
         return InteractionResult.sidedSuccess(level.isClientSide());
+    }
+
+    @Nullable
+    @Override
+    public BlockEntity newBlockEntity(@NotNull BlockPos pPos, @NotNull BlockState pState) {
+        return BlockEntityInit.FOUNDRY.get().create(pPos, pState);
     }
 
     @Override
