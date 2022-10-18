@@ -4,7 +4,7 @@ import io.github.darealturtywurty.turtychemistry.init.BlockEntityInit;
 import io.github.darealturtywurty.turtychemistry.init.FluidInit;
 import io.github.darealturtywurty.turtychemistry.init.ItemInit;
 import io.github.darealturtywurty.turtychemistry.init.MultiblockInit;
-import io.github.darealturtywurty.turtychemistry.recipe.FoundryRecipie;
+import io.github.darealturtywurty.turtychemistry.recipe.FoundryRecipe;
 import io.github.darealturtywurty.turtylib.common.blockentity.ModularBlockEntity;
 import io.github.darealturtywurty.turtylib.common.blockentity.module.FluidModule;
 import io.github.darealturtywurty.turtylib.common.blockentity.module.InventoryModule;
@@ -113,12 +113,12 @@ public final class FoundryBlockEntity extends ModularBlockEntity {
         return currentFluid;
     }
 
-    public @Nullable FoundryRecipie getRecipe() {
+    public @Nullable FoundryRecipe getRecipe() {
         if (this.level == null) return null;
 
-        Set<Recipe<?>> recipes = findRecipesByType(FoundryRecipie.Type.INSTANCE, this.level);
+        Set<Recipe<?>> recipes = findRecipesByType(FoundryRecipe.Type.INSTANCE, this.level);
         for (Recipe<?> iRecipe : recipes) {
-            var recipe = (FoundryRecipie) iRecipe;
+            var recipe = (FoundryRecipe) iRecipe;
             if (recipe.matches(this.inventory.getCapability(), this.level)) return recipe;
         }
 
@@ -131,7 +131,7 @@ public final class FoundryBlockEntity extends ModularBlockEntity {
         if (this.level == null) return;
         if (!this.level.isClientSide) {
             if (!hasFuel()) return;
-            final FoundryRecipie recipe = getRecipe();
+            final FoundryRecipe recipe = getRecipe();
 
             if (this.fuelProgress >= MAX_BURN_TIME || this.fuelProgress == 0) {
                 this.fuelProgress = 0;

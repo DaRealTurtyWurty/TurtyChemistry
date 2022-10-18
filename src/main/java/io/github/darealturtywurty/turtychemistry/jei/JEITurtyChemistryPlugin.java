@@ -2,7 +2,7 @@ package io.github.darealturtywurty.turtychemistry.jei;
 
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
 import io.github.darealturtywurty.turtychemistry.recipe.ClayAlloyFurnaceRecipe;
-import io.github.darealturtywurty.turtychemistry.recipe.FoundryRecipie;
+import io.github.darealturtywurty.turtychemistry.recipe.FoundryRecipe;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.recipe.RecipeType;
@@ -21,9 +21,9 @@ import java.util.Objects;
 public class JEITurtyChemistryPlugin implements IModPlugin {
     public static final RecipeType<ClayAlloyFurnaceRecipe> CLAY_ALLOY_FURNACE_TYPE = new RecipeType<>(
             ClayAlloyFurnaceRecipeCategory.UID, ClayAlloyFurnaceRecipe.class);
-    public static final RecipeType<FoundryRecipie> FOUNDRY_RECIPE_RECIPE_TYPE = new RecipeType<>(
-            FoundryRecipeCategory.UID, FoundryRecipie.class
-    );
+    public static final RecipeType<FoundryRecipe> FOUNDRY_RECIPE_RECIPE_TYPE = new RecipeType<>(
+            FoundryRecipeCategory.UID, FoundryRecipe.class);
+
     @Override
     public @NotNull ResourceLocation getPluginUid() {
         return new ResourceLocation(TurtyChemistry.MODID, "jei_plugin");
@@ -39,9 +39,10 @@ public class JEITurtyChemistryPlugin implements IModPlugin {
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
         RecipeManager recipeManager = Objects.requireNonNull(Minecraft.getInstance().level).getRecipeManager();
-        final List<ClayAlloyFurnaceRecipe> recipes = recipeManager.getAllRecipesFor(ClayAlloyFurnaceRecipe.Type.INSTANCE);
+        final List<ClayAlloyFurnaceRecipe> recipes = recipeManager.getAllRecipesFor(
+                ClayAlloyFurnaceRecipe.Type.INSTANCE);
         registration.addRecipes(CLAY_ALLOY_FURNACE_TYPE, recipes);
-        final List<FoundryRecipie> foundryRecipes = recipeManager.getAllRecipesFor(FoundryRecipie.Type.INSTANCE);
-        registration.addRecipes(FOUNDRY_RECIPE_RECIPE_TYPE,foundryRecipes);
+        final List<FoundryRecipe> foundryRecipes = recipeManager.getAllRecipesFor(FoundryRecipe.Type.INSTANCE);
+        registration.addRecipes(FOUNDRY_RECIPE_RECIPE_TYPE, foundryRecipes);
     }
 }

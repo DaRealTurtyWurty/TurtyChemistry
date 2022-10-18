@@ -20,7 +20,7 @@ import net.minecraftforge.items.wrapper.RecipeWrapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public final class FoundryRecipie implements Recipe<Container> {
+public final class FoundryRecipe implements Recipe<Container> {
 
     public static final String ID = "foundry_smelt";
     private final ResourceLocation id;
@@ -28,7 +28,7 @@ public final class FoundryRecipie implements Recipe<Container> {
 
     private final int processTime;
 
-    FoundryRecipie(final ResourceLocation id,  final NonNullList<Ingredient> ingredients, final int processTime) {
+    FoundryRecipe(final ResourceLocation id, final NonNullList<Ingredient> ingredients, final int processTime) {
         this.id = id;
         this.ingredients = ingredients;
         this.processTime = processTime;
@@ -86,16 +86,16 @@ public final class FoundryRecipie implements Recipe<Container> {
         return Type.INSTANCE;
     }
 
-    public static final class Type implements RecipeType<FoundryRecipie> {
+    public static final class Type implements RecipeType<FoundryRecipe> {
         public static final Type INSTANCE = new Type();
     }
 
-    public static final class Serializer implements RecipeSerializer<FoundryRecipie> {
+    public static final class Serializer implements RecipeSerializer<FoundryRecipe> {
         public static final Serializer INSTANCE = new Serializer();
-        public static final ResourceLocation ID = new ResourceLocation(TurtyChemistry.MODID, FoundryRecipie.ID);
+        public static final ResourceLocation ID = new ResourceLocation(TurtyChemistry.MODID, FoundryRecipe.ID);
 
         @Override
-        public @NotNull FoundryRecipie fromJson(@NotNull ResourceLocation pRecipeId, @NotNull JsonObject pSerializedRecipe) {
+        public @NotNull FoundryRecipe fromJson(@NotNull ResourceLocation pRecipeId, @NotNull JsonObject pSerializedRecipe) {
 
             final JsonArray ingredients = GsonHelper.getAsJsonArray(pSerializedRecipe, "ingredients");
             final NonNullList<Ingredient> inputs = NonNullList.withSize(1, Ingredient.EMPTY);
@@ -103,20 +103,20 @@ public final class FoundryRecipie implements Recipe<Container> {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
             final int processTime = GsonHelper.getAsInt(pSerializedRecipe, "process_time");
-            return new FoundryRecipie(pRecipeId, inputs, processTime);
+            return new FoundryRecipe(pRecipeId, inputs, processTime);
         }
 
         @Override
-        public @Nullable FoundryRecipie fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
+        public @Nullable FoundryRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
             final NonNullList<Ingredient> inputs = NonNullList.withSize(pBuffer.readInt(), Ingredient.EMPTY);
             inputs.replaceAll(ingredient -> Ingredient.fromNetwork(pBuffer));
 
             final int processTime = pBuffer.readInt();
-            return new FoundryRecipie(pRecipeId, inputs, processTime);
+            return new FoundryRecipe(pRecipeId, inputs, processTime);
         }
 
         @Override
-        public void toNetwork(final @NotNull FriendlyByteBuf pBuffer, final @NotNull FoundryRecipie pRecipe) {
+        public void toNetwork(final @NotNull FriendlyByteBuf pBuffer, final @NotNull FoundryRecipe pRecipe) {
             pBuffer.writeInt(pRecipe.getIngredients().size());
             pRecipe.getIngredients().forEach(ingredient -> ingredient.toNetwork(pBuffer));
             pBuffer.writeFluidStack(FluidStack.loadFluidStackFromNBT(pRecipe.getResultItem().getOrCreateTag()));

@@ -3,7 +3,7 @@ package io.github.darealturtywurty.turtychemistry.jei;
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
 import io.github.darealturtywurty.turtychemistry.client.util.screens.ClayAlloyFurnaceScreen;
 import io.github.darealturtywurty.turtychemistry.init.BlockInit;
-import io.github.darealturtywurty.turtychemistry.recipe.FoundryRecipie;
+import io.github.darealturtywurty.turtychemistry.recipe.FoundryRecipe;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
@@ -17,8 +17,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
-public final class FoundryRecipeCategory implements IRecipeCategory<FoundryRecipie> {
-    public static final ResourceLocation UID = new ResourceLocation(TurtyChemistry.MODID, FoundryRecipie.ID);
+public final class FoundryRecipeCategory implements IRecipeCategory<FoundryRecipe> {
+    public static final ResourceLocation UID = new ResourceLocation(TurtyChemistry.MODID, FoundryRecipe.ID);
     private final IDrawable background;
     private final IDrawable icon;
 
@@ -31,7 +31,7 @@ public final class FoundryRecipeCategory implements IRecipeCategory<FoundryRecip
     }
 
     @Override
-    public @NotNull RecipeType<FoundryRecipie> getRecipeType() {
+    public @NotNull RecipeType<FoundryRecipe> getRecipeType() {
         return JEITurtyChemistryPlugin.FOUNDRY_RECIPE_RECIPE_TYPE;
     }
 
@@ -51,7 +51,7 @@ public final class FoundryRecipeCategory implements IRecipeCategory<FoundryRecip
     }
 
     @Override
-    public void setRecipe(final IRecipeLayoutBuilder builder,final FoundryRecipie recipe,final @NotNull IFocusGroup focuses) {
+    public void setRecipe(final IRecipeLayoutBuilder builder, final FoundryRecipe recipe, final @NotNull IFocusGroup focuses) {
         builder.addSlot(RecipeIngredientRole.INPUT, 55, 17).addIngredients(recipe.getIngredients().get(0));
     }
 }
