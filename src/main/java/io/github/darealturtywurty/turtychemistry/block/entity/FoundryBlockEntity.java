@@ -24,7 +24,8 @@ public final class FoundryBlockEntity extends ModularBlockEntity {
     
     public final FluidModule fluidInventory;
     public final InventoryModule inventory;
-    private final MultiblockModule multiblockModule;
+    public final MultiblockModule multiblockModule;
+    
     private int progress, fuelProgress;
     private FluidStack currentFluid;
     
