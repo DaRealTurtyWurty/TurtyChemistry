@@ -3,7 +3,7 @@ package io.github.darealturtywurty.turtychemistry.jei;
 import io.github.darealturtywurty.turtychemistry.TurtyChemistry;
 import io.github.darealturtywurty.turtychemistry.client.util.screens.ClayAlloyFurnaceScreen;
 import io.github.darealturtywurty.turtychemistry.init.BlockInit;
-import io.github.darealturtywurty.turtychemistry.recipe.ClayAlloyFurnaceRecipe;
+import io.github.darealturtywurty.turtychemistry.recipe.FoundryRecipie;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
@@ -17,28 +17,27 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
-public final class ClayAlloyFurnaceRecipeCategory implements IRecipeCategory<ClayAlloyFurnaceRecipe> {
-    public static final ResourceLocation UID = new ResourceLocation(TurtyChemistry.MODID, ClayAlloyFurnaceRecipe.ID);
-
+public final class FoundryRecipeCategory implements IRecipeCategory<FoundryRecipie> {
+    public static final ResourceLocation UID = new ResourceLocation(TurtyChemistry.MODID, FoundryRecipie.ID);
     private final IDrawable background;
     private final IDrawable icon;
 
-    public ClayAlloyFurnaceRecipeCategory(IGuiHelper helper) {
+    public FoundryRecipeCategory(final IGuiHelper helper) {
         this.background = helper.createDrawable(ClayAlloyFurnaceScreen.TEXTURE, 0, 0, 176, 83);
 
         // TODO: Make this use a custom renderer
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK,
-                new ItemStack(BlockInit.CLAY_ALLOY_FURNACE.get()));
+                new ItemStack(BlockInit.FOUNDRY_BLOCK.get()));
     }
 
     @Override
-    public @NotNull RecipeType<ClayAlloyFurnaceRecipe> getRecipeType() {
-        return JEITurtyChemistryPlugin.CLAY_ALLOY_FURNACE_TYPE;
+    public @NotNull RecipeType<FoundryRecipie> getRecipeType() {
+        return JEITurtyChemistryPlugin.FOUNDRY_RECIPE_RECIPE_TYPE;
     }
 
     @Override
     public @NotNull Component getTitle() {
-        return Component.literal("Clay Alloy Furnace");
+        return Component.literal("Foundry");
     }
 
     @Override
@@ -52,9 +51,7 @@ public final class ClayAlloyFurnaceRecipeCategory implements IRecipeCategory<Cla
     }
 
     @Override
-    public void setRecipe(IRecipeLayoutBuilder builder, ClayAlloyFurnaceRecipe recipe, IFocusGroup focuses) {
-        builder.addSlot(RecipeIngredientRole.INPUT, 42, 17).addIngredients(recipe.getIngredients().get(0));
-        builder.addSlot(RecipeIngredientRole.INPUT, 69, 17).addIngredients(recipe.getIngredients().get(1));
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 35).addItemStack(recipe.getResultItem());
+    public void setRecipe(final IRecipeLayoutBuilder builder,final FoundryRecipie recipe,final @NotNull IFocusGroup focuses) {
+        builder.addSlot(RecipeIngredientRole.INPUT, 55, 17).addIngredients(recipe.getIngredients().get(0));
     }
 }

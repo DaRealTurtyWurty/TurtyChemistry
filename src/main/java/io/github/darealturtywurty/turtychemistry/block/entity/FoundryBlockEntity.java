@@ -4,6 +4,7 @@ import io.github.darealturtywurty.turtychemistry.init.BlockEntityInit;
 import io.github.darealturtywurty.turtychemistry.init.FluidInit;
 import io.github.darealturtywurty.turtychemistry.init.ItemInit;
 import io.github.darealturtywurty.turtychemistry.init.MultiblockInit;
+import io.github.darealturtywurty.turtychemistry.recipe.FoundryRecipie;
 import io.github.darealturtywurty.turtylib.common.blockentity.ModularBlockEntity;
 import io.github.darealturtywurty.turtylib.common.blockentity.module.FluidModule;
 import io.github.darealturtywurty.turtylib.common.blockentity.module.InventoryModule;
@@ -14,21 +15,27 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.Collections;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public final class FoundryBlockEntity extends ModularBlockEntity {
     public static final int MAX_BURN_TIME = 200;
-    
+
     public final FluidModule fluidInventory;
     public final InventoryModule inventory;
     public final MultiblockModule multiblockModule;
-    
+
     private int progress, fuelProgress;
-    private FluidStack currentFluid;
-    
     private final ContainerData containerData = new ContainerData() {
         @Override
         public int get(int pIndex) {
@@ -45,7 +52,7 @@ public final class FoundryBlockEntity extends ModularBlockEntity {
             switch (pIndex) {
                 case 0 -> FoundryBlockEntity.this.progress = pValue;
                 case 1 -> FoundryBlockEntity.this.fuelProgress = pValue;
-                case 2 -> FoundryBlockEntity.this.setFluidLevel(pValue,FluidStack.EMPTY);
+                case 2 -> FoundryBlockEntity.this.setFluidLevel(pValue, FluidStack.EMPTY);
                 default -> {
                 }
             }
@@ -56,6 +63,7 @@ public final class FoundryBlockEntity extends ModularBlockEntity {
             return 3;
         }
     };
+    private FluidStack currentFluid;
 
     public FoundryBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(BlockEntityInit.FOUNDRY.get(), pPos, pBlockState);
@@ -69,13 +77,19 @@ public final class FoundryBlockEntity extends ModularBlockEntity {
         return stack.is(ItemTags.COALS) || stack.is(Items.LAVA_BUCKET);
     }
 
+    public static Set<Recipe<?>> findRecipesByType(RecipeType<?> typeIn, Level world) {
+        return world != null ? world.getRecipeManager().getRecipes().stream()
+                .filter(recipe -> recipe.getType() == typeIn).collect(Collectors.toSet()) : Collections.emptySet();
+    }
+
     public int getFluidLevel() {
         return this.fluidInventory.getCapability().getFluidAmount();
     }
-    public void setFluidLevel(final int newLevel, final FluidStack stack)
-    {
+
+    public void setFluidLevel(final int newLevel, final FluidStack stack) {
         this.fluidInventory.getCapability().fill(stack, IFluidHandler.FluidAction.EXECUTE);
     }
+
     public ContainerData getContainerData() {
         return this.containerData;
     }
@@ -94,20 +108,34 @@ public final class FoundryBlockEntity extends ModularBlockEntity {
         this.fuelProgress = nbt.getInt("FuelProgress");
     }
 
-    public FluidStack getFluidType()
-    {
+    public FluidStack getFluidType() {
         this.currentFluid = this.fluidInventory.getCapability().getFluid();
         return currentFluid;
     }
+
+    public @Nullable FoundryRecipie getRecipe() {
+        if (this.level == null) return null;
+
+        Set<Recipe<?>> recipes = findRecipesByType(FoundryRecipie.Type.INSTANCE, this.level);
+        for (Recipe<?> iRecipe : recipes) {
+            var recipe = (FoundryRecipie) iRecipe;
+            if (recipe.matches(this.inventory.getCapability(), this.level)) return recipe;
+        }
+
+        return null;
+    }
+
     @Override
     public void tick() {
         super.tick();
         if (this.level == null) return;
         if (!this.level.isClientSide) {
             if (!hasFuel()) return;
+            final FoundryRecipie recipe = getRecipe();
+
             if (this.fuelProgress >= MAX_BURN_TIME || this.fuelProgress == 0) {
                 this.fuelProgress = 0;
-                if (hasItem(0)) {
+                if (hasItem(0) && recipe != null) {
                     getItem(0).shrink(1);
                     this.fuelProgress++;
                 } else {
@@ -116,7 +144,11 @@ public final class FoundryBlockEntity extends ModularBlockEntity {
             } else {
                 this.fuelProgress++;
             }
-            if (this.progress >= 100) {
+            if (recipe == null) {
+                this.progress = 0;
+                return;
+            }
+            if (this.progress >= recipe.getProcessTime()) {
                 this.progress = 0;
                 processFluid(getItem(1));
                 getItem(1).shrink(1);
