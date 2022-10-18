@@ -27,6 +27,7 @@ public final class FoundryBlockEntity extends ModularBlockEntity {
     private final MultiblockModule multiblockModule;
     private int progress, fuelProgress;
     private FluidStack currentFluid;
+    
     private final ContainerData containerData = new ContainerData() {
         @Override
         public int get(int pIndex) {
