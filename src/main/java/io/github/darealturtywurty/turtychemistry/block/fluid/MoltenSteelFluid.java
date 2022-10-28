@@ -21,8 +21,8 @@ public abstract class MoltenSteelFluid extends ForgeFlowingFluid {
     public int getAmount(@NotNull FluidState pState) {
         return 0;
     }
-    public static final class Flowing extends MoltenSteelFluid
-    {
+    
+    public static final class Flowing extends MoltenSteelFluid {
 
         public Flowing(Properties properties) {
             super(properties);
@@ -45,8 +45,8 @@ public abstract class MoltenSteelFluid extends ForgeFlowingFluid {
             return false;
         }
     }
-    public static final class Source extends MoltenSteelFluid
-    {
+    
+    public static final class Source extends MoltenSteelFluid {
 
         public Source(Properties properties) {
             super(properties);

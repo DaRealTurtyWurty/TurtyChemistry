@@ -84,10 +84,12 @@ public final class FoundryBlockEntity extends ModularBlockEntity {
     public int getFluidLevel() {
         return this.fluidInventory.getCapability().getFluidAmount();
     }
+    
 
     public void setFluidLevel(final int newLevel, final FluidStack stack) {
         this.fluidInventory.getCapability().fill(stack, IFluidHandler.FluidAction.EXECUTE);
     }
+    
 
     public ContainerData getContainerData() {
         return this.containerData;
@@ -176,6 +178,5 @@ public final class FoundryBlockEntity extends ModularBlockEntity {
             fluidInventory.getCapability()
                     .fill(new FluidStack(FluidInit.MOLTEN_STEEL.get(), 3), IFluidHandler.FluidAction.EXECUTE);
         }
-
     }
 }

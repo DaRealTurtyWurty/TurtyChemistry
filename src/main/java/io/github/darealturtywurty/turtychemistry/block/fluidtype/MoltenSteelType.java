@@ -43,26 +43,22 @@ public final class MoltenSteelType extends FluidType {
         consumer.accept(new IClientFluidTypeExtensions() {
 
             @Override
-            public ResourceLocation getStillTexture()
-            {
+            public ResourceLocation getStillTexture() {
                 return MOLTEN_STEEL_STILL;
             }
 
             @Override
-            public ResourceLocation getFlowingTexture()
-            {
+            public ResourceLocation getFlowingTexture() {
                 return MOLTEN_STEEL_FLOWING;
             }
 
             @Override
-            public ResourceLocation getOverlayTexture()
-            {
+            public ResourceLocation getOverlayTexture() {
                 return MOLTEN_STEEL_STILL;
             }
 
             @Override
-            public ResourceLocation getRenderOverlayTexture(Minecraft mc)
-            {
+            public ResourceLocation getRenderOverlayTexture(Minecraft mc) {
                 return null;
             }
 
@@ -70,8 +66,6 @@ public final class MoltenSteelType extends FluidType {
             public int getTintColor() {
                 return 0xFFFFFFFF;
             }
-
-
         });
     }
 }
