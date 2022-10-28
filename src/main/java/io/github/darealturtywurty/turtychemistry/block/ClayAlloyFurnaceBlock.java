@@ -32,11 +32,9 @@ import org.jetbrains.annotations.Nullable;
 
 public final class ClayAlloyFurnaceBlock extends Block implements EntityBlock {
     private static final VoxelShape SHAPE = createShape();
-    private static final Component TRANSLATION_COMPONENT;
+    private static final Component TRANSLATION_COMPONENT = Component.translatable(
+            "container." + TurtyChemistry.MODID + ".clay_alloy_furnace");
 
-    static {
-        TRANSLATION_COMPONENT = Component.translatable("container." + TurtyChemistry.MODID + ".clay_alloy_furnace");
-    }
 
     public ClayAlloyFurnaceBlock(Properties properties) {
         super(properties);

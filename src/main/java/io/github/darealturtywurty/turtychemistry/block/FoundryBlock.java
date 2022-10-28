@@ -22,11 +22,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public final class FoundryBlock extends Block implements EntityBlock {
-    private static final Component TRANSLATION_COMPONENT;
+    private static final Component TRANSLATION_COMPONENT = Component.translatable(
+            "container." + TurtyChemistry.MODID + ".foundry");
 
-    static {
-        TRANSLATION_COMPONENT = Component.translatable("container." + TurtyChemistry.MODID + ".foundry");
-    }
 
     public FoundryBlock(Properties pProperties) {
         super(pProperties);
