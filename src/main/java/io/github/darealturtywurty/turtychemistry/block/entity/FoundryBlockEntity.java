@@ -70,7 +70,6 @@ public final class FoundryBlockEntity extends ModularBlockEntity {
         this.fluidInventory = addModule(new FluidModule(this, 80));
         this.inventory = addModule(new InventoryModule(this, 2));
         this.multiblockModule = addModule(new MultiblockModule(MultiblockInit.FOUNDRY));
-
     }
 
     public static boolean isFuel(ItemStack stack) {
