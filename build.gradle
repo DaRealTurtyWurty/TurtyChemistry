@@ -1,19 +1,18 @@
 buildscript {
     repositories {
-        maven { url = 'https://maven.minecraftforge.net' }
-        maven { url = 'https://maven.parchmentmc.org' }
-        mavenCentral()
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1+', changing: true
-        classpath 'org.parchmentmc:librarian:1.+'
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
     }
 }
 
-apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'eclipse'
-apply plugin: 'maven-publish'
-apply plugin: 'org.parchmentmc.librarian.forgegradle'
+plugins {
+    id 'eclipse'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '5.1.+'
+    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+}
 
 version = '1.0'
 group = 'io.github.darealturtywurty.turtychemistry'
@@ -23,13 +22,15 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
-    mappings channel: 'official', version: '1.19.2'
+    mappings channel: 'parchment', version: '2022.09.04-1.19.2'
 
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
     runs {
         client {
-            workingDirectory project.file('run')
+            properties 'mixin.env.remapRefMap': 'true'
+            property 'mixin.env.refMapRemappingFile', "${project.projectDir}/build/createSrgToMcp/output.srg"
+            workingDirectory project.file('run_client')
             arg "-mixin.config=" + archivesBaseName + ".mixins.json"
 
             mods {
@@ -40,7 +41,9 @@ minecraft {
         }
 
         server {
-            workingDirectory project.file('run')
+            properties 'mixin.env.remapRefMap': 'true'
+            property 'mixin.env.refMapRemappingFile', "${project.projectDir}/build/createSrgToMcp/output.srg"
+            workingDirectory project.file('run_server')
             arg "-mixin.config=" + archivesBaseName + ".mixins.json"
 
             mods {
@@ -51,7 +54,7 @@ minecraft {
         }
 
         data {
-            workingDirectory project.file('run')
+            workingDirectory project.file('run_data')
 
             args '--mod', archivesBaseName, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
@@ -70,13 +73,25 @@ repositories {
     flatDir {
         dir 'libs'
     }
+    maven {
+        name = "Progwml6 maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
+    maven {
+        name = "ModMaven"
+        url = "https://modmaven.dev"
+    }
 }
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.19.2-43.1.3'
     annotationProcessor 'org.spongepowered:mixin:0.8.3:processor'
-    
-    implementation fg.deobf("io.github.darealturtywurty.turtylib:turtylib-1.0:0.1");
+
+    implementation fg.deobf("io.github.darealturtywurty.turtylib:turtylib-1.0:0.1")
+
+    compileOnly(fg.deobf("mezz.jei:jei-1.19.2-common-api:11.3.0.260"))
+    compileOnly(fg.deobf("mezz.jei:jei-1.19.2-forge-api:11.3.0.260"))
+    runtimeOnly(fg.deobf("mezz.jei:jei-1.19.2-forge:11.3.0.260"))
 }
 
 jar {
@@ -89,7 +104,7 @@ jar {
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "TurtyWurty",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "MixinConfigs": archivesBaseName + ".mixins.json"
+                "MixinConfigs"            : archivesBaseName + ".mixins.json"
         ])
     }
 }
@@ -107,4 +122,10 @@ publishing {
             url "file://${project.projectDir}/mcmodsrepo"
         }
     }
+}
+
+apply plugin: 'org.spongepowered.mixin'
+
+mixin {
+    add sourceSets.main, "${archivesBaseName}.refmap.json"
 }

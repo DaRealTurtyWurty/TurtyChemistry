@@ -1,12 +1,13 @@
 {
-	"required": true,
-	"package": "io.github.darealturtywurty.turtychemistry.mixins",
-	"compatibilityLevel": "JAVA_17",
-	"refmap": "turtychemistry.refmap.json",
-	"mixins": [
-    	
-	],
-	"server": [],
-	"client": [],
-	"minVersion": "0.8"
+    "required": true,
+    "package": "io.github.darealturtywurty.turtychemistry.mixins",
+    "compatibilityLevel": "JAVA_17",
+    "refmap": "turtychemistry.refmap.json",
+    "mixins": [
+        "AnvilMixin",
+        "ItemMixin"
+    ],
+    "server": [],
+    "client": [],
+    "minVersion": "0.8"
 }

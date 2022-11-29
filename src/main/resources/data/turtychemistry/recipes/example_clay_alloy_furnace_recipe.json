@@ -1,0 +1,16 @@
+{
+    "type": "turtychemistry:clay_alloy",
+    "ingredients": [
+        {
+            "item": "minecraft:apple"
+        },
+        {
+            "item": "minecraft:dirt"
+        }
+    ],
+    "output": {
+        "item": "turtychemistry:hydrogen",
+        "count": 1
+    },
+    "process_time": 100
+}

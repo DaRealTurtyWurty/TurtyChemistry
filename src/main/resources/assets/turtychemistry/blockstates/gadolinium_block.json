@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "turtychemistry:block/gadolinium_block"
-		}
-	}
+    "variants": {
+        "": {
+            "model": "turtychemistry:block/gadolinium_block"
+        }
+    }
 }

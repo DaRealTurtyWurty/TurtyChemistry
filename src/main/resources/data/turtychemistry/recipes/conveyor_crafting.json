@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "RRR",
+        "A A",
+        "I I"
+    ],
+    "key": {
+        "R": {
+            "item": "turtychemistry:rubber"
+        },
+        "A": {
+            "item": "turtychemistry:aluminum_sheet"
+        },
+        "I": {
+            "item": "turtychemistry:iron_rod"
+        }
+    },
+    "result": {
+        "item": "turtychemistry:conveyor_belt"
+    }
+}

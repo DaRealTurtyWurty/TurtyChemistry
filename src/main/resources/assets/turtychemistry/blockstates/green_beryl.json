@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "turtychemistry:block/green_beryl"
-		}
-	}
+    "variants": {
+        "": {
+            "model": "turtychemistry:block/green_beryl"
+        }
+    }
 }

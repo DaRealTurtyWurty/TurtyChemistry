@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "turtychemistry:block/painite"
-		}
-	}
+    "variants": {
+        "": {
+            "model": "turtychemistry:block/painite"
+        }
+    }
 }

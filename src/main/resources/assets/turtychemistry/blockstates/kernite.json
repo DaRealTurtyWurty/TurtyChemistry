@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "turtychemistry:block/kernite"
-		}
-	}
+    "variants": {
+        "": {
+            "model": "turtychemistry:block/kernite"
+        }
+    }
 }
